@@ -1,8 +1,14 @@
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 function HomepageButton() {
   return (
-    <button type="button" className="homepageButton">Questions</button>
+    <div className='QuizzButton'>
+      <Link to="/Quizz">
+      <button type="button" className="homepageButton">Questions</button>
+      </Link>
+    </div>
+    
   );
 }
 

@@ -1,4 +1,16 @@
 .homepageButton{
   width: 7em;
   align-self: center;
+  padding: 2em;
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  border-radius: 2em;
+  all: unset;
+}
+
+.QuizzButton {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }

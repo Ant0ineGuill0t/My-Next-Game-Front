@@ -44,45 +44,7 @@ body {
   
 }
 
-#root{
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  margin: 2em;
-
-  padding: 2em;
-
-  /*border: 0.3em orangered solid;*/
-
-  /*box-shadow:-15px 0 0 0 white,
-
-              15px 0 0 0 white,
-
-              0 -15px 0 0 white,
-
-              0 15px 0 0 white;*/
-
-  background-color: #022829;
-
-  border: 2px solid #67CECD;
-
-  border-radius: 2em;
-
-  margin: auto;
-
-  width: 80%;
-
-  height: 100%;
-
-}
-
-.root h2{
+#root h2{
 
   width: 100%;
 
@@ -90,7 +52,7 @@ body {
 
 }
 
-.root p{
+#root p{
 
   width: 100%;
 
