@@ -1,3 +1,5 @@
+// == Import
+// data, styles
 import './style.scss';
 
 function Footer() {

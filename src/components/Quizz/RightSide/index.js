@@ -1,3 +1,5 @@
+// == Import
+// data, styles
 import './style.scss';
 import Mascotte from '../../../assets/images/mascotte.gif';
 import PreviousButton from '../../../assets/images/previousButton.png'
@@ -6,13 +8,13 @@ import RestartButton from '../../../assets/images/RestartButton.png'
 function RightSide() {
   return (
     <div className="rightSide">
-        <img className="mascotte" src={Mascotte} alt=""/>
-        <div className="progressBar">
-            <label htmlFor="file">Progression :</label>
-            <progress className="progressionBar" id="file" max="100" value="70"> 70% </progress>
-        </div>
-        <button><img className="back" src={PreviousButton} alt=""/></button>
-        <button><img className="restart" src={RestartButton} alt=""/></button>
+      <img className="mascotte" src={Mascotte} alt=""/>
+      <div className="progressBar">
+        <label htmlFor="file">Progression :</label>
+        <progress className="progressionBar" id="file" max="100" value="70"> 70% </progress>
+      </div>
+      <button><img className="back" src={PreviousButton} alt=""/></button>
+      <button><img className="restart" src={RestartButton} alt=""/></button>
     </div>
   );
 }

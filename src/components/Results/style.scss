@@ -1,0 +1,29 @@
+.results{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+.restartQuizz{
+  height: 100%;
+  width: 100%;
+  all: unset;
+  padding: 1em;
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  border-radius: 1em;
+  font-size: 0.9em;
+}
+
+.results a{
+  height: 2%;
+  width: 10%;
+}
+
+.cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}

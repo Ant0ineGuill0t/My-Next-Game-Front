@@ -1,0 +1,105 @@
+.card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  width: 20.5em;
+  height: 80%;
+
+  background-color: #022829;
+
+  border-radius: 1em;
+
+  box-shadow: -1rem 0 1rem #001414;
+
+/*   margin-left: -50px; */
+
+  transition: 0.4s ease-out;
+
+  position: relative;
+
+  left: 0em;
+
+  margin: 0 1em;
+
+}
+
+.cardImg{
+
+  width: 100%;
+
+  height: 60%;
+
+  border-radius: 1em 1em 0 0;
+
+  object-fit: cover;
+
+  justify-content: flex-start;
+
+  text-align: center;
+
+  position: relative;
+
+}
+
+.gameTitle{
+  margin: 2em 0;
+}
+
+.card p {
+  text-align: center;
+  padding: 1em;
+  height: 1em;
+}
+
+/* .gameWishlist{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+}
+.gameWishlist p{
+  height: 1em;
+} */
+
+.circle {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  display: flex;
+  left: calc(50% - 60px);
+}
+
+svg {
+
+  fill: #17141d;
+
+  stroke-width: 0.125em;
+
+  width: 100%;
+
+}
+
+.stroke {
+
+  stroke: #67CECD;
+  stroke-dasharray: 324;
+  stroke-dashoffset : 100;
+  transition: 0.6s ease-out;
+}
+
+.note{
+
+  position: relative;
+
+  top: 2.5em;
+
+  left: -10.7em;
+
+}
