@@ -1,3 +1,5 @@
+// == Import
+// data, styles
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
 

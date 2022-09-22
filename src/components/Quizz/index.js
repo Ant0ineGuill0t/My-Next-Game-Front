@@ -1,6 +1,10 @@
-import './style.scss';
+// == Import
+// composants
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
+
+// data, styles
+import './style.scss';
 
 function Quizz() {
   return (
