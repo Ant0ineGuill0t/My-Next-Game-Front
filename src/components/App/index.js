@@ -17,7 +17,7 @@ import './styles.css';
 // == Composant
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <div className="app">
         <Routes>
@@ -30,7 +30,7 @@ function App() {
         </Routes>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
