@@ -1,20 +1,20 @@
 // == Import
 // data, styles
 import './style.scss';
-import TestImage from '../../../assets/images/eldenring.png'
-import WishListImage from '../../../assets/images/WishlistButton.png'
-import CheckListImage from '../../../assets/images/ChecklistButton.png'
+import TestImage from '../../../assets/images/eldenring.png';
+import WishListImage from '../../../assets/images/WishlistButton.png';
+import CheckListImage from '../../../assets/images/ChecklistButton.png';
 
 function Result() {
   return (
-    <div className='card'>
-      <img className='cardImg' src={TestImage} alt="" />
-      <h3 className='gameTitle'>Elden Ring</h3>
+    <div className="card">
+      <img className="cardImg" src={TestImage} alt="" />
+      <h3 className="gameTitle">Elden Ring</h3>
       <div className="circle">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
           <circle className="stroke" cx="60" cy="60" r="40" />
-          </svg>
-          <p className="note">90%</p>
+        </svg>
+        <p className="note">90%</p>
       </div>
       {/* <p className='gameNote'>90/100</p> */}
       {/* <div className='gameWishlist'>

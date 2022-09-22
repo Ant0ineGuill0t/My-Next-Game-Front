@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 
 function HomepageButton() {
   return (
-    <div className='QuizzButton'>
+    <div className="QuizzButton">
       <Link to="/Quizz">
       <button type="button" className="homepageButton">Questions</button>
       </Link>
     </div>
-    
   );
 }
 
