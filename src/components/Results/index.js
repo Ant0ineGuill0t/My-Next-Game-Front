@@ -1,7 +1,7 @@
 // == Import
-// composants
-import {useRef, useEffect, useState} from 'react';
+
 import { Link } from 'react-router-dom';
+// composants
 import Result from './Result';
 // data, styles
 import './style.scss';

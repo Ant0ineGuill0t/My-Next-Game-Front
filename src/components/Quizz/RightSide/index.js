@@ -2,8 +2,8 @@
 // data, styles
 import './style.scss';
 import Mascotte from '../../../assets/images/mascotte.gif';
-import PreviousButton from '../../../assets/images/previousButton.png'
-import RestartButton from '../../../assets/images/RestartButton.png'
+import PreviousButton from '../../../assets/images/previousButton.png';
+import RestartButton from '../../../assets/images/RestartButton.png';
 
 function RightSide() {
   return (
