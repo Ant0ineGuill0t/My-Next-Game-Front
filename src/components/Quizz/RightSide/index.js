@@ -8,13 +8,13 @@ import RestartButton from '../../../assets/images/RestartButton.png'
 function RightSide() {
   return (
     <div className="rightSide">
-      <img className="mascotte" src={Mascotte} alt=""/>
+      <img className="mascotte" src={Mascotte} alt="" />
       <div className="progressBar">
-        <label htmlFor="file">Progression :</label>
-        <progress className="progressionBar" id="file" max="100" value="70"> 70% </progress>
+        <label htmlFor="progressionBar">Progression :</label>
+        <progress className="progressionBar" id="progressionBar" max="100" value="70"> 70% </progress>
       </div>
-      <button><img className="back" src={PreviousButton} alt=""/></button>
-      <button><img className="restart" src={RestartButton} alt=""/></button>
+      <button type="button"><img className="back" src={PreviousButton} alt="" /></button>
+      <button type="button"><img className="restart" src={RestartButton} alt="" /></button>
     </div>
   );
 }
