@@ -1,15 +1,14 @@
 // == Import
+import { Link } from 'react-router-dom';
 // data, styles
 import './style.scss';
 
 function Footer() {
   return (
-    <footer>
-      <div className="footer">
-        <a href="#">Mentions Légales</a>
-        <a href="#" className="mid">FAQ</a>
-        <a href="#">Qui sommes-nous ?</a>
-      </div>
+    <footer className="footer">
+      <Link to="/legal-notice">Mentions Légales</Link>
+      <Link to="/faq" className="mid">FAQ</Link>
+      <Link to="/about-us">Qui sommes-nous ?</Link>
     </footer>
   );
 }

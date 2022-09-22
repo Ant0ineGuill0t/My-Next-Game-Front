@@ -1,0 +1,36 @@
+.faq{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: left;
+  height: 100%;
+  overflow: auto;
+}
+
+.faq-main-title{
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.faq-main-title:hover{
+  animation-duration: .6s;
+  animation-name: clignoter;
+  transition: none;
+}
+
+@keyframes clignoter {
+  0%   { opacity:1; }
+  50%   { opacity:0; }
+  60%   { opacity:1; }
+  70%   { opacity:0; }
+  90%   { opacity:1; }
+  95%   { opacity:0; }
+  100% { opacity:1; }
+}
+
+.faq-title{
+  padding: 1rem 0;
+}
+
