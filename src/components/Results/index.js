@@ -1,23 +1,27 @@
 // == Import
-//composants
-import Result from './Result'
+// composants
+import {useRef, useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
+import Result from './Result';
 // data, styles
 import './style.scss';
-import { Link } from 'react-router-dom';
 
 function Results() {
   return (
-    <div className='results'>
-    <Link to="/Quizz">
-      <button className='restartQuizz'>Refaire le Quizz</button>
-    </Link>
-      
-      <div className='cardContainer'>
-        <Result />
-        <Result />
-        <Result />
-        <Result />
-        <Result />
+    <div className="results">
+      <Link to="/Quizz">
+        <button type="button" className="restartQuizz">Refaire le Quizz</button>
+      </Link>
+      <div className="cardContainer">
+        <ul className="scrollZone">
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+        </ul>
       </div>
     </div>
   );

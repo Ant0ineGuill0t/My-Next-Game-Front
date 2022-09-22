@@ -1,12 +1,22 @@
 @media screen and (max-width: 767px){
   .card{
-    height: 13.5em;
+    height: 31.5em;
+    width: 18.5em;
+    box-sizing: border-box;
+  }
+  .note{
+    left: -9.3em;
   }
 }
 
 @media screen and (min-width: 900px){
   .card{
     height: 80%;
+    width: 20.5em;
+    box-sizing: border-box;
+  }
+  .note{
+    left: -10.8em;
   }
 }
 
@@ -19,8 +29,6 @@
   flex-wrap: wrap;
 
   align-items: center;
-
-  width: 20.5em;
 
   background-color: #022829;
 
@@ -36,7 +44,7 @@
 
   left: 0em;
 
-  margin: 0 1em;
+  margin: 1em;
 
 }
 
@@ -44,7 +52,7 @@
 
   width: 100%;
 
-  height: 60%;
+  height: 50%;
 
   border-radius: 1em 1em 0 0;
 
@@ -59,13 +67,17 @@
 }
 
 .gameTitle{
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
 .card p {
   text-align: center;
   padding: 1em;
   height: 1em;
+}
+
+.platform{
+  justify-self: flex-end;
 }
 
 /* .gameWishlist{
@@ -84,6 +96,7 @@
   justify-self: center;
   width: 100%;
   display: flex;
+  flex-wrap: nowrap;
   left: calc(50% - 60px);
 }
 
@@ -106,11 +119,6 @@ svg {
 }
 
 .note{
-
   position: relative;
-
-  top: 2.5em;
-
-  left: -10.7em;
-
+  margin: 2.5em 0 0 0;
 }
