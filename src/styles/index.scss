@@ -1,8 +1,61 @@
 @use 'reset';
 @use 'vars';
 
+@font-face {
+
+  font-family: 'Karmatic-Arcade'; /*a name to be used later*/
+
+  src: url('../assets/fonts/karmatic-arcade.regular.ttf');
+
+}
+
+@font-face {
+
+  font-family: 'Press-Start'; /*a name to be used later*/
+
+  src: url('../assets/fonts/press-start.regular.ttf');
+
+}
+
+@font-face {
+
+  font-family: 'Graph35'; /*a name to be used later*/
+
+  src: url('../assets/fonts/Graph-35-pix.ttf');
+
+}
+
 body {
-  font-family: sans-serif;
+    /*background-color: black;*/
+
+    font-family: 'Graph35';
+
+    color: #9EF4F3;
+  
+    font-size: 0.9em;
+  
+    /*font-family: 'Press-Start'*/
+  
+    background-color: #001414;
+  
+    padding: 1em;
+  
+    height: 100vh;
+  
+}
+
+#root h2{
+
+  width: 100%;
+
+  
+
+}
+
+#root p{
+
+  width: 100%;
+
 }
 
 /* 

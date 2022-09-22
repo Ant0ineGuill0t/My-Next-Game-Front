@@ -1,0 +1,40 @@
+@use 'src/styles/vars';
+
+.header{
+
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+.h1{
+
+  width: 7em;
+
+  font-size: 20px;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-family: 'Press-Start'; /*a name to be used later*/
+
+  color: #67CECD;
+
+}
+
+.h1 img{
+
+  width: 100%;
+
+}
+.userButton{
+
+  justify-self: center;
+
+}

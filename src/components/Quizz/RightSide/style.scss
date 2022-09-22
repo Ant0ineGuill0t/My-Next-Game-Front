@@ -1,0 +1,129 @@
+.rightSide{
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  margin: auto;
+
+  justify-content: space-around;
+
+}
+
+.rightSide label{
+
+  height: 20%;
+
+  width: 40%;
+
+}
+
+.mascotte{
+
+  animation-name: example;
+
+  animation-duration: 1s;
+
+  animation-iteration-count: infinite;
+
+  animation-direction: alternate;
+
+  position: relative;
+
+  animation-timing-function: linear;
+
+}
+
+
+
+@keyframes example {
+
+  0%   {top:-0.5em;}
+
+  100% {top:0.5em;}
+
+}
+
+
+
+.progressionBar{
+
+  margin: 0 2em;
+
+  align-self: center;
+
+  -webkit-appearance: none;
+
+  width: 100%;
+
+  
+
+}
+
+::-webkit-progress-value {
+
+  background-color: #9EF4F3;
+
+  border-radius: 0.2em;
+
+}
+
+
+
+::-webkit-progress-bar {
+
+  background-color: #5D9393;
+
+  border: #9EF4F3 1px solid;
+
+  border-radius: 0.2em;
+
+  box-shadow: #9EF4F3 0em 0em 0.2em 0.05em;
+
+}
+
+.progressBar{
+
+  width: 100%;
+
+  justify-self: center;
+
+  justify-content: center;
+
+  margin: 2em 0;
+
+  align-self: center;
+
+  display: flex;
+
+}
+
+.back{
+
+  width: 80%;
+
+}
+
+.back:active {
+
+  content: url("../../../assets/images/previousButtonPushed.png");
+
+}
+
+.restart{
+
+  width: 80%;
+
+}
+
+.restart:active {
+
+  content: url("../../../assets/images/RestartButtonPushed.png");
+
+}
+
+.root button{
+
+  all: unset;
+
+}
