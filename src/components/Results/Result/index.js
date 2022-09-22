@@ -25,7 +25,7 @@ function Result() {
         <img src={CheckListImage} alt="wishlistButton" />
         <p>Ajouter à la checklist</p>
       </div> */}
-      <p>Steam/Epic</p>
+      <p className="platform">Steam/Epic</p>
     </div>
   );
 }

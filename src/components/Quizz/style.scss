@@ -1,3 +1,21 @@
+@media screen and (max-width: 380px){
+  .quizz{
+    height: 63%;
+  }
+}
+
+@media screen and (min-width: 380px){
+  .quizz{
+    height: 53%;
+  }
+}
+
+@media screen and (min-width: 1080px){
+  .quizz{
+    height: 55%;
+  }
+}
+
 .quizz{
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +25,7 @@
   border: 2px solid #67CECD;
   width: 100%;
   border-radius: 2em;
-  height: 65%;
+  
   margin: 1em 0;
 }
 .quizz button{

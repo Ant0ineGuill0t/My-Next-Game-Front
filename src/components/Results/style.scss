@@ -18,7 +18,7 @@
   justify-content: center;
 }
 .restartQuizz{
-  height: 100%;
+  height: 50%;
   width: 100%;
   all: unset;
   padding: 1em;
@@ -31,6 +31,7 @@
 .results a{
   height: 2%;
   margin: 1em 0;
+  justify-self: flex-start;
 }
 
 .cardContainer{
@@ -39,5 +40,28 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  max-width: 1000%;
+  overflow-x: hidden;
+	overflow-y: hidden;
   margin: 2em 0;
+}
+.scrollZone{
+  display: flex;
+  white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 1em;
+}
+::-webkit-scrollbar-track {
+  background: #022829;
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #67CECD;
+  border-radius: 1em;
 }

@@ -1,4 +1,5 @@
 // == Import
+
 import { Link } from 'react-router-dom';
 // composants
 import Result from './Result';
@@ -9,15 +10,18 @@ function Results() {
   return (
     <div className="results">
       <Link to="/Quizz">
-        <button className="restartQuizz">Refaire le Quizz</button>
+        <button type="button" className="restartQuizz">Refaire le Quizz</button>
       </Link>
-
       <div className="cardContainer">
-        <Result />
-        <Result />
-        <Result />
-        <Result />
-        <Result />
+        <ul className="scrollZone">
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+          <li><Result /></li>
+        </ul>
       </div>
     </div>
   );

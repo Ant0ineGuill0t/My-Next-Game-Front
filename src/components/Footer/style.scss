@@ -1,8 +1,25 @@
+@media screen and (max-width: 380px){
+  .footer{
+    margin: 8em 0;
+  }
+}
+
+@media screen and (min-width: 380px){
+  .footer{
+    margin: 3em 0;
+  }
+}
+
 .footer{
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 1em 0;
+
+  align-items: center;
+
+  align-self: flex-end;
+
+
 }
 
 .footer a{
