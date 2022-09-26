@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     name: 'God of war',
-    plateform: ['pc'],
+    plateforms: ['PC'],
     release: '2018',
     rate: 90,
     picture: 'https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7',
@@ -13,9 +13,9 @@ export default [
   {
     id: 2,
     name: 'Skyrim',
-    plateform: [
-      'pc',
-      'ps4'
+    plateforms: [
+      'PC',
+      'PS4',
     ],
     release: '2011',
     rate: 99,
@@ -27,7 +27,7 @@ export default [
   {
     id: 3,
     name: 'Company of heroes',
-    plateform: ['pc'],
+    plateforms: ['PC'],
     release: '2006',
     rate: 85,
     picture: 'https://gpstatic.com/acache/23/08/1/fr/packshot-d341ecf418053e6a11f3bcf3760b056a.jpg',
@@ -38,7 +38,7 @@ export default [
   {
     id: 4,
     name: 'Dawn of war',
-    plateform: ['pc'],
+    plateforms: ['PC'],
     release: '2004',
     rate: 91,
     picture: 'https://image.jeuxvideo.com/images/pc/w/4/w4dwpc0f.jpg',
@@ -49,7 +49,7 @@ export default [
   {
     id: 5,
     name: 'La bataille pour la terre du milieu',
-    plateform: ['pc'],
+    plateforms: ['PC'],
     release: '2004',
     rate: 95,
     picture: 'https://m.media-amazon.com/images/I/51m0R2WVPjL._AC_.jpg',
