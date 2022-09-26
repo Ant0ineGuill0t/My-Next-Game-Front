@@ -12,7 +12,7 @@ function Result() {
       <h3 className="gameTitle">Elden Ring</h3>
       <div className="circle">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <circle className="stroke" cx="60" cy="60" r="40" />
+          <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray="324" />
         </svg>
         <p className="note">90%</p>
       </div>
