@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 // data, styles
 import './style.scss';
-import TestImage from '../../../assets/images/eldenring.png';
 // import WishListImage from '../../../assets/images/WishlistButton.png';
 // import CheckListImage from '../../../assets/images/ChecklistButton.png';
 
