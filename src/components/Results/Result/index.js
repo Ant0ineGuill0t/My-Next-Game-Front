@@ -19,6 +19,7 @@ function Result({
       <div className="circle">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
           <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray={rate * 3.6} />
+
         </svg>
         <p className="note">{rate}%</p>
       </div>
