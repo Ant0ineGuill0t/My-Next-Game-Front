@@ -1,0 +1,185 @@
+@media screen and (min-width: 280px){
+  .game{
+    font-size: 0.7em;
+    padding: 2em;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    height: 100%;
+    justify-content: center;
+  }
+  .game ul{
+    width: 100%;
+  }
+  .gameLeft{
+    width: 100%;
+    height: 40%;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  .gameRight{
+    width: 100%;
+    height: 15%;
+  }
+  .gameImg{
+    height: 40%;
+    width: 100%;
+  }
+  .images{
+    visibility: hidden;
+    height: 0%;
+    margin: 0;
+  }
+  .gameplay{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 380px){
+  .game{
+    font-size: 0.7em;
+    margin-top: 3em;
+    padding: 2em;
+    height: 100%;
+    justify-content: center;
+  }
+  .game ul{
+    width: 100%;
+  }
+  .gameLeft{
+    width: 100%;
+    height: 30%;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  .gameRight{
+    width: 100%;
+    height: 15%;
+  }
+  .gameImg{
+    height: 50%;
+    width: 100%;
+  }
+  .images{
+    visibility: hidden;
+    height: 0%;
+    margin: 0;
+  }
+  .gameplay{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1080px){
+  .game{
+    font-size: 0.9em;
+    padding: 2.5em;
+    justify-content: space-between;
+  }
+  .gameLeft{
+    justify-self: flex-start;
+    font-size: 1em;
+    height: 70%;
+    width: 20%;
+  }
+  .gameRight{
+    width: 30%;
+    height: 70%;
+  }
+  .gameImg{
+    height: 70%;
+    width: 25%;
+  }
+  .images{
+    width: 100%;
+    height: 20%;
+    visibility: visible;
+    margin: 1.5em 0 0 0;
+    justify-content: center;
+  }
+  .gameplay{
+    width: 20%;
+  }
+}
+
+.game{
+  
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  width: 100%;
+  border-radius: 2em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.gameImg{
+  object-fit: cover;
+  object-position: left top;
+  border: #67CECD 0.1em solid;
+  border-radius: 2em;
+  margin:0 0.5em 0.5em 0.5em;
+}
+.gameplay{
+  margin: 0 1em;
+  object-fit: contain;
+  border-radius: 2em;
+}
+.images{
+  justify-self: flex-end;
+  display: flex;
+}
+
+.gameRight{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-self: flex-end;
+}
+
+.gameLeft{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.game h3{
+  font-weight: bold;
+  margin: 1em 0 ;
+  width: 100%;
+}
+
+.game ul{
+  margin-bottom: 2em;
+  overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.gameLeft p{
+  width: 50%;
+}
+
+.game ul li{
+  display: inline;
+  width: 50%;
+}
+
+.game ul li:before {
+  content: ' ';
+}
+
+.game h2{
+  text-align: center;
+  margin-bottom: 2em;
+  height: 1em;
+}
+
+.pitch{
+  height: 70%;
+}
+
+.game p{
+  overflow-x: hidden;
+	overflow-y: auto;
+}
+
