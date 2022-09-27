@@ -30,8 +30,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomepageButton />} />
           <Route path="/quizz" element={<Quizz />} />
-          <Route path="/quizz/results" element={<Results />} />
           <Route path="/quizz/game/:slug" element={<Game />} />
+          <Route path="/quizz/results" element={<Results datas={dataGames} />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/about-us" element={<AboutUs />} />

@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px){
+@media screen and (max-width: 899px){
   .card{
     height: 31.5em;
     width: 18.5em;
@@ -68,6 +68,9 @@
 
 .gameTitle{
   margin: 1em 0;
+  width: 80%;
+  text-align: center;
+  white-space: pre-wrap;
 }
 
 .card p {
@@ -121,4 +124,5 @@ svg {
 .note{
   position: relative;
   margin: 2.5em 0 0 0;
+  word-spacing: 5rem;
 }
