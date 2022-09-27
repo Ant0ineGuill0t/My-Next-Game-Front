@@ -116,6 +116,7 @@ svg {
 .stroke {
 
   stroke: #67CECD;
+  stroke-dasharray: 324;
   stroke-dashoffset : 100;
   transition: 0.6s ease-out;
 }
