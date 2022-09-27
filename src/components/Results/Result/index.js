@@ -32,7 +32,7 @@ function Result({
       </div> */}
       {
         plateforms.map(
-          (plateform) => <p>{plateform}</p>,
+          (plateform) => <p key={plateform}>{plateform}</p>,
         )
       }
     </div>

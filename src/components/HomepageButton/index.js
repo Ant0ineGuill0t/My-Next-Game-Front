@@ -11,7 +11,7 @@ function HomepageButton() {
         pépite que vous avez loupé? Nous sommes là pour ça!
       </p>
       <img className="home-picture" src={Mascotte} alt="mascotte du site" />
-      <Link to="/Quizz">
+      <Link to="/quizz">
         <button type="button" className="home-button">Commencer le questionnaire</button>
       </Link>
     </div>

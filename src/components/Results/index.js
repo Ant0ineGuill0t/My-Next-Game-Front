@@ -16,7 +16,7 @@ function Results({ datas }) {
         <ul className="scrollZone">
           {
             datas.map(
-              (data) => <li><Result key={data.id} {...data} /></li>,
+              (data) => <li key={data.id}><Result {...data} /></li>,
             )
           }
         </ul>
