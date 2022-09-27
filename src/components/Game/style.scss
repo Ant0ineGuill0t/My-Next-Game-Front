@@ -136,32 +136,26 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  white-space: nowrap;
-	overflow-x: auto;
-	overflow-y: hidden;
-	-webkit-overflow-scrolling: touch;
-  box-sizing: border-box;
 }
 
 .game h3{
   font-weight: bold;
   margin: 1em 0 ;
-  width: 100%;
+  width: 40%;
 }
 
 .game ul{
   margin-bottom: 2em;
-  overflow-x: hidden;
-	overflow-y: auto;
+  width: 40%;
 }
 
 .gameLeft p{
-  width: 50%;
+  width: 40%;
 }
 
 .game ul li{
   display: inline;
-  width: 50%;
+  width: 40%;
 }
 
 .game ul li:before {

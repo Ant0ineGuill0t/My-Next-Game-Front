@@ -8,7 +8,8 @@ export default [
     rate: 90,
     pegi: 18,
     picture: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.png',
-    gameplays:[
+    gameplays:
+    [
       'https://images.igdb.com/igdb/image/upload/t_720p/rm35ytrytuka9qkylqyk.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/ywrkjcrbeemmb51flsfj.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/qseegzssgetrybgbplrv.jpg',
@@ -29,7 +30,8 @@ export default [
     rate: 99,
     pegi: 18,
     picture: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1tnw.png',
-    gameplays:[
+    gameplays:
+    [
       'https://images.igdb.com/igdb/image/upload/t_720p/xzk2h41fiye7uwbhc6ub.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/urqw7ltwmhr39gkidsih.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/x5bbaqvgbpaz4hzlfeqb.jpg',
@@ -47,7 +49,8 @@ export default [
     rate: 85,
     pegi: 18,
     picture: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2ht7.png',
-    gameplays:[
+    gameplays:
+    [
       'https://images.igdb.com/igdb/image/upload/t_720p/ziif4tmanig4cbkws2g3.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/spzerwnrod4fkwgafk3p.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/wokthmguvmedphgpfmm7.jpg',
@@ -65,7 +68,8 @@ export default [
     rate: 91,
     pegi: 16,
     picture: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1wep.png',
-    gameplays:[
+    gameplays:
+    [
       'https://images.igdb.com/igdb/image/upload/t_720p/kulm4qxjrod29xd92yks.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/buartoygc3lnphznjxxu.jpg',
       'https://images.igdb.com/igdb/image/upload/t_720p/byvhpadb5n0p9fzydzh2.jpg',
@@ -83,7 +87,8 @@ export default [
     rate: 95,
     pegi: 12,
     picture: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co20og.png',
-    gameplays:[
+    gameplays:
+    [
       'https://images.igdb.com/igdb/image/upload/t_720p/hjikqarxufbbtkprti0z.jpg',
       'https://images.igdb.com/igdb/image/upload/t_original/n3qiinvrkdjovleqpnlc.jpg',
       'https://images.igdb.com/igdb/image/upload/t_original/qhnxdbnqe3bsy6riniqb.jpg',

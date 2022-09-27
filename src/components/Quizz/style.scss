@@ -6,7 +6,7 @@
 
 @media screen and (min-width: 300px){
   .quizz{
-    height: 63%;
+    height: 67%;
   }
 }
 
@@ -42,7 +42,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 2em;
+  padding: 1em;
   background-color: #022829;
   border: 2px solid #67CECD;
   width: 100%;
@@ -60,4 +60,10 @@ h2{
   font-size: 1.4em;
   font-weight: bold;
   margin: 0.5em 0;
+  height: 5%;
+}
+
+.question{
+  width: 100%;
+
 }
