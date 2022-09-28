@@ -7,7 +7,7 @@
 
 @media screen and (min-width: 300px){
   .rightSide{
-    margin-bottom: 8em;
+    margin-bottom: 1em;
     margin-top: 1em;
   }
 }
@@ -118,6 +118,10 @@
 
 }
 
+.progressBar label{
+  cursor: default;
+}
+
 ::-webkit-progress-value {
 
   background-color: #9EF4F3;
@@ -161,6 +165,7 @@
 .back{
 
   width: 100%;
+  cursor: pointer;
 
 }
 
@@ -173,6 +178,7 @@
 .restart{
 
   width: 100%;
+  cursor: pointer;
 }
 
 .restart:active {

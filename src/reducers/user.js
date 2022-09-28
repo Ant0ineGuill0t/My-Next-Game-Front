@@ -1,7 +1,7 @@
 import { TOGGLE_LOGIN_FORM } from 'src/actions';
 
 const initialState = {
-  isOpen: 'false',
+  isOpen: false,
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
