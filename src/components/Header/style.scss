@@ -85,6 +85,7 @@
 .login-button:hover {
   background-color: #67CECD;
   border: 2px solid #67CECD;
+  color: #001414;
   margin: 1em 1em 2em 1em;
   padding: 0.7em;
   border-radius: 0.3em;
@@ -102,6 +103,13 @@
   border-radius: 15em;
   color: #67CECD;
   
+}
+
+.login-button-close:hover {
+  background-color: #67CECD;
+  border: 2px solid #001414;
+  border-radius: 15em;
+  color: #001414;
 }
 
 .login-button-plus{
