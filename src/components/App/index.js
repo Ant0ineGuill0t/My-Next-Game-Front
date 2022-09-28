@@ -15,6 +15,7 @@ import Faq from '../Faq';
 import LegalNotice from '../LegalNotice';
 import AboutUs from '../AboutUs';
 import Game from '../Game';
+import LoginForm from '../LoginForm';
 import Error from '../Error';
 // styles
 import './styles.css';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/error" element={<Error />} />
+          <Route path="/login-form" element={<LoginForm />} />
           <Route path="*" element={<Navigate to="/error" />} />
         </Routes>
       </div>
