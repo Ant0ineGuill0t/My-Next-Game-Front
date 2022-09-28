@@ -21,7 +21,7 @@ function Header() {
             type="button"
             className="login-button-close"
           >
-            +
+          <p className= "login-button-plus">+</p>
           </button>
           <label htmlFor="login-email">
             <input

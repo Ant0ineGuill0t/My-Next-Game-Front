@@ -38,6 +38,7 @@
   border: 2px solid #67CECD;
   border-radius: 1em;
   font-size: 0.9em;
+  cursor: pointer;
 }
 
 .h1 img{
@@ -45,7 +46,9 @@
 }
 
 .login {
-  position: relative;
+  position: fixed;
+  top: -1em;
+  right: -2em;
   width: 15rem;
   padding: 2em;
   margin: 3em;
@@ -83,6 +86,7 @@
 .login-button:hover {
   background-color: #67CECD;
   border: 2px solid #67CECD;
+  color: #001414;
   margin: 1em 1em 2em 1em;
   padding: 0.7em;
   border-radius: 0.3em;
@@ -92,12 +96,23 @@
 .login-button-close{
   position: absolute;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   top: 2%;
   right: 2%;
   background-color: #001414;
   border: 2px solid #67CECD;
-  border-radius: 50%;
+  border-radius: 15em;
   color: #67CECD;
+  
+}
+
+.login-button-close:hover {
+  background-color: #67CECD;
+  border: 2px solid #001414;
+  border-radius: 15em;
+  color: #001414;
+}
+
+.login-button-plus{
   transform: rotateZ(45deg);
 }
