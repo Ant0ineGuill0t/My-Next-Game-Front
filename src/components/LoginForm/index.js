@@ -1,13 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 import { changeFieldCreateUser } from 'src/actions';
 import './style.scss';
 
 function LoginForm() {
   const dispatch = useDispatch();
   const userEmail = useSelector((state) => state.user.email);
-  const userConfirmPassword = useSelector((state) => state.user.confirmePassword);
   const userPassword = useSelector((state) => state.user.password);
+  const userConfirmPassword = useSelector((state) => state.user.confirmePassword);
   const userAge = useSelector((state) => state.user.age);
   function handleSubmit(event) {
     event.preventDefault();

@@ -1,7 +1,7 @@
 // == Import
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleLoginForm } from 'src/actions';
+import { toggleLoginForm, changeFieldUserLogin } from 'src/actions';
 // data, styles
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
@@ -10,6 +10,8 @@ import Profil from '../../assets/images/Profil.png';
 function Header() {
   const dispatch = useDispatch();
   const isOpen = useSelector((state) => state.user.isOpen);
+  const userEmail = useSelector((state) => state.user.email);
+  const userPassword = useSelector((state) => state.user.password);
 
   return (
     <header className="header">
@@ -38,16 +40,24 @@ function Header() {
               id="email"
               type="text"
               name="email"
+              value={userEmail}
               placeholder="Votre Email"
+              onChange={(event) => {
+                dispatch(changeFieldUserLogin(event.target.value, 'email'));
+              }}
             />
           </label>
           <label htmlFor="login-password">
             <input
               className="login-password"
               id="password"
-              type="text"
+              type="password"
               name="password"
+              value={userPassword}
               placeholder="Votre password"
+              onChange={(event) => {
+                dispatch(changeFieldUserLogin(event.target.value, 'password'));
+              }}
             />
           </label>
           <button type="button" className="login-button">
