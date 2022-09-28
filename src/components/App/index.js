@@ -1,9 +1,11 @@
 // == Import
 import {
-  Routes, Route, useParams,
+  Routes, Route, Navigate,
 } from 'react-router-dom';
+import React from 'react';
 // Composants
 import dataGames from 'src/data/dataGames';
+import dataQuestions from 'src/data/dataQuestions';
 import Header from '../Header';
 import HomepageButton from '../HomepageButton';
 import Quizz from '../Quizz';
@@ -13,28 +15,26 @@ import Faq from '../Faq';
 import LegalNotice from '../LegalNotice';
 import AboutUs from '../AboutUs';
 import Game from '../Game';
-// data, styles
-
+import Error from '../Error';
+// styles
 import './styles.css';
 
 // == Composant
 function App() {
-  const params = useParams();
-
-  console.log(params); // 👉️ {userId: '4200'}
-
   return (
     <>
       <Header />
       <div className="app">
         <Routes>
           <Route path="/" element={<HomepageButton />} />
-          <Route path="/quizz" element={<Quizz />} />
+          <Route path="/quizz" element={<Quizz datas={dataQuestions} />} />
           <Route path="/game/:paramSlug" element={<Game datas={dataGames} />} />
           <Route path="/quizz/results" element={<Results datas={dataGames} />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/legal-notice" element={<LegalNotice />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/error" element={<Error />} />
+          <Route path="*" element={<Navigate to="/error" />} />
         </Routes>
       </div>
       <Footer />

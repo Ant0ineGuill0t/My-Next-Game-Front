@@ -10,11 +10,16 @@ function RightSide() {
     <div className="rightSide">
       <img className="mascotte" src={Mascotte} alt="" />
       <div className="progressBar">
-        <label htmlFor="progressionBar">Progression :</label>
-        <progress className="progressionBar" id="progressionBar" max="100" value="70"> 70% </progress>
+        <label htmlFor="progressionBar">Progression :
+          <progress className="progressionBar" id="progressionBar" max="100" value="70"> 70% </progress>
+        </label>
       </div>
-      <button type="button"><img className="back" src={PreviousButton} alt="" /></button>
-      <button type="button"><img className="restart" src={RestartButton} alt="" /></button>
+      <button type="button">
+        <img className="back" src={PreviousButton} alt="" />
+      </button>
+      <button type="button">
+        <img className="restart" src={RestartButton} alt="" />
+      </button>
     </div>
   );
 }

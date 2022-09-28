@@ -7,16 +7,26 @@ function LeftSide() {
   return (
     <div className="leftSide">
       <div className="checkboxes">
-        <input type="checkbox" name="checkbox1" id="checkbox1" />
-        <label htmlFor="checkbox1"><img className="checkbox__img" src={NeonButton} alt="checkbox" /></label>
-        <input type="checkbox" name="checkbox2" id="checkbox2" />
-        <label htmlFor="checkbox2"><img className="checkbox__img" src={NeonButton} alt="checkbox" /></label>
-        <input type="checkbox" name="checkbox3" id="checkbox3" />
-        <label htmlFor="checkbox3"><img className="checkbox__img" src={NeonButton} alt="checkbox" /></label>
-        <input type="checkbox" name="checkbox4" id="checkbox4" />
-        <label htmlFor="checkbox4"><img className="checkbox__img" src={NeonButton} alt="checkbox" /></label>
-        <input type="checkbox" name="checkbox1" id="checkbox5" />
-        <label htmlFor="checkbox5"><img className="checkbox__img" src={NeonButton} alt="checkbox" /></label>
+        <label htmlFor="checkbox1">
+          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+          <input type="checkbox" name="checkbox1" id="checkbox1" />
+        </label>
+        <label htmlFor="checkbox2">
+          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+          <input type="checkbox" name="checkbox2" id="checkbox2" />
+        </label>
+        <label htmlFor="checkbox3">
+          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+          <input type="checkbox" name="checkbox3" id="checkbox3" />
+        </label>
+        <label htmlFor="checkbox4">
+          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+          <input type="checkbox" name="checkbox4" id="checkbox4" />
+        </label>
+        <label htmlFor="checkbox5">
+          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+          <input type="checkbox" name="checkbox1" id="checkbox5" />
+        </label>
       </div>
       <div className="responses">
         <p>World of Warcraft</p>

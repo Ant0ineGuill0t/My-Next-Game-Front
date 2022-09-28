@@ -10,7 +10,7 @@ function Quizz() {
   return (
     <div className="quizz">
       <h2>Question</h2>
-      <p>Et toi à quoi tu joues ?!</p>
+      <p className="question">Et toi à quoi tu joues ?!Et toi à quoi tu joues ?!Et toi à quoi tu joues ?!Et toi à quoi tu joues ?!</p>
       <LeftSide />
       <RightSide />
     </div>
