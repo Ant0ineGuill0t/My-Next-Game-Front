@@ -1,4 +1,4 @@
-import { CHANGE_BACKGROUND } from '../actions';
+import { TOGGLE_LOGIN_FORM } from '../actions';
 
 const initialState = {
   game: '',
@@ -6,7 +6,7 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_BACKGROUND:
+    case TOGGLE_LOGIN_FORM:
       return {
         ...state,
       };

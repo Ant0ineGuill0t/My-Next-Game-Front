@@ -45,7 +45,9 @@
 }
 
 .login {
-  position: relative;
+  position: fixed;
+  top: -1em;
+  right: -2em;
   width: 15rem;
   padding: 2em;
   margin: 3em;
