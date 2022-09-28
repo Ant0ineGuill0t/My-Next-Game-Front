@@ -54,7 +54,12 @@ function Header() {
             connexion
           </button>
           <Link to="/login-form">
-            <p>Créer un compte</p>
+            <button
+              type="button"
+              className="create-button"
+              onClick={() => dispatch(toggleLoginForm())}
+            >Créer un compte
+            </button>
           </Link>
         </div>
       )}
