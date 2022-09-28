@@ -30,7 +30,7 @@ function Header() {
             className="login-button-close"
             onClick={() => dispatch(toggleLoginForm())}
           >
-            +
+          <p className= "login-button-plus">+</p>
           </button>
           <label htmlFor="login-email">
             <input

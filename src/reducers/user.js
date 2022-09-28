@@ -6,6 +6,7 @@ const initialState = {
   userPassword: '',
   userAge: '',
   userConfirmPassword: '',
+
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
