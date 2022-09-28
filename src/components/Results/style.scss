@@ -1,15 +1,3 @@
-@media screen and (max-width: 767px){
-  .results a{
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 900px){
-  .results a{
-    width: 10%;
-  }
-}
-
 .results{
   display: flex;
   flex-wrap: wrap;
@@ -18,6 +6,7 @@
   justify-content: center;
 }
 .restartQuizz{
+  text-align: center;
   height: 50%;
   width: 100%;
   all: unset;
@@ -26,12 +15,6 @@
   border: 2px solid #67CECD;
   border-radius: 1em;
   font-size: 0.9em;
-}
-
-.results a{
-  height: 2%;
-  margin: 1em 0;
-  justify-self: flex-start;
 }
 
 .cardContainer{

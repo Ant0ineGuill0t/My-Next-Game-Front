@@ -9,9 +9,6 @@ import './style.scss';
 function Results({ datas }) {
   return (
     <div className="results">
-      <Link to="/Quizz">
-        <button type="button" className="restartQuizz">Refaire le Quizz</button>
-      </Link>
       <div className="cardContainer">
         <ul className="scrollZone">
           {
@@ -21,6 +18,9 @@ function Results({ datas }) {
           }
         </ul>
       </div>
+      <Link to="/Quizz">
+        <button type="button" className="restartQuizz">Refaire le Quizz</button>
+      </Link>
     </div>
   );
 }

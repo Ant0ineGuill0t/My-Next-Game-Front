@@ -3,7 +3,8 @@
 
 @font-face {
 
-  font-family: 'Karmatic-Arcade'; /*a name to be used later*/
+  font-family: 'Karmatic-Arcade';
+  /*a name to be used later*/
 
   src: url('../assets/fonts/karmatic-arcade.regular.ttf');
 
@@ -11,7 +12,8 @@
 
 @font-face {
 
-  font-family: 'Press-Start'; /*a name to be used later*/
+  font-family: 'Press-Start';
+  /*a name to be used later*/
 
   src: url('../assets/fonts/press-start.regular.ttf');
 
@@ -19,40 +21,39 @@
 
 @font-face {
 
-  font-family: 'Graph35'; /*a name to be used later*/
+  font-family: 'Graph35';
+  /*a name to be used later*/
 
   src: url('../assets/fonts/Graph-35-pix.ttf');
 
 }
-@media screen and (min-width: 200px){
-  body{
+
+@media screen and (min-width: 200px) {
+  body {
     font-size: 0.7em;
   }
 }
-@media screen and (min-width: 290px){
-  body{
+
+@media screen and (min-width: 290px) {
+  body {
     font-size: 0.9em;
   }
 }
 
-
-
 body {
-    /*background-color: black;*/
+  /*background-color: black;*/
+  font-family: 'Graph35';
 
-    font-family: 'Graph35';
+  color: #9EF4F3;
 
-    color: #9EF4F3;
-  
-  
-    /*font-family: 'Press-Start'*/
-  
-    background-color: #001414;
-  
-    padding: 1em;
-  
-    height: 100vh;
-  
+
+  /*font-family: 'Press-Start'*/
+
+  background-color: #001414;
+
+  padding: 1em;
+
+  height: 100%;
 }
 
 /* 

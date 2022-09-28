@@ -1,7 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   align-items: center;
 }
 
@@ -12,13 +12,14 @@
   animation-direction: alternate;
   position: relative;
   animation-timing-function: linear;
-  margin-top: 3em;
+  margin-top: 2em;
   margin: 3em  auto 0 auto;
 }
 
 .home-content{
-margin: 5rem;
+margin: 3rem;
 text-align: center;
+width: 70%;
 }
 
 .home-button{
@@ -26,7 +27,7 @@ text-align: center;
   align-self: center;
   text-align: center;
   padding: 2em;
-  margin: 5em;
+  margin: 3em;
   background-color: #022829;
   border: 2px solid #67CECD;
   border-radius: 2em;
