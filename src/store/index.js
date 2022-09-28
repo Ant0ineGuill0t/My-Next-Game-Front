@@ -1,6 +1,6 @@
 import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux';
 import gameMiddleware from 'src/middlewares/gameMiddleware';
-import reducer from '../reducers/game';
+import reducer from '../reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
