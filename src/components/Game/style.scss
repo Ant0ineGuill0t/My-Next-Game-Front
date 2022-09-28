@@ -18,7 +18,8 @@
   }
   .gameRight{
     width: 100%;
-    height: 15%;
+    height: 20vh;
+    margin-top: 2em;
   }
   .gameImg{
     height: 40%;
@@ -52,7 +53,7 @@
   }
   .gameRight{
     width: 100%;
-    height: 15%;
+    height: 20vh;
   }
   .gameImg{
     height: 20%;
@@ -67,34 +68,55 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 1080px){
+
+@media screen and (min-width: 1024px){
+  .gameImg{
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1280px){
   .game{
-    font-size: 0.9em;
-    padding: 2.5em;
+    font-size: 0.8em;
+    padding: 2.5em 2.5em 3.5em 2.5em;
+    height: 69.5vh;
     justify-content: space-between;
   }
   .gameLeft{
     justify-self: flex-start;
     font-size: 1em;
-    height: 70%;
+    height: 65%;
     width: 30%;
   }
   .gameRight{
     width: 30%;
-    height: 70%;
+    height: 65%;
   }
   .gameImg{
-    height: 80%;
+    height: 75%;
     width: 25%;
   }
   .images{
     width: 100%;
-    height: 20%;
+    height: 25%;
     visibility: visible;
     margin: 1.5em 0 0 0;
     justify-content: center;
   }
   .gameplay{
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1281px){
+  .game{
+    font-size: 1em;
+  }
+}
+
+
+@media screen and (min-width: 2000px){
+  .gameImg{
     width: 20%;
   }
 }
@@ -118,7 +140,7 @@
 }
 .gameplay{
   margin: 0 1em;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 2em;
 }
 .images{
@@ -133,6 +155,8 @@
   flex-wrap: wrap;
   justify-self: flex-end;
   order: 3;
+  overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .gameLeft{
@@ -175,11 +199,7 @@
 }
 
 .pitch{
-  height: 70%;
-}
-
-.game p{
   overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 
