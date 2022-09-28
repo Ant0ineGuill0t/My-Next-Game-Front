@@ -1,12 +1,13 @@
-import { TOGGLE_LOGIN_FORM, CHANGE_FIELD_CREATE_USER } from 'src/actions';
+import { TOGGLE_LOGIN_FORM, CHANGE_FIELD_CREATE_USER, CHANGE_FIELD_USER_LOGIN } from 'src/actions';
 
 const initialState = {
   isOpen: false,
   userEmail: '',
   userPassword: '',
-  userAge: '',
-  userConfirmPassword: '',
-
+  newUserEmail: '',
+  newUserPassword: '',
+  newUserAge: '',
+  newUserConfirmPassword: '',
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -19,25 +20,37 @@ const reducer = (state = initialState, action = {}) => {
       if (action.identifier === 'email') {
         return {
           ...state,
-          userEmail: action.value,
+          newUserEmail: action.value,
         };
       }
       if (action.identifier === 'password') {
         return {
           ...state,
-          userPassword: action.value,
+          newUserPassword: action.value,
         };
       }
       if (action.identifier === 'confirmPassword') {
         return {
           ...state,
-          userConfirmPassword: action.value,
+          newUserConfirmPassword: action.value,
         };
       }
       return {
         ...state,
-        userAge: action.value,
+        newUserAge: action.value,
       };
+    case CHANGE_FIELD_USER_LOGIN:
+      if (action.identifier === 'email') {
+        return {
+          ...state,
+          userEmail: action.value,
+        };
+      }
+      return {
+        ...state,
+        userPassword: action.value,
+      };
+
     default:
       return state;
   }
