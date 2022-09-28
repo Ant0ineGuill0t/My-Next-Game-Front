@@ -14,50 +14,46 @@ function Header() {
   return (
     <header className="header">
       <Link to="/"><h1 className="h1"><img src={Logo} alt="" /></h1></Link>
-      {!isOpen && (
+      <button
+        type="button"
+        className={isOpen ? 'userButton_off' : 'userButton_on'}
+        onClick={() => dispatch(toggleLoginForm())}
+      >
+        <img src={Profil} alt="logo du profil" />
+      </button>
+      <div className={isOpen ? 'login_on' : 'login_off'}>
         <button
           type="button"
-          className="userButton"
+          className="login-button-close"
           onClick={() => dispatch(toggleLoginForm())}
         >
-          <img src={Profil} alt="logo du profil" />
+          <p className="login-button-plus">+</p>
         </button>
-      )}
-      {isOpen && (
-        <div className="login">
-          <button
-            type="button"
-            className="login-button-close"
-            onClick={() => dispatch(toggleLoginForm())}
-          >
-          <p className= "login-button-plus">+</p>
-          </button>
-          <label htmlFor="login-email">
-            <input
-              className="login-email"
-              id="email"
-              type="text"
-              name="email"
-              placeholder="Votre Email"
-            />
-          </label>
-          <label htmlFor="login-password">
-            <input
-              className="login-password"
-              id="password"
-              type="text"
-              name="password"
-              placeholder="Votre password"
-            />
-          </label>
-          <button type="button" className="login-button">
-            connexion
-          </button>
-          <Link to="/login-form">
-            <p>Créer un compte</p>
-          </Link>
-        </div>
-      )}
+        <label htmlFor="login-email">
+          <input
+            className="login-email"
+            id="email"
+            type="text"
+            name="email"
+            placeholder="Votre Email"
+          />
+        </label>
+        <label htmlFor="login-password">
+          <input
+            className="login-password"
+            id="password"
+            type="text"
+            name="password"
+            placeholder="Votre password"
+          />
+        </label>
+        <button type="button" className="login-button">
+          Connexion
+        </button>
+        <Link to="/login-form">
+          <p>Créer un compte</p>
+        </Link>
+      </div>
     </header>
   );
 }
