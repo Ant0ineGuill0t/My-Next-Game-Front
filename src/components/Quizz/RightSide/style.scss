@@ -118,6 +118,10 @@
 
 }
 
+.progressBar label{
+  cursor: default;
+}
+
 ::-webkit-progress-value {
 
   background-color: #9EF4F3;
