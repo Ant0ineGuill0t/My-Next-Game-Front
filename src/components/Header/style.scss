@@ -1,4 +1,15 @@
-@use 'src/styles/vars';
+@media screen and (min-width: 380px){
+  .userButton{
+    width: 8%;
+  }
+  
+}
+
+@media screen and (min-width: 1080px){
+  .userButton{
+    width: 3%;
+  }
+}
 
 .header{
 
@@ -40,10 +51,5 @@
 .h1 img{
 
   width: 100%;
-
-}
-.userButton{
-
-  justify-self: center;
 
 }

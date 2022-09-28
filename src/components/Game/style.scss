@@ -114,6 +114,7 @@
   border: #67CECD 0.1em solid;
   border-radius: 2em;
   margin:0 0.5em 0.5em 0.5em;
+  order: 1;
 }
 .gameplay{
   margin: 0 1em;
@@ -123,6 +124,7 @@
 .images{
   justify-self: flex-end;
   display: flex;
+  order: 4;
 }
 
 .gameRight{
@@ -130,12 +132,15 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-self: flex-end;
+  order: 3;
 }
 
 .gameLeft{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
+  order: 3;
 }
 
 .game h3{
@@ -166,6 +171,7 @@
   text-align: center;
   margin-bottom: 2em;
   height: 1em;
+  order: 2;
 }
 
 .pitch{
