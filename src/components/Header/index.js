@@ -18,7 +18,7 @@ function Header() {
   };
   return (
     <header className="header">
-      <Link to="/"><h1 className="h1"><img src={Logo} alt="" /></h1></Link>
+      <Link to="/"><h1 className="h1"><img className="header-logo" src={Logo} alt="" /></h1></Link>
       <button
         type="button"
         className={isOpen ? 'userButton_off' : 'userButton_on'}

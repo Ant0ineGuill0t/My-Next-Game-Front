@@ -55,8 +55,23 @@
   transition: all 1s ease-out, opacity 0.5s;
 }
 
-.h1 img{
+.header-logo{
   width: 150%;
+}
+.header-logo:hover{
+  animation-duration: .6s;
+  animation-name: clignoter;
+  transition: none;
+}
+
+@keyframes clignoter {
+  0%   { opacity:1; }
+  50%   { opacity:0; }
+  60%   { opacity:1; }
+  70%   { opacity:0; }
+  90%   { opacity:1; }
+  95%   { opacity:0; }
+  100% { opacity:1; }
 }
 
 .login_on {
