@@ -42,7 +42,7 @@ function Header() {
           <input
             className="login-password"
             id="password"
-            type="text"
+            type="password"
             name="password"
             placeholder="Votre password"
           />
