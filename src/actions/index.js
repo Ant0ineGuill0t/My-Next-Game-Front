@@ -28,7 +28,7 @@ export const logIn = () => ({
   type: LOG_IN,
 });
 
-export const displayFirstQuestion = () => ({
+export const displayQuizz = () => ({
   type: DISPLAY_QUIZZ,
 });
 

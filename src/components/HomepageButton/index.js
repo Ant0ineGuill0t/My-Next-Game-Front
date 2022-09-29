@@ -4,12 +4,12 @@ import './style.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Mascotte from 'src/assets/images/mascotte.gif';
-import { displayFirstQuestion } from 'src/actions';
+import { displayQuizz } from 'src/actions';
 
 function HomepageButton() {
   const dispatch = useDispatch();
   const createForm = () => {
-    dispatch(displayFirstQuestion());
+    dispatch(displayQuizz());
   };
   return (
     <div className="home">
