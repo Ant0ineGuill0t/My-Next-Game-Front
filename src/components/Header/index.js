@@ -1,7 +1,7 @@
 // == Import
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleLoginForm, changeFieldUserLogin } from 'src/actions';
+import { toggleLoginForm, changeFieldUserLogin, logIn } from 'src/actions';
 // data, styles
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
@@ -12,7 +12,10 @@ function Header() {
   const isOpen = useSelector((state) => state.user.isOpen);
   const userEmail = useSelector((state) => state.user.email);
   const userPassword = useSelector((state) => state.user.password);
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(logIn());
+  };
   return (
     <header className="header">
       <Link to="/"><h1 className="h1"><img src={Logo} alt="" /></h1></Link>
@@ -26,7 +29,10 @@ function Header() {
         </button>
       )}
       {isOpen && (
-        <div className="login">
+        <form
+          className="login"
+          onSubmit={handleSubmit}
+        >
           <button
             type="button"
             className="login-button-close"
@@ -60,7 +66,10 @@ function Header() {
               }}
             />
           </label>
-          <button type="button" className="login-button">
+          <button
+            type="submit"
+            className="login-button"
+          >
             connexion
           </button>
           <Link to="/login-form">
@@ -71,7 +80,7 @@ function Header() {
             >Créer un compte
             </button>
           </Link>
-        </div>
+        </form>
       )}
     </header>
   );

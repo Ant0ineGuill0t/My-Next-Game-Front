@@ -1,4 +1,5 @@
 // == Import
+import { useSelector } from 'react-redux';
 // composants
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
@@ -7,10 +8,11 @@ import RightSide from './RightSide';
 import './style.scss';
 
 function Quizz() {
+  const question = useSelector((state) => state.game.question);
   return (
     <div className="quizz">
       <h2>Question</h2>
-      <p className="question">Et toi à quoi tu joues ?!Et toi à quoi tu joues ?!Et toi à quoi tu joues ?!Et toi à quoi tu joues ?!</p>
+      <p className="question">{question}</p>
       <LeftSide />
       <RightSide />
     </div>
