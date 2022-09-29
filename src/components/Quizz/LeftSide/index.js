@@ -1,17 +1,28 @@
 // == Import
+import { useSelector } from 'react-redux';
 // data, styles
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
 
 function LeftSide() {
+  const choices = useSelector((state) => state.game.choices);
+  const keys = Object.keys(choices);
+  const values = Object.values(choices);
+  console.log(keys);
   return (
     <div className="leftSide">
       <div className="checkboxes">
-        <label htmlFor="checkbox1">
-          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
-          <input type="checkbox" name="checkbox1" id="checkbox1" />
-        </label>
-        <label htmlFor="checkbox2">
+        {
+          values.map(
+            (choice) => (
+              <label key={choice} htmlFor="checkbox1">
+                <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+                <input type="checkbox" name="checkbox1" id="checkbox1" value={choice} />
+              </label>
+            ),
+          )
+        }
+        {/* <label htmlFor="checkbox2">
           <img className="checkbox__img" src={NeonButton} alt="checkbox" />
           <input type="checkbox" name="checkbox2" id="checkbox2" />
         </label>
@@ -26,14 +37,14 @@ function LeftSide() {
         <label htmlFor="checkbox5">
           <img className="checkbox__img" src={NeonButton} alt="checkbox" />
           <input type="checkbox" name="checkbox1" id="checkbox5" />
-        </label>
+        </label> */}
       </div>
       <div className="responses">
-        <p>World of Warcraft</p>
-        <p>Skyrim</p>
-        <p>The Witcher 3</p>
-        <p>Cyberpunk 2077</p>
-        <p>Undertale</p>
+        {
+          keys.map(
+            (key) => <p key={key}>{key}</p>,
+          )
+        }
       </div>
     </div>
   );
