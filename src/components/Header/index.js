@@ -43,6 +43,7 @@ function Header() {
             id="email"
             type="text"
             name="email"
+            value={userEmail}
             onChange={(event) => {
               dispatch(changeFieldUserLogin(event.target.value, 'email'));
             }}
@@ -55,6 +56,7 @@ function Header() {
             id="password"
             type="password"
             name="password"
+            value={userPassword}
             onChange={(event) => {
               dispatch(changeFieldUserLogin(event.target.value, 'password'));
             }}
