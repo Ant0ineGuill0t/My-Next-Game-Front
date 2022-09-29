@@ -1,4 +1,9 @@
-import { TOGGLE_LOGIN_FORM, CHANGE_FIELD_CREATE_USER, CHANGE_FIELD_USER_LOGIN } from 'src/actions';
+import {
+  TOGGLE_LOGIN_FORM,
+  CHANGE_FIELD_CREATE_USER,
+  CHANGE_FIELD_USER_LOGIN,
+  SAVE_USER_DATA,
+} from 'src/actions';
 
 const initialState = {
   isOpen: false,
@@ -8,6 +13,7 @@ const initialState = {
   newUserPassword: '',
   newUserAge: '',
   newUserConfirmPassword: '',
+  token: '',
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -49,6 +55,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         userPassword: action.value,
+      };
+    case SAVE_USER_DATA:
+      return {
+        ...state,
+        token: action.token,
       };
 
     default:
