@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOG_IN } from 'src/actions';
+import { LOG_IN, saveUserData, toggleLoginForm } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -9,11 +9,15 @@ const userMiddleware = (store) => (next) => (action) => {
         {
           username: store.getState().user.userEmail,
           password: store.getState().user.userPassword,
-          headers: { 'Content-Type':'application/json'},
+          headers: { 'Content-Type': 'application/json' },
         },
       )
         .then((response) => {
-          
+          console.log(response);
+          store.dispatch(
+            saveUserData(response.data.token),
+          );
+          store.dispatch(toggleLoginForm());
         })
         .catch((error) => {
           console.log(error);
