@@ -59,7 +59,6 @@ function Header() {
           <p>Créer un compte</p>
         </Link>
       </div>
-      )}
     </header>
   );
 }
