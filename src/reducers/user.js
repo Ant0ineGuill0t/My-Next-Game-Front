@@ -14,6 +14,7 @@ const initialState = {
   newUserAge: '',
   newUserConfirmPassword: '',
   token: '',
+
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -61,7 +62,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         token: action.token,
       };
-
     default:
       return state;
   }

@@ -1,16 +1,21 @@
-import { TOGGLE_LOGIN_FORM } from '../actions';
+import {
+  TOGGLE_LOGIN_FORM,
+  SAVE_QUIZZ_ID,
+} from '../actions';
 
 const initialState = {
   game: '',
-  question: 'Aimez-vous l\'aventure ?',
+  question: '',
   choices: {
-    'absolument !': 2,
-    'Un peu': 1,
-    'Je ne sais pas...': 0,
-    'Pas vraiment': -1,
-    'Pas du tout': -2,
+    // 'absolument !': 2,
+    // 'Un peu': 1,
+    // 'Je ne sais pas...': 0,
+    // 'Pas vraiment': -1,
+    // 'Pas du tout': -2,
   },
-  questionNumber: 1,
+  questionNumber: '',
+  idQuiz: '',
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -18,6 +23,11 @@ const reducer = (state = initialState, action = {}) => {
     case TOGGLE_LOGIN_FORM:
       return {
         ...state,
+      };
+    case SAVE_QUIZZ_ID:
+      return {
+        ...state,
+        idQuiz: action.idQuiz,
       };
     default:
       return state;
