@@ -19,68 +19,46 @@ function Header() {
   return (
     <header className="header">
       <Link to="/"><h1 className="h1"><img src={Logo} alt="" /></h1></Link>
-      {!isOpen && (
+      <button
+        type="button"
+        className={isOpen ? 'userButton_off' : 'userButton_on'}
+        onClick={() => dispatch(toggleLoginForm())}
+      >
+        <img src={Profil} alt="logo du profil" />
+      </button>
+      <div className={isOpen ? 'login_on' : 'login_off'}>
         <button
           type="button"
-          className="userButton"
+          className="login-button-close"
           onClick={() => dispatch(toggleLoginForm())}
         >
-          <img src={Profil} alt="logo du profil" />
+          <p className="login-button-plus">+</p>
         </button>
-      )}
-      {isOpen && (
-        <form
-          className="login"
-          onSubmit={handleSubmit}
-        >
-          <button
-            type="button"
-            className="login-button-close"
-            onClick={() => dispatch(toggleLoginForm())}
-          >
-            <p className="login-button-plus">+</p>
-          </button>
-          <label htmlFor="login-email">
-            <input
-              className="login-email"
-              id="email"
-              type="text"
-              name="email"
-              value={userEmail}
-              placeholder="Votre Email"
-              onChange={(event) => {
-                dispatch(changeFieldUserLogin(event.target.value, 'email'));
-              }}
-            />
-          </label>
-          <label htmlFor="login-password">
-            <input
-              className="login-password"
-              id="password"
-              type="password"
-              name="password"
-              value={userPassword}
-              placeholder="Votre password"
-              onChange={(event) => {
-                dispatch(changeFieldUserLogin(event.target.value, 'password'));
-              }}
-            />
-          </label>
-          <button
-            type="submit"
-            className="login-button"
-          >
-            connexion
-          </button>
-          <Link to="/login-form">
-            <button
-              type="button"
-              className="create-button"
-              onClick={() => dispatch(toggleLoginForm())}
-            >Créer un compte
-            </button>
-          </Link>
-        </form>
+        <label htmlFor="login-email">
+          <input
+            className="login-email"
+            id="email"
+            type="text"
+            name="email"
+            placeholder="Votre Email"
+          />
+        </label>
+        <label htmlFor="login-password">
+          <input
+            className="login-password"
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Votre password"
+          />
+        </label>
+        <button type="button" className="login-button">
+          Connexion
+        </button>
+        <Link to="/login-form">
+          <p>Créer un compte</p>
+        </Link>
+      </div>
       )}
     </header>
   );

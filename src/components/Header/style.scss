@@ -31,7 +31,7 @@
 
 }
 
-.userButton{
+.userButton_on{
   all: unset;
   padding: 0.3em;
   background-color: #022829;
@@ -39,13 +39,27 @@
   border-radius: 1em;
   font-size: 0.9em;
   cursor: pointer;
+  opacity: 1;
+  transition: all 1s ease-out, opacity 1.5s;
+}
+
+.userButton_off{
+  all: unset;
+  padding: 0.3em;
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  border-radius: 1em;
+  font-size: 0.9em;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 1s ease-out, opacity 0.5s;
 }
 
 .h1 img{
   width: 150%;
 }
 
-.login {
+.login_on {
   position: fixed;
   top: -1em;
   right: -2em;
@@ -56,12 +70,46 @@
   border: 2px solid #67CECD;
   border-radius: 1em;
   all: unset;
+  opacity: 1;
+  transition: all 0.8s ease-out, opacity 1.3s;
+}
+.login_on .login-button-plus{
+  transition: font-size 1s;
+}
+
+.login_on .login-button-close{
+  transition: width 1s;
+}
+
+.login_off {
+  position: fixed;
+  top: -1em;
+  right: -2em;
+  width: 0;
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  font-size: 0;
+  border-radius: 1em;
+  all: unset;
+  opacity: 0;
+  transition: all 0.8s ease-out, opacity 0.3s, font-size 1s;
+}
+
+.login_off .login-button-plus{
+  font-size: 0;
+  transition: font-size 1s;
+}
+
+.login_off .login-button-close{
+  width: 0;
+  transition: width 1s;
 }
 
 .login-email {
   background-color: #001414;
   border: 2px solid #67CECD;
   border-radius: 0.3em;
+  width: 75%;
   margin: 0.8em 1em;
   padding: 1em;
   all: unset;
@@ -69,6 +117,7 @@
 .login-password {
   background-color: #001414;
   border: 2px solid #67CECD;
+  width: 75%;
   border-radius: 0.3em;
   margin: 0.8em 1em;
   padding: 1em;
@@ -77,6 +126,7 @@
 .login-button {
   background-color: #001414;
   border: 2px solid #67CECD;
+  width: 40%;
   margin: 1em 1em 2em 1em;
   padding: 0.7em;
   border-radius: 0.3em;
@@ -91,30 +141,33 @@
   padding: 0.7em;
   border-radius: 0.3em;
   all: unset;
+  cursor: pointer;
 }
 
 .login-button-close{
   position: absolute;
   font-weight: bold;
   font-size: 1.3rem;
+  width: 5%;
   top: 2%;
   right: 2%;
   background-color: #001414;
-  border: 2px solid #67CECD;
-  border-radius: 15em;
+  border: 0.1em solid #67CECD;
+  border-radius: 50%;
   color: #67CECD;
-  
+  text-align: center;
 }
 
 .login-button-close:hover {
   background-color: #67CECD;
-  border: 2px solid #001414;
-  border-radius: 15em;
+  border: 0.1em solid #001414;
+  border-radius: 50%;
   color: #001414;
 }
 
 .login-button-plus{
   transform: rotateZ(45deg);
+  
 }
 
 .create-button{
