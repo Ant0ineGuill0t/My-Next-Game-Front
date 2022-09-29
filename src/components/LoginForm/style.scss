@@ -1,0 +1,50 @@
+.create-login{
+  display: flex;
+  flex-direction: column;
+}
+
+.create-login-email {
+  background-color: #001414;
+  border: 2px solid #67CECD;
+  width: 10rem;
+  border-radius: 0.3em;
+  margin: 0.8em 1em;
+  padding: 1em;
+  all: unset;
+}
+.create-login-password {
+  background-color: #001414;
+  border: 2px solid #67CECD;
+  width: 10rem;
+  border-radius: 0.3em;
+  margin: 0.8em 1em;
+  padding: 1em;
+  all: unset;
+}
+.create-login-age {
+  background-color: #001414;
+  border: 2px solid #67CECD;
+  width: 10rem;
+  border-radius: 0.3em;
+  margin: 0.8em 1em;
+  padding: 1em;
+  all: unset;
+}
+.create-login-submit {
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  width: 10em;
+  height: 3rem;
+  align-self: center;
+  color: #67CECD;
+  border-radius: 5rem;
+}
+input:invalid+span:after {
+  content: '✖';
+  padding-left: 5px;
+}
+
+input:valid+span:after {
+  content: '✓';
+  padding-left: 5px;
+}
