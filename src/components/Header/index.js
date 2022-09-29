@@ -26,7 +26,10 @@ function Header() {
       >
         <img src={Profil} alt="logo du profil" />
       </button>
-      <div className={isOpen ? 'login_on' : 'login_off'}>
+      <form
+        className={isOpen ? 'login_on' : 'login_off'}
+        onSubmit={handleSubmit}
+      >
         <button
           type="button"
           className="login-button-close"
@@ -40,6 +43,9 @@ function Header() {
             id="email"
             type="text"
             name="email"
+            onChange={(event) => {
+              dispatch(changeFieldUserLogin(event.target.value, 'email'));
+            }}
             placeholder="Votre Email"
           />
         </label>
@@ -49,16 +55,19 @@ function Header() {
             id="password"
             type="password"
             name="password"
+            onChange={(event) => {
+              dispatch(changeFieldUserLogin(event.target.value, 'password'));
+            }}
             placeholder="Votre password"
           />
         </label>
-        <button type="button" className="login-button">
+        <button type="submit" className="login-button">
           Connexion
         </button>
         <Link to="/login-form">
           <p>Créer un compte</p>
         </Link>
-      </div>
+      </form>
     </header>
   );
 }
