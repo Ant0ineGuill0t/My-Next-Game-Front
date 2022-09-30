@@ -13,11 +13,13 @@ const gameMiddleware = (store) => (next) => (action) => {
         headers: {
           Authorization: `Bearer ${store.getState().user.token}`,
         },
+        withCredentials: true,
+        credential: 'include',
       })
         .then((response) => {
           const idQuiz = response.data.quiz.id;
           store.dispatch(saveQuizzId(idQuiz));
-          console.log(idQuiz);
+          console.log(response);
           store.dispatch(displayNextQuestion());
         })
         .catch((error) => {
@@ -30,15 +32,16 @@ const gameMiddleware = (store) => (next) => (action) => {
       axios.get(
         `http://cyonefr-server.eddi.cloud/api/quiz/${store.getState().game.idQuiz}/ask`,
         {
-          // questionNumber: store.getState().game.questionNumber,
           headers: {
             Authorization: `Bearer ${store.getState().user.token}`,
           },
+          withCredentials: true,
+          credential: 'include',
         },
       )
         .then((response) => {
           console.log(store.getState().game.idQuiz);
-          console.log(response.data);
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);
