@@ -6,6 +6,8 @@ export const DISPLAY_QUIZZ = 'DISPLAY_QUIZZ';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const DISPLAY_NEXT_QUESTION = 'DISPLAY_NEXT_QUESTION';
 export const SAVE_QUIZZ_ID = 'SAVE_QUIZZ_ID';
+export const SAVE_QUESTION = 'SAVE_QUESTION';
+export const SAVE_ANSWER = 'SAVE_ANSWER';
 export const SEND_ANSWER = 'SEND_ANSWER';
 
 export const toggleLoginForm = () => ({
@@ -45,6 +47,18 @@ export const saveQuizzId = (idQuiz, sessId) => ({
   type: SAVE_QUIZZ_ID,
   idQuiz: idQuiz,
   sessId: sessId,
+});
+
+export const saveQuestion = (question, choices, questionNumber) => ({
+  type: SAVE_QUESTION,
+  question: question,
+  choices: choices,
+  questionNumber: questionNumber,
+});
+
+export const saveAnswer = (answerChosen) => ({
+  type: SAVE_ANSWER,
+  answerChosen: answerChosen,
 });
 
 export const sendAnswer = () => ({

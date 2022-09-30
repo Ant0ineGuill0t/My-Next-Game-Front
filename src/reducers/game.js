@@ -1,6 +1,8 @@
 import {
   TOGGLE_LOGIN_FORM,
   SAVE_QUIZZ_ID,
+  SAVE_QUESTION,
+  SAVE_ANSWER,
 } from '../actions';
 
 const initialState = {
@@ -13,7 +15,8 @@ const initialState = {
     // 'Pas vraiment': -1,
     // 'Pas du tout': -2,
   },
-  questionNumber: '',
+  questionNumber: '1',
+  answerChosen: '',
   idQuiz: '',
   sessId: '',
 };
@@ -29,6 +32,18 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         idQuiz: action.idQuiz,
         sessId: action.sessId,
+      };
+    case SAVE_QUESTION:
+      return {
+        ...state,
+        question: action.question,
+        choices: action.choices,
+        questionNumber: action.questionNumber,
+      };
+    case SAVE_ANSWER:
+      return {
+        ...state,
+        answerChosen: action.answerChosen,
       };
     default:
       return state;

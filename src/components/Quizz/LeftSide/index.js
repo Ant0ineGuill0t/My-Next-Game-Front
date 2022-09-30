@@ -1,30 +1,33 @@
 // == Import
-import { sendAnswer } from 'src/actions';
+import { sendAnswer, saveAnswer } from 'src/actions';
 import { useSelector, useDispatch } from 'react-redux';
 // data, styles
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
-
 
 function LeftSide() {
   const dispatch = useDispatch();
   const choices = useSelector((state) => state.game.choices);
   const keys = Object.keys(choices);
   const values = Object.values(choices);
+  const handleClick = (event) => {
+    dispatch(saveAnswer(event.target.value));
+    dispatch(sendAnswer());
+  };
   return (
     <div className="leftSide">
       <div className="checkboxes">
         {
           values.map(
             (choice) => (
-              <label key={choice} htmlFor="checkbox1">
+              <label key={choice} htmlFor={`checkbox ${choice}`}>
                 <img className="checkbox__img" src={NeonButton} alt="checkbox" />
                 <input
                   type="checkbox"
-                  name="checkbox1"
-                  id="checkbox1"
+                  name={`checkbox ${choice}`}
+                  id={`checkbox ${choice}`}
                   value={choice}
-                  onClick={(event) => dispatch(sendAnswer(event.target.value))}
+                  onClick={handleClick}
                 />
               </label>
             ),
