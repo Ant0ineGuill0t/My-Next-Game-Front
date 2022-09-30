@@ -5,7 +5,7 @@ const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN:
       axios.post(
-        'http://cyonefr-server.eddi.cloud/api/login_check',
+        'http://localhost:8000/api/login_check',
         {
           username: store.getState().user.userEmail,
           password: store.getState().user.userPassword,

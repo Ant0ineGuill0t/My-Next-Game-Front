@@ -15,7 +15,7 @@ const initialState = {
   },
   questionNumber: '',
   idQuiz: '',
-
+  sessId: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -28,6 +28,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         idQuiz: action.idQuiz,
+        sessId: action.sessId,
       };
     default:
       return state;

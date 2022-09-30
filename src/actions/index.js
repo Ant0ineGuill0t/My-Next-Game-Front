@@ -41,9 +41,10 @@ export const displayNextQuestion = () => ({
   type: DISPLAY_NEXT_QUESTION,
 });
 
-export const saveQuizzId = (idQuiz) => ({
+export const saveQuizzId = (idQuiz, sessId) => ({
   type: SAVE_QUIZZ_ID,
   idQuiz: idQuiz,
+  sessId: sessId,
 });
 
 export const sendAnswer = () => ({

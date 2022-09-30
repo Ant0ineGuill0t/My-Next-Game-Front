@@ -9,16 +9,18 @@ import {
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case DISPLAY_QUIZZ:
-      axios.get('http://cyonefr-server.eddi.cloud/api/quiz', {
+      axios.get('http://localhost:8000/api/quiz', {
         headers: {
           Authorization: `Bearer ${store.getState().user.token}`,
         },
         withCredentials: true,
-        credential: 'include',
+        credentials: 'include',
       })
         .then((response) => {
           const idQuiz = response.data.quiz.id;
-          store.dispatch(saveQuizzId(idQuiz));
+          const sessId = response.data.sessionId;
+          store.dispatch(saveQuizzId(idQuiz, sessId));
+          console.log(sessId);
           console.log(response);
           store.dispatch(displayNextQuestion());
         })
@@ -30,13 +32,13 @@ const gameMiddleware = (store) => (next) => (action) => {
 
     case DISPLAY_NEXT_QUESTION:
       axios.get(
-        `http://cyonefr-server.eddi.cloud/api/quiz/${store.getState().game.idQuiz}/ask`,
+        `http://localhost:8000/api/quiz/${store.getState().game.idQuiz}/ask`,
         {
           headers: {
             Authorization: `Bearer ${store.getState().user.token}`,
           },
           withCredentials: true,
-          credential: 'include',
+          credentials: 'include',
         },
       )
         .then((response) => {
