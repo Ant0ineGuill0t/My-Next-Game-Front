@@ -3,9 +3,12 @@ import {
   DISPLAY_QUIZZ,
   DISPLAY_NEXT_QUESTION,
   displayNextQuestion,
+  saveQuestion,
   saveQuizzId,
+  displayResults,
+  SEND_ANSWER,
+  DISPLAY_RESULTS,
 } from 'src/actions';
-import { saveQuestion, SEND_ANSWER } from '../actions';
 
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -28,7 +31,6 @@ const gameMiddleware = (store) => (next) => (action) => {
         });
 
       break;
-
     case DISPLAY_NEXT_QUESTION:
       axios.get(
         `http://localhost:8000/api/quiz/${store.getState().game.idQuiz}/ask`,
@@ -61,7 +63,6 @@ const gameMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(store.getState().game.questionNumber);
           store.dispatch(displayNextQuestion());
         })
         .catch((error) => {
@@ -69,7 +70,25 @@ const gameMiddleware = (store) => (next) => (action) => {
         });
 
       break;
+    case DISPLAY_RESULTS:
+      axios.get(
+        'http://localhost:8000/api/game/result',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().user.token}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
 
+      break;
     default:
   }
   next(action);

@@ -9,7 +9,6 @@ import './style.scss';
 function Game({ datas }) {
   const { paramSlug } = useParams();
   const filteredSlug = datas.filter((data) => data.slug === paramSlug);
-  console.log(filteredSlug);
 
   if (filteredSlug.length < 1) {
     return (

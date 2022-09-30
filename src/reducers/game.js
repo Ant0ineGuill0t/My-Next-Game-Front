@@ -15,7 +15,7 @@ const initialState = {
     // 'Pas vraiment': -1,
     // 'Pas du tout': -2,
   },
-  questionNumber: '1',
+  questionNumber: '',
   answerChosen: '',
   idQuiz: '',
   sessId: '',

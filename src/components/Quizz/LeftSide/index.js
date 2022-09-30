@@ -1,6 +1,7 @@
 // == Import
-import { sendAnswer, saveAnswer } from 'src/actions';
+import { sendAnswer, saveAnswer, displayResults } from 'src/actions';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 // data, styles
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
@@ -10,9 +11,16 @@ function LeftSide() {
   const choices = useSelector((state) => state.game.choices);
   const keys = Object.keys(choices);
   const values = Object.values(choices);
+  const questionNumber = useSelector((state) => state.game.questionNumber);
   const handleClick = (event) => {
-    dispatch(saveAnswer(event.target.value));
-    dispatch(sendAnswer());
+    if (questionNumber < 20) {
+      console.log(questionNumber);
+      dispatch(saveAnswer(event.target.value));
+      dispatch(sendAnswer());
+    }
+    if (questionNumber === 20) {
+      console.log('quizz fini');
+    }
   };
   return (
     <div className="leftSide">

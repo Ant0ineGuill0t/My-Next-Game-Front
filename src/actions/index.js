@@ -9,6 +9,7 @@ export const SAVE_QUIZZ_ID = 'SAVE_QUIZZ_ID';
 export const SAVE_QUESTION = 'SAVE_QUESTION';
 export const SAVE_ANSWER = 'SAVE_ANSWER';
 export const SEND_ANSWER = 'SEND_ANSWER';
+export const DISPLAY_RESULTS = 'DISPLAY_RESULTS';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -63,4 +64,8 @@ export const saveAnswer = (answerChosen) => ({
 
 export const sendAnswer = () => ({
   type: SEND_ANSWER,
+});
+
+export const displayResults = () => ({
+  type: DISPLAY_RESULTS,
 });
