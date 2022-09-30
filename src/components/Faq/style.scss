@@ -1,6 +1,13 @@
 @media screen and (min-width: 1080px){
   .faq{
     padding-bottom: 25rem;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1081px){
+  .faq{
+    padding-bottom: 35rem;
+    height: 80vh;
   }
 }
 
@@ -9,7 +16,6 @@
   flex-direction: column;
   margin: auto;
   text-align: left;
-  height: 100%;
   overflow: auto;
 }
 
