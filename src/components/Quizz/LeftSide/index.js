@@ -1,5 +1,6 @@
 // == Import
-import { sendAnswer, saveAnswer } from 'src/actions';
+import { sendAnswer, saveAnswer, displayResults } from 'src/actions';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // data, styles
 import './style.scss';
@@ -10,9 +11,17 @@ function LeftSide() {
   const choices = useSelector((state) => state.game.choices);
   const keys = Object.keys(choices);
   const values = Object.values(choices);
+  const questionNumber = useSelector((state) => state.game.questionNumber);
   const handleClick = (event) => {
-    dispatch(saveAnswer(event.target.value));
-    dispatch(sendAnswer());
+    if (questionNumber < 20) {
+      console.log(questionNumber);
+      dispatch(saveAnswer(event.target.value));
+      dispatch(sendAnswer());
+    }
+    if (questionNumber === 20) {
+      window.location.href = '/quizz/results';
+      dispatch(displayResults());
+    }
   };
   return (
     <div className="leftSide">

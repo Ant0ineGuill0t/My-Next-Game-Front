@@ -42,6 +42,9 @@
     height: 100%;
     justify-content: center;
   }
+  .gameTitle{
+    width: 100%;
+  }
   .game ul{
     width: 100%;
   }
@@ -72,6 +75,9 @@
 @media screen and (min-width: 1024px){
   .gameImg{
     width: 90%;
+  }
+  .gameTitle{
+    width: 12%;
   }
 }
 
@@ -130,6 +136,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .gameImg{
   object-fit: cover;
   object-position: left top;
@@ -203,3 +210,18 @@
 	overflow-y: scroll;
 }
 
+.returnResults{
+  text-align: center;
+  height: 50%;
+  width: 20%;
+  all: unset;
+  padding: 1em;
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  border-radius: 1em;
+  font-size: 0.9em;
+}
+
+.returnResultsButton{
+  all: unset;
+}
