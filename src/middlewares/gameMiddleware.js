@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import {
   DISPLAY_QUIZZ,
   DISPLAY_NEXT_QUESTION,

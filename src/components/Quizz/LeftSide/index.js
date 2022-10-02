@@ -1,7 +1,7 @@
 // == Import
 import { sendAnswer, saveAnswer, displayResults } from 'src/actions';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 // data, styles
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
@@ -19,7 +19,8 @@ function LeftSide() {
       dispatch(sendAnswer());
     }
     if (questionNumber === 20) {
-      console.log('quizz fini');
+      window.location.href = '/quizz/results';
+      dispatch(displayResults());
     }
   };
   return (
