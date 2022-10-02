@@ -12,6 +12,7 @@ function Header() {
   const isOpen = useSelector((state) => state.user.isOpen);
   const userEmail = useSelector((state) => state.user.email);
   const userPassword = useSelector((state) => state.user.password);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(logIn());

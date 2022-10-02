@@ -14,7 +14,7 @@ const initialState = {
   newUserAge: '',
   newUserConfirmPassword: '',
   token: '',
-
+  isLogged: false,
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -61,6 +61,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         token: action.token,
+        isLogged: action.islogged,
       };
     default:
       return state;

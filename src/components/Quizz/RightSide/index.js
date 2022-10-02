@@ -9,7 +9,7 @@ import './style.scss';
 
 function RightSide() {
   const questionNumber = useSelector((state) => state.game.questionNumber);
-  const progressBar = questionNumber * 10;
+  const progressBar = questionNumber * 5;
   return (
     <div className="rightSide">
       <img className="mascotte" src={Mascotte} alt="" />

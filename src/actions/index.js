@@ -38,6 +38,7 @@ export const displayQuizz = () => ({
 export const saveUserData = (token) => ({
   type: SAVE_USER_DATA,
   token: token,
+  isLogged: true,
 });
 
 export const displayNextQuestion = () => ({
