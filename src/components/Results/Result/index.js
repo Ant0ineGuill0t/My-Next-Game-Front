@@ -16,7 +16,7 @@ function Result({
   return (
     <Link to={`/game/${slug}`}>
       <div className="card">
-        <img className="cardImg" src={JSON.stringify(cover.url)} alt="" />
+        <img className="cardImg" src={cover.url} alt="" />
         <h3 className="gamesTitle">{name}</h3>
         <div className="circle">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ function Result({
       </div> */}
         {
           platforms.map(
-            (plateform) => <p key={plateform.id}>{plateform}</p>,
+            (plateform) => <p key={plateform.id}>{plateform.name}</p>,
           )
         }
       </div>
@@ -45,18 +45,21 @@ function Result({
 
 Result.propTypes = {
   cover: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-  }).isRequired,
+    url: PropTypes.string,
+  }),
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   // rate: PropTypes.number.isRequired,
   platforms: PropTypes.arrayOf(
     PropTypes.shape({
+
       id: PropTypes.number.isRequired,
-    }).isRequired,
-  ).isRequired,
+    }),
+  ),
 };
 Result.defaultProps = {
+  platforms: [{ id: 1 }],
+  cover: { url: 'https://cdn.pixabay.com/photo/2014/04/02/10/44/cross-mark-304374_960_720.png' },
 };
 
 export default Result;
