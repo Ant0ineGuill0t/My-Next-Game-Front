@@ -7,16 +7,16 @@ import './style.scss';
 // import CheckListImage from '../../../assets/images/ChecklistButton.png';
 
 function Result({
-  picture,
+  cover,
   name,
   slug,
-  rate,
-  plateforms,
+  platforms,
 }) {
+  const rate = 80;
   return (
     <Link to={`/game/${slug}`}>
       <div className="card">
-        <img className="cardImg" src={picture} alt="" />
+        <img className="cardImg" src={cover.url} alt="" />
         <h3 className="gamesTitle">{name}</h3>
         <div className="circle">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -34,8 +34,8 @@ function Result({
         <p>Ajouter à la checklist</p>
       </div> */}
         {
-          plateforms.map(
-            (plateform) => <p key={plateform}>{plateform}</p>,
+          platforms.map(
+            (plateform) => <p key={plateform.id}>{plateform.name}</p>,
           )
         }
       </div>
@@ -44,11 +44,22 @@ function Result({
 }
 
 Result.propTypes = {
-  picture: PropTypes.string.isRequired,
+  cover: PropTypes.shape({
+    url: PropTypes.string,
+  }),
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
-  rate: PropTypes.number.isRequired,
-  plateforms: PropTypes.arrayOf(PropTypes.string).isRequired,
+  // rate: PropTypes.number.isRequired,
+  platforms: PropTypes.arrayOf(
+    PropTypes.shape({
+
+      id: PropTypes.number.isRequired,
+    }),
+  ),
+};
+Result.defaultProps = {
+  platforms: [{ id: 1 }],
+  cover: { url: 'https://cdn.pixabay.com/photo/2014/04/02/10/44/cross-mark-304374_960_720.png' },
 };
 
 export default Result;
