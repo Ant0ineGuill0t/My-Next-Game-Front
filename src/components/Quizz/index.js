@@ -1,6 +1,7 @@
 // == Import
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 // composants
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
@@ -15,10 +16,11 @@ function Quizz() {
     );
   }
   const question = useSelector((state) => state.game.question);
+
   return (
     <div className="quizz">
       <h2>Question {useSelector((state) => state.game.questionNumber)}/20</h2>
-      <p className="question">{question}</p>
+      <div className="questionDiv"><p className="question animation" key={question}>{question}</p></div>
       <LeftSide />
       <RightSide />
     </div>
