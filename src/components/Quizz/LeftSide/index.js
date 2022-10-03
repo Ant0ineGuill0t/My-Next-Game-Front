@@ -14,6 +14,7 @@ function LeftSide() {
   const values = Object.values(choices);
   const questionNumber = useSelector((state) => state.game.questionNumber);
   const navigate = useNavigate();
+
   const handleClick = (event) => {
     if (questionNumber < 20) {
       console.log(questionNumber);
@@ -22,7 +23,9 @@ function LeftSide() {
     }
     if (questionNumber === 20) {
       dispatch(displayResults());
-      navigate('/quizz/results');
+      setTimeout(() => {
+        navigate('/quizz/results');
+      }, '3000');
     }
   };
   return (

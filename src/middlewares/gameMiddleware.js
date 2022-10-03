@@ -1,12 +1,11 @@
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import {
   DISPLAY_QUIZZ,
   DISPLAY_NEXT_QUESTION,
   displayNextQuestion,
   saveQuestion,
   saveQuizzId,
-  displayResults,
+  saveResults,
   SEND_ANSWER,
   DISPLAY_RESULTS,
 } from 'src/actions';
@@ -83,6 +82,7 @@ const gameMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          store.dispatch(saveResults(response));
           console.log(response);
         })
         .catch((error) => {
