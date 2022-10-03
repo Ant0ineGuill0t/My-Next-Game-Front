@@ -57,6 +57,7 @@ function Header() {
             id="password"
             type="password"
             name="password"
+            autoComplete="on"
             value={userPassword}
             onChange={(event) => {
               dispatch(changeFieldUserLogin(event.target.value, 'password'));

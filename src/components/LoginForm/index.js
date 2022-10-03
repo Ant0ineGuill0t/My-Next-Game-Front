@@ -37,6 +37,7 @@ function LoginForm() {
             id="createPassword"
             type="password"
             name="password"
+            autoComplete="on"
             value={userPassword}
             placeholder="Votre password"
             required
@@ -52,6 +53,7 @@ function LoginForm() {
             id="comfirmPassword"
             type="password"
             name="password"
+            autoComplete="on"
             value={userConfirmPassword}
             placeholder="Votre password"
             required

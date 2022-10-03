@@ -1,7 +1,8 @@
 // == Import
 import { sendAnswer, saveAnswer, displayResults } from 'src/actions';
-import { useHistory } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 // data, styles
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
@@ -12,6 +13,7 @@ function LeftSide() {
   const keys = Object.keys(choices);
   const values = Object.values(choices);
   const questionNumber = useSelector((state) => state.game.questionNumber);
+  const navigate = useNavigate();
   const handleClick = (event) => {
     if (questionNumber < 20) {
       console.log(questionNumber);
@@ -19,8 +21,8 @@ function LeftSide() {
       dispatch(sendAnswer());
     }
     if (questionNumber === 20) {
-      window.location.href = '/quizz/results';
       dispatch(displayResults());
+      navigate('/quizz/results');
     }
   };
   return (
