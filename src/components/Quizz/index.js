@@ -17,7 +17,7 @@ function Quizz() {
   const question = useSelector((state) => state.game.question);
   return (
     <div className="quizz">
-      <h2>Question</h2>
+      <h2>Question {useSelector((state) => state.game.questionNumber)}/20</h2>
       <p className="question">{question}</p>
       <LeftSide />
       <RightSide />

@@ -22,7 +22,7 @@ function Result({
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
             <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray={rate * 3.6} />
           </svg>
-          <p className="note">{rate}%</p>
+          <p className="note">{rate}/100</p>
         </div>
         {/* <p className='gameNote'>90/100</p> */}
         {/* <div className='gameWishlist'>
