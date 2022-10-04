@@ -17,10 +17,11 @@ function Quizz() {
   }
   const question = useSelector((state) => state.game.question);
 
+
   return (
     <div className="quizz">
       <h2>Question {useSelector((state) => state.game.questionNumber)}/20</h2>
-      <div className="questionDiv"><p className="question animation" key={question}>{question}</p></div>
+      <div className="questionDiv"><p className="question" key={question}>{question}</p></div>
       <LeftSide />
       <RightSide />
     </div>
