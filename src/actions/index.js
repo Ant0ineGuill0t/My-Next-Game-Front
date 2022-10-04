@@ -14,6 +14,8 @@ export const SAVE_ANSWER = 'SAVE_ANSWER';
 export const SEND_ANSWER = 'SEND_ANSWER';
 export const DISPLAY_RESULTS = 'DISPLAY_RESULTS';
 export const DISPLAY_ERROR_MESSAGE = 'DISPLAY_ERROR_MESSAGE';
+export const SAVE_RESULTS = 'SAVE_RESULTS';
+
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -89,4 +91,9 @@ export const displayResults = () => ({
 
 export const toggleErrorMessage = () => ({
   type: DISPLAY_ERROR_MESSAGE,
+});  
+
+const saveResults = (response) => ({
+  type: SAVE_RESULTS,
+  gameData: response.data.results,
 });

@@ -16,6 +16,10 @@
     font-size: 0.8em;
     text-align: center;
   }
+  .gameLeftRelease, .gameLeftPegi, .gameLeftPlateform, .gameLeftType, .gameLeftRate{
+    text-align: center;
+    width: 100%;
+  }
   .gameRight{
     width: 100%;
     height: 20vh;
@@ -54,6 +58,12 @@
     font-size: 0.8em;
     text-align: center;
   }
+  .gameLeftRelease, .gameLeftPegi, .gameLeftPlateform, .gameLeftType, .gameLeftRate{
+    width: 100%;
+    font-size: 1.3em;
+  }
+  
+
   .gameRight{
     width: 100%;
     height: 20vh;
@@ -93,6 +103,10 @@
     font-size: 1em;
     height: 65%;
     width: 30%;
+  }
+  .gameLeftRelease, .gameLeftPegi, .gameLeftPlateform, .gameLeftType, .gameLeftRate{
+    width: 50%;
+    font-size: 1em;
   }
   .gameRight{
     width: 30%;
@@ -135,6 +149,7 @@
   border-radius: 2em;
   display: flex;
   flex-wrap: wrap;
+  line-height: 2em;
 }
 
 .gameImg{
@@ -152,8 +167,12 @@
 }
 .images{
   justify-self: flex-end;
+  justify-content: flex-start;
   display: flex;
   order: 4;
+  padding-bottom: 1em;
+  overflow-y: hidden;
+	overflow-x: scroll;
 }
 
 .gameRight{
@@ -171,27 +190,27 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  text-align: left;
   order: 3;
 }
 
 .game h3{
   font-weight: bold;
   margin: 1em 0 ;
-  width: 40%;
 }
 
 .game ul{
   margin-bottom: 2em;
   width: 40%;
-}
-
-.gameLeft p{
-  width: 40%;
+  line-height: 2em;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
 .game ul li{
   display: inline;
-  width: 40%;
+  width: 100%;
 }
 
 .game ul li:before {
@@ -220,8 +239,20 @@
   border: 2px solid #67CECD;
   border-radius: 1em;
   font-size: 0.9em;
+  cursor: pointer;
 }
 
-.returnResultsButton{
+.returnResultsButton {
   all: unset;
+}
+
+.gameLeftType {
+height: 50%;
+}
+.gameLeftRate {
+  height: 40%;
+}
+
+.gameLeftPlateform {
+  height: 50%;
 }

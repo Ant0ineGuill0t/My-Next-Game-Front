@@ -9,16 +9,13 @@ import RightSide from './RightSide';
 import './style.scss';
 
 function Quizz() {
-  if (useSelector((state) => state.user.token) === '') {
-    return (
-      <Navigate to="/" replace />
-    );
-  }
   const question = useSelector((state) => state.game.question);
+
+
   return (
     <div className="quizz">
-      <h2>Question</h2>
-      <p className="question">{question}</p>
+      <h2>Question {useSelector((state) => state.game.questionNumber)}/20</h2>
+      <div className="questionDiv"><p className="question" key={question}>{question}</p></div>
       <LeftSide />
       <RightSide />
     </div>

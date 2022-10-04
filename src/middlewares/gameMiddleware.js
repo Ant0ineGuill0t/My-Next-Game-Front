@@ -5,6 +5,7 @@ import {
   displayNextQuestion,
   saveQuestion,
   saveQuizzId,
+  saveResults,
   SEND_ANSWER,
   DISPLAY_RESULTS,
 } from 'src/actions';
@@ -81,6 +82,7 @@ const gameMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          store.dispatch(saveResults(response));
           console.log(response);
         })
         .catch((error) => {

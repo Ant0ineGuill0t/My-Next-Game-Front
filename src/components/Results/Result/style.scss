@@ -1,22 +1,22 @@
 @media screen and (max-width: 899px){
   .card{
-    height: 33em;
+    height: 100%;
     width: 18.5em;
     box-sizing: border-box;
   }
   .note{
-    left: -12em;
+    left: -6em;
   }
 }
 
 @media screen and (min-width: 900px){
   .card{
-    height: 80%;
+    height: 100%;
     width: 20.5em;
     box-sizing: border-box;
   }
   .note{
-    left: -14em;
+    left: -7em;
   }
 }
 
@@ -71,6 +71,7 @@
   width: 100%;
   text-align: center;
   white-space: pre-wrap;
+  height: 2em;
 }
 
 .card p {
@@ -95,12 +96,13 @@
 } */
 
 .circle {
-  position: relative;
+  
   justify-self: center;
+  justify-content: center;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  left: calc(50% - 60px);
+  
 }
 
 svg {
@@ -111,11 +113,14 @@ svg {
 
   width: 100%;
 
+  position: relative;
+  left: calc(50% - 60px);
+
 }
 
 .stroke {
 
-  stroke: #67CECD;
+  stroke: #ff9633;
   stroke-dasharray: 324;
   stroke-dashoffset : 100;
   transition: 0.6s ease-out;

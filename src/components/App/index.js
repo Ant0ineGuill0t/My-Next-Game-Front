@@ -17,6 +17,7 @@ import AboutUs from '../AboutUs';
 import Game from '../Game';
 import LoginForm from '../LoginForm';
 import Error from '../Error';
+import Loading from '../Loading';
 // styles
 import './styles.css';
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/error" element={<Error />} />
           <Route path="/login-form" element={<LoginForm />} />
           <Route path="*" element={<Navigate to="/error" />} />
+          <Route path="/loading" element={<Loading />} />
         </Routes>
       </div>
       <Footer />

@@ -3,6 +3,7 @@ import {
   SAVE_QUIZZ_ID,
   SAVE_QUESTION,
   SAVE_ANSWER,
+  SAVE_RESULTS,
 } from '../actions';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
   answerChosen: '',
   idQuiz: '',
   sessId: '',
+  gameData: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -44,6 +46,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         answerChosen: action.answerChosen,
+      };
+    case SAVE_RESULTS:
+      return {
+        ...state,
+        gameData: action.gameData,
       };
     default:
       return state;
