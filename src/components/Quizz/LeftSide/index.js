@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
 
-function LeftSide(setAnimationclass) {
+function LeftSide() {
   const dispatch = useDispatch();
   const choices = useSelector((state) => state.game.choices);
   const keys = Object.keys(choices);
@@ -19,7 +19,6 @@ function LeftSide(setAnimationclass) {
       console.log(questionNumber);
       dispatch(saveAnswer(event.target.value));
       dispatch(sendAnswer());
-      setAnimationclass('animation');
     }
     if (questionNumber === 20) {
       dispatch(displayResults());
