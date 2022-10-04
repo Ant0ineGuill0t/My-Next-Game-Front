@@ -13,7 +13,7 @@ function HomepageButton() {
   };
   return (
     <div className="home">
-      <p className="home-content">Bienvenue sur MNG! Vous êtes en quête de la petite
+      <p className="home-content animation">Bienvenue sur MNG! Vous êtes en quête de la petite
         pépite que vous avez loupé? Nous sommes là pour ça!
       </p>
       <img className="home-picture" src={Mascotte} alt="mascotte du site" />
