@@ -1,12 +1,10 @@
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import {
   DISPLAY_QUIZZ,
   DISPLAY_NEXT_QUESTION,
   displayNextQuestion,
   saveQuestion,
   saveQuizzId,
-  displayResults,
   SEND_ANSWER,
   DISPLAY_RESULTS,
 } from 'src/actions';
