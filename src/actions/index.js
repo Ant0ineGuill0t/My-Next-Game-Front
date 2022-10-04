@@ -2,6 +2,9 @@ export const TOGGLE_LOGIN_FORM = 'TOGGLE_LOGIN_FORM';
 export const CHANGE_FIELD_CREATE_USER = 'CHANGE_FIELD_CREATE_USER';
 export const CHANGE_FIELD_USER_LOGIN = 'CHANGE_FIELD_USER_LOGIN';
 export const LOG_IN = 'LOG_IN';
+export const LOG_OUT = 'LOG_OUT';
+export const CLEAR_LOG_STORE = 'CLEAR_LOG_STORE';
+export const TOGGLE_ISLOGGED = 'TOGGLE_ISLOGGED';
 export const DISPLAY_QUIZZ = 'DISPLAY_QUIZZ';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const DISPLAY_NEXT_QUESTION = 'DISPLAY_NEXT_QUESTION';
@@ -10,7 +13,9 @@ export const SAVE_QUESTION = 'SAVE_QUESTION';
 export const SAVE_ANSWER = 'SAVE_ANSWER';
 export const SEND_ANSWER = 'SEND_ANSWER';
 export const DISPLAY_RESULTS = 'DISPLAY_RESULTS';
+export const DISPLAY_ERROR_MESSAGE = 'DISPLAY_ERROR_MESSAGE';
 export const SAVE_RESULTS = 'SAVE_RESULTS';
+
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -30,6 +35,18 @@ export const changeFieldUserLogin = (newValue, fieldIdentifier) => ({
 
 export const logIn = () => ({
   type: LOG_IN,
+});
+
+export const logOut = () => ({
+  type: LOG_OUT,
+});
+
+export const clearLogStore = () => ({
+  type: CLEAR_LOG_STORE,
+});
+
+export const toggleIsLogged = () => ({
+  type: TOGGLE_ISLOGGED,
 });
 
 export const displayQuizz = () => ({
@@ -72,7 +89,11 @@ export const displayResults = () => ({
   type: DISPLAY_RESULTS,
 });
 
-export const saveResults = (response) => ({
+export const toggleErrorMessage = () => ({
+  type: DISPLAY_ERROR_MESSAGE,
+});  
+
+const saveResults = (response) => ({
   type: SAVE_RESULTS,
   gameData: response.data.results,
 });

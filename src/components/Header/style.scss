@@ -188,3 +188,25 @@
 .create-button{
   all: unset;
 }
+
+.logout-button {
+  background-color: #001414;
+  border: 2px solid #67CECD;
+  width: 80%;
+  margin: 1em auto;
+  padding: 0.7em;
+  border-radius: 0.3em;
+  all: unset;
+}
+
+.logout-button:hover {
+  background-color: #ff9633;
+  color: #001414;
+  border: 2px solid #ff9633;
+}
+.error-on {
+  color: #ff9633;
+}
+.error-off {
+display: none;
+}
