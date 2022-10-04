@@ -43,6 +43,13 @@
   transition: all 1s ease-out, opacity 1.5s;
 }
 
+.userButton_on:hover{
+  padding: 0.3em;
+  background-color: #ff9633;
+  border: 2px solid #67CECD;
+  border-radius: 1em;
+}
+
 .userButton_off{
   all: unset;
   padding: 0.3em;

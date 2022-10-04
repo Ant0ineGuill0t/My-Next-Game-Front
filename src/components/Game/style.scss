@@ -240,10 +240,18 @@
   border-radius: 1em;
   font-size: 0.9em;
   cursor: pointer;
+  transition: all 1s ease-out, opacity 1.5s;
 }
 
 .returnResultsButton {
   all: unset;
+}
+
+.returnResults:hover {
+  background-color: #ff9633;
+  border: 2px solid #001414;
+  border-radius: 1em;
+  color: #001414;
 }
 
 .gameLeftType {

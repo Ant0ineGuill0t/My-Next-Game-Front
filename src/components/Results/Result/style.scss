@@ -34,7 +34,7 @@
 
   border-radius: 1em;
 
-  box-shadow: -1rem 0 1rem #001414;
+  box-shadow: 0 0 1rem #001414;
 
 /*   margin-left: -50px; */
 
@@ -46,6 +46,10 @@
 
   margin: 1em;
 
+}
+
+.card:hover {
+  box-shadow: 0 0 1rem #ff9633;
 }
 
 .cardImg{
