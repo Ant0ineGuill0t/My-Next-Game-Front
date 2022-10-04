@@ -11,7 +11,7 @@
 
 @media screen and (min-width: 900px){
   .card{
-    height: 80%;
+    height: 100%;
     width: 20.5em;
     box-sizing: border-box;
   }
@@ -71,6 +71,7 @@
   width: 100%;
   text-align: center;
   white-space: pre-wrap;
+  height: 2em;
 }
 
 .card p {
