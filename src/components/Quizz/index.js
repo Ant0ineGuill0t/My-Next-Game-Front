@@ -1,7 +1,6 @@
 // == Import
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
 // composants
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
@@ -10,11 +9,6 @@ import RightSide from './RightSide';
 import './style.scss';
 
 function Quizz() {
-  if (useSelector((state) => state.user.token) === '') {
-    return (
-      <Navigate to="/" replace />
-    );
-  }
   const question = useSelector((state) => state.game.question);
 
 
