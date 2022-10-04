@@ -20,7 +20,7 @@ function Result({
         <img className="cardImg" src={`https://images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`} alt="" />
         <h3 className="gamesTitle">{name}</h3>
         <div className="circle">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <svg>
             <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray={gameNote * 3.6} />
           </svg>
           <p className="note">{gameNote}/100</p>
