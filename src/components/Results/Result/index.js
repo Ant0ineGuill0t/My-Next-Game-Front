@@ -11,18 +11,19 @@ function Result({
   name,
   slug,
   platforms,
+  aggregated_rating,
 }) {
-  const rate = 80;
+  const gameNote = Math.round(aggregated_rating);
   return (
     <Link to={`/game/${slug}`}>
       <div className="card">
-        <img className="cardImg" src={cover.url} alt="" />
+        <img className="cardImg" src={`https://images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`} alt="" />
         <h3 className="gamesTitle">{name}</h3>
         <div className="circle">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray={rate * 3.6} />
+          <svg>
+            <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray={gameNote * 3.6} />
           </svg>
-          <p className="note">{rate}/100</p>
+          <p className="note">{gameNote}/100</p>
         </div>
         {/* <p className='gameNote'>90/100</p> */}
         {/* <div className='gameWishlist'>
@@ -45,10 +46,11 @@ function Result({
 
 Result.propTypes = {
   cover: PropTypes.shape({
-    url: PropTypes.string,
+    image_id: PropTypes.string,
   }),
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
+  aggregated_rating: PropTypes.number.isRequired,
   // rate: PropTypes.number.isRequired,
   platforms: PropTypes.arrayOf(
     PropTypes.shape({
