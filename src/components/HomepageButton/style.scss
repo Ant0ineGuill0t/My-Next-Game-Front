@@ -41,7 +41,7 @@ text-align: center;
 
 @keyframes blinking {
   from, to { border-color: transparent; }
-  50% { border-color: #9EF4F3; }
+  50% { border-color: #ff9633; }
 }
 
 .home-button{
@@ -54,7 +54,7 @@ text-align: center;
   border: 2px solid #67CECD;
   border-radius: 2em;
   all: unset;
-  transition: all 1s ease-out, opacity 1.5s;
+  transition: all 0.2s ease-out, opacity 1.5s;
 }
 .home-button:hover {
   background-color: #ff9633;
