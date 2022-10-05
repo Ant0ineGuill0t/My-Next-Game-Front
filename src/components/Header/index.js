@@ -38,7 +38,7 @@ function Header() {
             className={isOpen ? 'userButton_off' : 'userButton_on'}
             onClick={() => dispatch(toggleLoginForm())}
           >
-            <img src={Profil} alt="logo du profil" />
+            <img className="logoProfil" src={Profil} alt="logo du profil" />
           </button><form
             className={isOpen ? 'login_on' : 'login_off'}
             onSubmit={handleSubmit}

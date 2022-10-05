@@ -51,6 +51,9 @@
 .card:hover {
   box-shadow: 0 0 1rem #ff9633;
 }
+.card:active{
+  box-shadow: 0 0 0.2rem #ff9633;
+}
 
 .cardImg{
 
