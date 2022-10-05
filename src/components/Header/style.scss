@@ -195,3 +195,11 @@
 .create-button{
   all: unset;
 }
+
+.signUp{
+  transition: color 0.2s ease-out;
+}
+
+.signUp:hover{
+  color: #ff9633;
+}

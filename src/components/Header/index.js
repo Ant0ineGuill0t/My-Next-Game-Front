@@ -69,7 +69,7 @@ function Header() {
           Connexion
         </button>
         <Link to="/login-form">
-          <p>Créer un compte</p>
+          <p className="signUp">Créer un compte</p>
         </Link>
       </form>
     </header>
