@@ -166,17 +166,7 @@
   border-radius: 2em;
 }
 
-.gameplay:active{
-  position: absolute;
-  width: 100em;
-  top: 12em;
-  border: #67CECD 0.2em solid;
-  left: 17em;
-  box-shadow: 0em 0em 1em 2em rgba(0, 0, 0, 0.7);
-}
-
 .images{
-  justify-self: flex-end;
   justify-content: flex-start;
   display: flex;
   order: 4;
@@ -251,6 +241,11 @@
   font-size: 0.9em;
   cursor: pointer;
   transition: all 0.2s ease-out, opacity 1.5s;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none
 }
 
 .returnResultsButton {
@@ -264,8 +259,13 @@
   color: #001414;
 }
 
+.returnResults:active{
+  box-shadow: inset 0 0 0.5em black;
+}
+
 .gameLeftType {
 height: 50%;
+padding: 1em;
 }
 .gameLeftRate {
   height: 40%;

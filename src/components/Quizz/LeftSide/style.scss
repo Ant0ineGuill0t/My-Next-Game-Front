@@ -6,6 +6,7 @@
 
   margin-top: 2em;
 
+
 }
 
 .responses{
@@ -45,18 +46,23 @@
   flex-wrap: nowrap;
 
   margin-right: 2em;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none
 
 }
 
 .checkbox__img{
 
   width: 3em;
-
 }
 
 .checkbox__img:active{
 
   content: url("../../../assets/images/neonbutton-pushed-colored.png");
+  filter: drop-shadow(0 0 0.75rem #9EF4F3);
 
 }
 
