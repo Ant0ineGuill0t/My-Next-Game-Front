@@ -16,6 +16,7 @@
   border-radius: 1em;
   font-size: 0.9em;
   transition: all 0.2s ease-out, opacity 1.5s;
+  -webkit-user-drag: none;
 }
 
 .restartQuizz:hover{
