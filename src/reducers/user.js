@@ -12,8 +12,10 @@ import {
 const initialState = {
   isOpen: false,
   userEmail: '',
+  userPseudo: '',
   userPassword: '',
   newUserEmail: '',
+  newUserPseudo: '',
   newUserPassword: '',
   newUserAge: '',
   newUserConfirmPassword: '',
@@ -38,6 +40,12 @@ const reducer = (state = initialState, action = {}) => {
         return {
           ...state,
           newUserEmail: action.value,
+        };
+      }
+      if (action.identifier === 'pseudo') {
+        return {
+          ...state,
+          newUserPseudo: action.value,
         };
       }
       if (action.identifier === 'password') {

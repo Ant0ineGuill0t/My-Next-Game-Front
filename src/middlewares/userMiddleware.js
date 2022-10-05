@@ -7,6 +7,7 @@ import {
   toggleIsLogged,
   LOG_OUT,
   clearLogStore,
+  SEND_NEW_USER_FORM,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -34,11 +35,27 @@ const userMiddleware = (store) => (next) => (action) => {
         });
 
       break;
+    case SEND_NEW_USER_FORM:
+      axios.post(
+        'http://localhost:8000/api/user/new',
+        {
+          headers: { 'Content-Type': 'application/json' },
+          data: action.formData,
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+      break;
     case LOG_OUT:
       axios.get(
         'http://localhost:8000/logout',
       )
-        .then((response) => {
+        .then(() => {
           store.dispatch(clearLogStore());
         })
         .catch((error) => {

@@ -16,6 +16,7 @@ export const DISPLAY_RESULTS = 'DISPLAY_RESULTS';
 export const SET_ERROR_MESSAGE = 'DISPLAY_ERROR_MESSAGE';
 export const UNSET_ERROR_MESSAGE = 'UNSET_ERROR_MESSAGE';
 export const SAVE_RESULTS = 'SAVE_RESULTS';
+export const SEND_NEW_USER_FORM = 'SEND_NEW_USER_FORM';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -100,4 +101,9 @@ export const unsetErrorMessage = () => ({
 export const saveResults = (response) => ({
   type: SAVE_RESULTS,
   gameData: response.data.results,
+});
+
+export const sendnewUserForm = (formData) => ({
+  type: SEND_NEW_USER_FORM,
+  formData: formData,
 });
