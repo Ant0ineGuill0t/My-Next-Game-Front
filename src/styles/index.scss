@@ -47,6 +47,7 @@ body {
   color: #9EF4F3;
   
   /*font-family: 'Press-Start'*/
+  
 
   background-color: #001414;
 
@@ -61,6 +62,10 @@ img{
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+a{
+  -webkit-user-drag: none;
 }
 /* 
   // or you can import your own font
