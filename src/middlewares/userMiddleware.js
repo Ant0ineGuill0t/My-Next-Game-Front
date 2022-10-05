@@ -38,9 +38,9 @@ const userMiddleware = (store) => (next) => (action) => {
     case SEND_NEW_USER_FORM:
       axios.post(
         'http://localhost:8000/api/user/new',
+        action.data,
         {
-          headers: { 'Content-Type': 'application/json' },
-          data: action.formData,
+          headers: { 'Content-Type': 'multipart/form-data' },
         },
       )
         .then((response) => {

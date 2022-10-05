@@ -103,7 +103,7 @@ export const saveResults = (response) => ({
   gameData: response.data.results,
 });
 
-export const sendnewUserForm = (formData) => ({
+export const sendnewUserForm = (data) => ({
   type: SEND_NEW_USER_FORM,
-  formData: formData,
+  data: data,
 });

@@ -57,7 +57,7 @@ function Game() {
           </div>
         </div>
         <div className="gameRight">
-          <p className="pitch" translate="yes">{game.summary}</p>
+          <p className="pitch">{game.summary}</p>
         </div>
         <div className="images">
           {game.screenshots.map(
