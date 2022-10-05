@@ -5,12 +5,14 @@ export const LOG_IN = 'LOG_IN';
 export const DISPLAY_QUIZZ = 'DISPLAY_QUIZZ';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const DISPLAY_NEXT_QUESTION = 'DISPLAY_NEXT_QUESTION';
+export const DISPLAY_PREVIOUS_QUESTION = 'DISPLAY_PREVIOUS_QUESTION';
 export const SAVE_QUIZZ_ID = 'SAVE_QUIZZ_ID';
 export const SAVE_QUESTION = 'SAVE_QUESTION';
 export const SAVE_ANSWER = 'SAVE_ANSWER';
 export const SEND_ANSWER = 'SEND_ANSWER';
 export const DISPLAY_RESULTS = 'DISPLAY_RESULTS';
 export const SAVE_RESULTS = 'SAVE_RESULTS';
+export const RESTART_QUIZZ = 'RESTART_QUIZZ';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -36,6 +38,10 @@ export const displayQuizz = () => ({
   type: DISPLAY_QUIZZ,
 });
 
+export const restartQuizz = () => ({
+  type: RESTART_QUIZZ,
+});
+
 export const saveUserData = (token) => ({
   type: SAVE_USER_DATA,
   token: token,
@@ -44,6 +50,10 @@ export const saveUserData = (token) => ({
 
 export const displayNextQuestion = () => ({
   type: DISPLAY_NEXT_QUESTION,
+});
+
+export const displayPreviousQuestion = () => ({
+  type: DISPLAY_PREVIOUS_QUESTION,
 });
 
 export const saveQuizzId = (idQuiz, sessId) => ({
