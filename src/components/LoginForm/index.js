@@ -17,23 +17,8 @@ function LoginForm() {
   const newUserConfirmPassword = useSelector((state) => state.user.newUserConfirmPassword);
   function handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData();
-    const inputDate = new Date(newUserAge);
-    const year = (inputDate.getFullYear());
-    const month = (inputDate.getMonth());
-    const day = (inputDate.getDate());
-    data.set('user[email]', newUserEmail);
-    data.set('user[Birthdate]', newUserAge);
-    // data.set('user[Birthdate][month]', month);
-    // data.set('user[Birthdate][day]', day);
-    // data.set('user[Birthdate][year]', year);
-    data.set('user[pseudo]', newUserPseudo);
-    data.set('user[platform]', '');
-    data.set('user[avatar]', '');
-    data.set('user[password][first]', newUserPassword);
-    data.set('user[password][second]', newUserConfirmPassword);
-    data.set('user[_token]', token);
-    // data.append('Birthdate', newUserAge);
+    const data = {'email':newUserEmail,'Birthdate':newUserAge,'password':{'first':newUserPassword,'second':newUserConfirmPassword},'pseudo':newUserPseudo,'platform':'','avatar':''};
+
     dispatch(sendnewUserForm(data));
   }
   return (
