@@ -127,6 +127,7 @@ const gameMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          store.dispatch(saveResults(response));
           console.log(response);
         })
         .catch((error) => {

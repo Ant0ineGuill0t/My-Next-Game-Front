@@ -13,11 +13,11 @@ function RightSide() {
   const questionNumber = useSelector((state) => state.game.questionNumber);
   const progressBar = questionNumber * 5;
 
-  const handleRestartClick = (event) => {
+  const handleRestartClick = () => {
     dispatch(restartQuizz());
   };
 
-  const handlePreviousClick = (event) => {
+  const handlePreviousClick = () => {
     dispatch(displayPreviousQuestion());
   };
   return (
