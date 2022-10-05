@@ -34,11 +34,13 @@ function Result({
         <img src={CheckListImage} alt="wishlistButton" />
         <p>Ajouter à la checklist</p>
       </div> */}
-        {
-          platforms.map(
-            (plateform) => <p key={plateform.id}>{plateform.name}</p>,
-          )
-        }
+        <div className="platforms">
+          {
+            platforms.slice(0, 4).map(
+              (plateform) => <p key={plateform.id}>{plateform.name}</p>,
+            )
+          }
+        </div>
       </div>
     </Link>
   );
