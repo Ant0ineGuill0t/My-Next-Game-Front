@@ -13,6 +13,7 @@ function LoginForm() {
   const newUserPseudo = useSelector((state) => state.user.newUserPseudo);
   const newUserPassword = useSelector((state) => state.user.newUserPassword);
   const newUserAge = useSelector((state) => state.user.newUserAge);
+  const token = useSelector((state) => state.user.token);
   const newUserConfirmPassword = useSelector((state) => state.user.newUserConfirmPassword);
   function handleSubmit(event) {
     event.preventDefault();
@@ -22,15 +23,16 @@ function LoginForm() {
     const month = (inputDate.getMonth());
     const day = (inputDate.getDate());
     data.set('user[email]', newUserEmail);
-    data.set('user[Birthdate][month]', month);
-    data.set('user[Birthdate][day]', day);
-    data.set('user[Birthdate][year]', year);
+    data.set('user[Birthdate]', newUserAge);
+    // data.set('user[Birthdate][month]', month);
+    // data.set('user[Birthdate][day]', day);
+    // data.set('user[Birthdate][year]', year);
     data.set('user[pseudo]', newUserPseudo);
     data.set('user[platform]', '');
     data.set('user[avatar]', '');
     data.set('user[password][first]', newUserPassword);
     data.set('user[password][second]', newUserConfirmPassword);
-    data.set('user[_token]', '');
+    data.set('user[_token]', token);
     // data.append('Birthdate', newUserAge);
     dispatch(sendnewUserForm(data));
   }
