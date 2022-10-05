@@ -1,5 +1,13 @@
 import axios from 'axios';
-import { LOG_IN, saveUserData, toggleLoginForm } from 'src/actions';
+import {
+  LOG_IN,
+  saveUserData,
+  toggleLoginForm,
+  setErrorMessage,
+  toggleIsLogged,
+  LOG_OUT,
+  clearLogStore,
+} from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -18,13 +26,25 @@ const userMiddleware = (store) => (next) => (action) => {
             saveUserData(response.data.token),
           );
           store.dispatch(toggleLoginForm());
+          store.dispatch(toggleIsLogged());
+        })
+        .catch((error) => {
+          console.log(error);
+          store.dispatch(setErrorMessage());
+        });
+
+      break;
+    case LOG_OUT:
+      axios.get(
+        'http://localhost:8000/logout',
+      )
+        .then((response) => {
+          store.dispatch(clearLogStore());
         })
         .catch((error) => {
           console.log(error);
         });
-
       break;
-
     default:
   }
   next(action);
