@@ -1,14 +1,21 @@
 // == Import
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { restartQuizz } from '../../actions';
+
 // composants
 import Result from './Result';
 // data, styles
 import './style.scss';
 
 function Results() {
+  const dispatch = useDispatch();
   const gameDatas = useSelector((state) => state.game.gameData);
   console.log(gameDatas);
+
+  const handleRestartClick = (event) => {
+    dispatch(restartQuizz());
+  };
   return (
     <div className="results">
       <div className="cardContainer">
@@ -21,7 +28,7 @@ function Results() {
         </ul>
       </div>
       <Link to="/Quizz">
-        <button type="button" className="restartQuizz">Refaire le Quizz</button>
+        <button onClick={handleRestartClick} type="button" className="restartQuizz">Refaire le Quizz</button>
       </Link>
     </div>
   );
