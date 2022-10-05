@@ -3,7 +3,7 @@ import {
   LOG_IN,
   saveUserData,
   toggleLoginForm,
-  toggleErrorMessage,
+  setErrorMessage,
   toggleIsLogged,
   LOG_OUT,
   clearLogStore,
@@ -30,7 +30,7 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          store.dispatch(toggleErrorMessage());
+          store.dispatch(setErrorMessage());
         });
 
       break;

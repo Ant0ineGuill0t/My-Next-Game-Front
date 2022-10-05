@@ -13,9 +13,9 @@ export const SAVE_QUESTION = 'SAVE_QUESTION';
 export const SAVE_ANSWER = 'SAVE_ANSWER';
 export const SEND_ANSWER = 'SEND_ANSWER';
 export const DISPLAY_RESULTS = 'DISPLAY_RESULTS';
-export const DISPLAY_ERROR_MESSAGE = 'DISPLAY_ERROR_MESSAGE';
+export const SET_ERROR_MESSAGE = 'DISPLAY_ERROR_MESSAGE';
+export const UNSET_ERROR_MESSAGE = 'UNSET_ERROR_MESSAGE';
 export const SAVE_RESULTS = 'SAVE_RESULTS';
-
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -89,11 +89,15 @@ export const displayResults = () => ({
   type: DISPLAY_RESULTS,
 });
 
-export const toggleErrorMessage = () => ({
-  type: DISPLAY_ERROR_MESSAGE,
-});  
+export const setErrorMessage = () => ({
+  type: SET_ERROR_MESSAGE,
+});
 
-const saveResults = (response) => ({
+export const unsetErrorMessage = () => ({
+  type: UNSET_ERROR_MESSAGE,
+});
+
+export const saveResults = (response) => ({
   type: SAVE_RESULTS,
   gameData: response.data.results,
 });

@@ -1,7 +1,7 @@
 // == Import
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleLoginForm, changeFieldUserLogin, logIn, logOut } from 'src/actions';
+import { toggleLoginForm, changeFieldUserLogin, logIn, logOut, clearLogStore, toggleIsLogged, unsetErrorMessage } from 'src/actions';
 // data, styles
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
@@ -14,12 +14,19 @@ function Header() {
   const userPassword = useSelector((state) => state.user.password);
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
+
+  const handleClick = () => {
+    dispatch(unsetErrorMessage());
+    dispatch(toggleLoginForm());
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(logIn());
   };
   const handleLogout = () => {
     dispatch(logOut());
+    dispatch(clearLogStore());
+    dispatch(toggleIsLogged());
   };
   return (
     <header className="header">
@@ -39,7 +46,7 @@ function Header() {
             <button
               type="button"
               className="login-button-close"
-              onClick={() => dispatch(toggleLoginForm())}
+              onClick={handleClick}
             >
               <p className="login-button-plus">+</p>
             </button>
@@ -75,7 +82,12 @@ function Header() {
               Connexion
             </button>
             <Link to="/login-form">
-              <p>Créer un compte</p>
+              <button
+                type="button"
+                className="create-user-button"
+                onClick={() => dispatch(toggleLoginForm())}
+              >Créer un compte
+              </button>
             </Link>
           </form>
         </div>

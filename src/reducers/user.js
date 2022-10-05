@@ -3,7 +3,8 @@ import {
   CHANGE_FIELD_CREATE_USER,
   CHANGE_FIELD_USER_LOGIN,
   SAVE_USER_DATA,
-  DISPLAY_ERROR_MESSAGE,
+  SET_ERROR_MESSAGE,
+  UNSET_ERROR_MESSAGE,
   TOGGLE_ISLOGGED,
   CLEAR_LOG_STORE,
 } from 'src/actions';
@@ -72,10 +73,15 @@ const reducer = (state = initialState, action = {}) => {
         token: action.token,
         isLogged: action.islogged,
       };
-    case DISPLAY_ERROR_MESSAGE:
+    case SET_ERROR_MESSAGE:
       return {
         ...state,
-        errorMessage: 'true',
+        errorMessage: true,
+      };
+    case UNSET_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: false,
       };
     case CLEAR_LOG_STORE:
       return {
