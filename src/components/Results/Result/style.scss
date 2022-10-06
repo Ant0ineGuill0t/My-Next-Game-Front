@@ -7,6 +7,13 @@
   .note{
     left: -6em;
   }
+  .cardImg{
+    height: 50%;
+    border-radius: 1em 1em 0 0;
+  }
+  svg{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 900px){
@@ -18,7 +25,81 @@
   .note{
     left: -7em;
   }
+  .cardImg{
+    height: 50%;
+    border-radius: 1em 1em 0 0;
+  }
+  svg{
+    width: 100%;
+  }
 }
+
+@media screen and (min-width: 1920px){
+  .card{
+    height: 100%;
+    width: 20.5em;
+    box-sizing: border-box;
+  }
+  .card:hover{
+    .cardImg{
+      opacity: 0.2;
+    }
+    .gamesTitle{
+      opacity: 1;
+    }
+    .circle{
+      opacity: 1;
+    }
+    .platforms{
+      opacity: 1;
+    }
+  }
+  .note{
+    left: -7em;
+  }
+  .cardImg{
+    height: 100%;
+    border-radius: 1em;
+  }
+  .gamesTitle{
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+  }
+  .circle{
+    position: absolute;
+    z-index: 1;
+    top: 7em;
+    opacity: 0;
+  }
+  .platforms{
+    position: absolute;
+    z-index: 1;
+    top: 20em;
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 2000px){
+  .card{
+    height: 100%;
+    width: 30.5em;
+    box-sizing: border-box;
+  }
+  .circle{
+    position: absolute;
+    z-index: 1;
+    top: 7em;
+    left: -4.5em;
+    opacity: 0;
+  }
+  .note{
+    left: -3.3em;
+  }
+  svg{
+    width: 50%;
+  }
+}
+
 
 .card {
 
@@ -38,7 +119,7 @@
 
 /*   margin-left: -50px; */
 
-  transition: 0.4s ease-out;
+  transition: 0.2s ease-out;
 
   position: relative;
 
@@ -59,9 +140,7 @@
 
   width: 100%;
 
-  height: 50%;
-
-  border-radius: 1em 1em 0 0;
+  
 
   object-fit: cover;
 
@@ -117,8 +196,6 @@ svg {
   fill: #17141d;
 
   stroke-width: 0.125em;
-
-  width: 100%;
 
   position: relative;
   left: calc(50% - 60px);

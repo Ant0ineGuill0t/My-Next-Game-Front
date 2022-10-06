@@ -1,3 +1,17 @@
+@media screen and (max-width: 1919px){
+  .home-content{
+    margin: 3rem;
+    text-align: center;
+    }
+}
+
+@media screen and (min-width: 1920px){
+  .home-content{
+    margin: 1rem;
+    text-align: center;
+    }
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -19,7 +33,6 @@
 }
 
 .home-content{
-margin: 3rem;
 text-align: center;
 }
 
