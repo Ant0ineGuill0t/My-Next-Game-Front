@@ -2,7 +2,15 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  toggleLoginForm, changeFieldUserLogin, logIn, logOut, clearLogStore, toggleIsLogged, unsetErrorMessage,
+  toggleLoginForm,
+  changeFieldUserLogin,
+  logIn,
+  logOut,
+  clearLogStore,
+  toggleIsLogged,
+  unsetErrorMessage,
+  unsetErrorFormMessage,
+  unsetValidUserForm,
 } from 'src/actions';
 // data, styles
 import './style.scss';
@@ -16,7 +24,6 @@ function Header() {
   const userPassword = useSelector((state) => state.user.password);
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
-  const token = useSelector((state) => state.user.token);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -31,18 +38,23 @@ function Header() {
     dispatch(clearLogStore());
     dispatch(toggleIsLogged());
   };
+  const handleLogin = () => {
+    dispatch(toggleLoginForm());
+    dispatch(unsetValidUserForm());
+  };
   return (
     <header className="header">
-      <Link to="/"><h1 className="h1"><img className="header-logo" src={Logo} alt="" /></h1></Link>
+      <Link to="/"><h1 className="h1"><img className="header-logo" src={Logo} alt="" onClick={() => dispatch(unsetErrorFormMessage())} /></h1></Link>
       {!isLogged && (
         <div>
           <button
             type="button"
             className={isOpen ? 'userButton_off' : 'userButton_on'}
-            onClick={() => dispatch(toggleLoginForm())}
+            onClick={handleLogin}
           >
             <img className="logoProfil" src={Profil} alt="logo du profil" />
-          </button><form
+          </button>
+          <form
             className={isOpen ? 'login_on' : 'login_off'}
             onSubmit={handleSubmit}
           >
@@ -92,7 +104,7 @@ function Header() {
               >Créer un compte
               </button>
             </Link>
-                   </form>
+          </form>
         </div>
       )}
       {isLogged && (

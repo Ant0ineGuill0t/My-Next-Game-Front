@@ -1,8 +1,6 @@
 // == Import
 import { Navigate, useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import React from 'react';
-import PropTypes from 'prop-types';
 // composants
 // data, styles
 import './style.scss';
