@@ -9,6 +9,7 @@ import {
   clearLogStore,
   SEND_NEW_USER_FORM,
 } from 'src/actions';
+import { useNavigate } from 'react-router-dom';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -28,6 +29,13 @@ const userMiddleware = (store) => (next) => (action) => {
           );
           store.dispatch(toggleLoginForm());
           store.dispatch(toggleIsLogged());
+          function parseJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(window.atob(base64).split('').map((c) => `%${(`00${c.charCodeAt(0).toString(16)}`).slice(-2)}`).join(''));
+            return JSON.parse(jsonPayload);
+          }
+          console.log(parseJwt(response.data.token));
         })
         .catch((error) => {
           console.log(error);
@@ -36,6 +44,7 @@ const userMiddleware = (store) => (next) => (action) => {
 
       break;
     case SEND_NEW_USER_FORM:
+      const navigate = useNavigate();
       axios.post(
         'http://localhost:8000/api/user/new',
         action.data,
@@ -45,6 +54,7 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          navigate('/');
         })
         .catch((error) => {
           console.log(error);
