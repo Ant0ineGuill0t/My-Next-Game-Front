@@ -70,7 +70,7 @@ function Game() {
           )}
         </div>
       </div>
-      <Link to="/quizz/results" className="returnResults"><button type="button" className="returnResultsButton">Restart a quiz</button></Link>
+      <Link to="/quizz/results" className="returnResults"><button type="button" className="returnResultsButton">Return</button></Link>
     </>
   );
 }

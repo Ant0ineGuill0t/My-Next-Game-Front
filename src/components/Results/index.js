@@ -28,7 +28,7 @@ function Results() {
         </ul>
       </div>
       <Link to="/Quizz">
-        <button onClick={handleRestartClick} type="button" className="restartQuizz">Refaire le Quizz</button>
+        <button onClick={handleRestartClick} type="button" className="restartQuizz">Restart a Quizz</button>
       </Link>
     </div>
   );
