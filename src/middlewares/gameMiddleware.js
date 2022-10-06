@@ -107,7 +107,7 @@ const gameMiddleware = (store) => (next) => (action) => {
           credentials: 'include',
         },
       )
-        .then((response) => {
+        .then(() => {
           store.dispatch(displayNextQuestion());
         })
         .catch((error) => {
