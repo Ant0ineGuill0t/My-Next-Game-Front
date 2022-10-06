@@ -11,6 +11,9 @@
     height: 50%;
     border-radius: 1em 1em 0 0;
   }
+  svg{
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 900px){
@@ -25,6 +28,9 @@
   .cardImg{
     height: 50%;
     border-radius: 1em 1em 0 0;
+  }
+  svg{
+    width: 100%;
   }
 }
 
@@ -79,8 +85,18 @@
     width: 30.5em;
     box-sizing: border-box;
   }
+  .circle{
+    position: absolute;
+    z-index: 1;
+    top: 7em;
+    left: -4.5em;
+    opacity: 0;
+  }
   .note{
-    left: -12em;
+    left: -3.3em;
+  }
+  svg{
+    width: 50%;
   }
 }
 
@@ -180,8 +196,6 @@ svg {
   fill: #17141d;
 
   stroke-width: 0.125em;
-
-  width: 100%;
 
   position: relative;
   left: calc(50% - 60px);
