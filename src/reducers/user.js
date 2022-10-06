@@ -9,6 +9,8 @@ import {
   CLEAR_LOG_STORE,
   SET_ERROR_FORM_MESSAGE,
   UNSET_ERROR_FORM_MESSAGE,
+  SET_VALID_USER_FORM,
+  UNSET_VALID_USER_FORM,
 } from 'src/actions';
 
 const initialState = {
@@ -25,6 +27,7 @@ const initialState = {
   isLogged: false,
   errorMessage: false,
   errorForm: [''],
+  validUserForm: false,
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -110,6 +113,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         errorForm: [''],
+      };
+    case SET_VALID_USER_FORM:
+      return {
+        ...state,
+        validUserForm: true,
+      };
+    case UNSET_VALID_USER_FORM:
+      return {
+        ...state,
+        validUserForm: false,
       };
     default:
       return state;

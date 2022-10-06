@@ -8,8 +8,8 @@ import {
   LOG_OUT,
   clearLogStore,
   SEND_NEW_USER_FORM,
+  setValidUserForm,
 } from 'src/actions';
-import { useNavigate } from 'react-router-dom';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -44,7 +44,6 @@ const userMiddleware = (store) => (next) => (action) => {
 
       break;
     case SEND_NEW_USER_FORM:
-      const navigate = useNavigate();
       axios.post(
         'http://localhost:8000/api/user/new',
         action.data,
@@ -52,14 +51,12 @@ const userMiddleware = (store) => (next) => (action) => {
           headers: { 'Content-Type': 'application/json' },
         },
       )
-        .then((response) => {
-          console.log(response);
-          navigate('/');
+        .then(() => {
+          store.dispatch(setValidUserForm());
         })
         .catch((error) => {
           console.log(error);
         });
-
       break;
     case LOG_OUT:
       axios.get(
