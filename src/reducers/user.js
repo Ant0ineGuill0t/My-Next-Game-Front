@@ -7,6 +7,8 @@ import {
   UNSET_ERROR_MESSAGE,
   TOGGLE_ISLOGGED,
   CLEAR_LOG_STORE,
+  SET_ERROR_FORM_MESSAGE,
+  UNSET_ERROR_FORM_MESSAGE,
 } from 'src/actions';
 
 const initialState = {
@@ -22,6 +24,7 @@ const initialState = {
   token: '',
   isLogged: false,
   errorMessage: false,
+  errorForm: [''],
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -97,6 +100,16 @@ const reducer = (state = initialState, action = {}) => {
         userEmail: '',
         userPassword: '',
         token: '',
+      };
+    case SET_ERROR_FORM_MESSAGE:
+      return {
+        ...state,
+        errorForm: [...state.errorForm, action.message],
+      };
+    case UNSET_ERROR_FORM_MESSAGE:
+      return {
+        ...state,
+        errorForm: [''],
       };
     default:
       return state;

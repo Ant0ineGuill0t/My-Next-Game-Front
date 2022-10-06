@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { changeFieldCreateUser, sendnewUserForm } from 'src/actions';
+import {
+  changeFieldCreateUser, sendnewUserForm, setErrorFormMessage, unsetErrorFormMessage,
+} from 'src/actions';
 import './style.scss';
 
 function LoginForm() {
@@ -13,11 +15,22 @@ function LoginForm() {
   const newUserPseudo = useSelector((state) => state.user.newUserPseudo);
   const newUserPassword = useSelector((state) => state.user.newUserPassword);
   const newUserAge = useSelector((state) => state.user.newUserAge);
-  const token = useSelector((state) => state.user.token);
+  const errorForm = useSelector((state) => state.user.errorForm);
   const newUserConfirmPassword = useSelector((state) => state.user.newUserConfirmPassword);
   function handleSubmit(event) {
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(newUserEmail)) {
+      dispatch(setErrorFormMessage('Veuillez indiquer un Email valide'));
+    }
+    if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i.test(newUserPassword)) {
+      dispatch(setErrorFormMessage('Veuillez indiquer un Mot de passe valide'));
+    }
+    if (newUserPassword !== newUserConfirmPassword) {
+      dispatch(setErrorFormMessage('Veuillez indiquer deux Mot de passe identiques'));
+    }
     event.preventDefault();
-    const data = {'email':newUserEmail,'Birthdate':newUserAge,'password':{'first':newUserPassword,'second':newUserConfirmPassword},'pseudo':newUserPseudo,'platform':'','avatar':''};
+    const data = {
+      email: newUserEmail, Birthdate: newUserAge, password: { first: newUserPassword, second: newUserConfirmPassword }, pseudo: newUserPseudo, platform: '', avatar: '',
+    };
 
     dispatch(sendnewUserForm(data));
   }
@@ -113,9 +126,15 @@ function LoginForm() {
           />
           {/* <span className="validity" /> */}
         </label>
+        {
+          errorForm.map(
+            (message) => <p className="create-login-error" key={message}>{message}</p>,
+          )
+        }
         <button
           type="submit"
           className="create-login-submit"
+          onClick={() => dispatch(unsetErrorFormMessage(''))}
         >
           Sign In 
         </button>

@@ -1,7 +1,9 @@
 // == Import
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleLoginForm, changeFieldUserLogin, logIn, logOut, clearLogStore, toggleIsLogged, unsetErrorMessage } from 'src/actions';
+import {
+  toggleLoginForm, changeFieldUserLogin, logIn, logOut, clearLogStore, toggleIsLogged, unsetErrorMessage,
+} from 'src/actions';
 // data, styles
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
@@ -14,6 +16,7 @@ function Header() {
   const userPassword = useSelector((state) => state.user.password);
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
+  const token = useSelector((state) => state.user.token);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -89,7 +92,7 @@ function Header() {
               >Sign In
               </button>
             </Link>
-          </form>
+                   </form>
         </div>
       )}
       {isLogged && (
