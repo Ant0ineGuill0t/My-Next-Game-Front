@@ -45,17 +45,37 @@ body {
   font-family: 'Graph35';
 
   color: #9EF4F3;
-
-
+  
   /*font-family: 'Press-Start'*/
+  
 
   background-color: #001414;
 
   padding: 1em;
 
   height: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none
 }
 
+img{
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+a{
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none
+}
 /* 
   // or you can import your own font
   @font-face {

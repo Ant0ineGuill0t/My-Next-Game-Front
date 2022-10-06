@@ -58,6 +58,11 @@
   justify-content: space-between;
 
   flex-direction: row;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none
 
 }
 
@@ -172,6 +177,7 @@
 .back:active {
 
   content: url("../../../assets/images/previousButtonPushed.png");
+  filter: drop-shadow(0 0 1.75rem #9EF4F3);
 
 }
 
@@ -184,6 +190,7 @@
 .restart:active {
 
   content: url("../../../assets/images/RestartButtonPushed.png");
+  filter: drop-shadow(0 0 1.5rem #9EF4F3);
 
 }
 
