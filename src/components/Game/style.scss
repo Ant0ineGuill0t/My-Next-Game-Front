@@ -128,9 +128,29 @@
   }
 }
 
-@media screen and (min-width: 1281px){
+@media screen and (min-width: 1920px){
+  .gameImg{
+    height: 100%;
+  }
+  .images{
+    width: 70%;
+    position: relative;
+    top: -12em;
+    left: 40em;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 1921px){
   .game{
     font-size: 1em;
+  }
+  .gameImg{
+    height: 75%;
+  }
+  .images{
+    width: 100%;
+    position: inherit;
   }
 }
 

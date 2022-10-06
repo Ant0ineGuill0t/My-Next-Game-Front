@@ -1,13 +1,12 @@
 @media screen and (min-width: 380px){
-  .userButton{
+  .userButton_on{
     width: 8%;
   }
   
 }
-
-@media screen and (min-width: 1080px){
-  .userButton{
-    width: 3%;
+@media screen and (min-width: 900px){
+  .userButton_on{
+    width: 1%;
   }
 }
 
