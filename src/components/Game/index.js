@@ -1,4 +1,5 @@
 // == Import
+import Popup from 'reactjs-popup';
 import { Navigate, useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import React from 'react';
@@ -61,7 +62,11 @@ function Game() {
         </div>
         <div className="images">
           {game.screenshots.map(
-            (screenshot) => <img src={`https://images.igdb.com/igdb/image/upload/t_720p/${screenshot.image_id}.jpg`} key={screenshot.id} className="gameplay" alt="screenshots" />,
+            (screenshot) => (
+              <Popup key={screenshot.id} modal trigger={<img src={`https://images.igdb.com/igdb/image/upload/t_720p/${screenshot.image_id}.jpg`} className="gameplay" alt="screenshots" />} position="right center">
+                <img src={`https://images.igdb.com/igdb/image/upload/t_720p/${screenshot.image_id}.jpg`} className="gameplayBig" alt="screenshots" />
+              </Popup>
+            ),
           )}
         </div>
       </div>

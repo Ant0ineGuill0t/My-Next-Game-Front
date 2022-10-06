@@ -54,9 +54,11 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal-image": "^2.6.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-transition-group": "^4.4.5",
+    "reactjs-popup": "^2.0.5",
     "redux": "^4.2.0"
   },
   "version": "1.0.0",
