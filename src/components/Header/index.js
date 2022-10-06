@@ -77,16 +77,16 @@ function Header() {
                 placeholder="Votre password"
               />
             </label>
-            <p className={errorMessage ? 'error-on' : 'error-off'}>Mot de passe ou Email incorrect</p>
+            <p className={errorMessage ? 'error-on' : 'error-off'}>Incorrect password/email !</p>
             <button type="submit" className="login-button">
-              Connexion
+              Log In
             </button>
             <Link to="/login-form">
               <button
                 type="button"
                 className="create-user-button"
                 onClick={() => dispatch(toggleLoginForm())}
-              >Créer un compte
+              >Sign In
               </button>
             </Link>
           </form>
@@ -100,7 +100,7 @@ function Header() {
             className="logout-button"
             onClick={handleLogout}
           >
-            Déconnexion
+            Log Out
           </button>
         </div>
       )}

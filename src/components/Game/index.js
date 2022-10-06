@@ -30,7 +30,7 @@ function Game() {
         <img src={`https://images.igdb.com/igdb/image/upload/t_720p/${game.cover.image_id}.jpg`} alt={game.name} className="gameImg" />
         <div className="gameLeft">
           <div className="gameLeftRelease">
-            <h3>Date de sortie :</h3>
+            <h3>Release Date :</h3>
             <p>{humanDateFormat}</p>
           </div>
           <div className="gameLeftPegi">
@@ -45,11 +45,11 @@ function Game() {
             </ul>
           </div>
           <div className="gameLeftRate">
-            <h3>Note :</h3>
+            <h3>Rating :</h3>
             <p className="noteGame">{gameNote}/100</p>
           </div>
           <div className="gameLeftPlateform">
-            <h3>Plateformes :</h3>
+            <h3>Plateforms :</h3>
             <ul>{game.platforms.map(
               (platform) => <li key={platform.id}>{platform.name} </li>,
             )}
@@ -65,7 +65,7 @@ function Game() {
           )}
         </div>
       </div>
-      <Link to="/quizz/results" className="returnResults"><button type="button" className="returnResultsButton">Retour</button></Link>
+      <Link to="/quizz/results" className="returnResults"><button type="button" className="returnResultsButton">Restart a quiz</button></Link>
     </>
   );
 }

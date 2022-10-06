@@ -6,16 +6,14 @@ function Faq() {
   return (
     <div className="faq">
       <h1 className="faq-main-title">FAQ My-Next-Game</h1>
-      <h2 className="faq-title">Qu'est-ce que MNG ?</h2>
-      <p className="faq-content">Un site qui vous suggère des jeux en fonctions de vos réponses au questionnaire</p>
-      <h2 className="faq-title">Suis-je obligé d'avoir déjà jouer aux jeux vidéos ?</h2>
-      <p className="faq-content">Pas du tout! Le questionnaire est crée de sorte que tout les joueurs nouveaux et anciens y trouvent leur compte avec des questions larges qui vous dirigerons vers votre style de jeux !</p>
-      <h2 className="faq-title">Puis-je faire un questionnaire sans être connecté ?</h2>
-      <p className="faq-content">Vous pouvez faire un questionnaire sans être préalablement connecté mais vous n'aurez pas accès aux avantages utilisateur</p>
-      <h2 className="faq-title">Qu'est ce que les avantages utilisateur ?</h2>
-      <p className="faq-content">L'avantages d'une connection avant d'effectuer un quizz est de pouvoir sauvegarder celui-ci,
-        d'autres avantages seront a venir tel que la wishList ou la CheckList qui vopus permettrons
-        un suivi de vos jeux
+      <h2 className="faq-title">What is MNG ?</h2>
+      <p className="faq-content">A website where through a quiz you'll get suggested a corresponding selection of games.</p>
+      <h2 className="faq-title">Do i need to already be a gamer ?</h2>
+      <p className="faq-content">Not at all! The quiz is made in a way that every new or veteran gamer will find a selection of game according to their preference !</p>
+      <h2 className="faq-title">Do i have to be registered to take a quiz ?</h2>
+      <p className="faq-content">Yes, you can the a quiz as a visitor but you'll not access to users privileges.</p>
+      <h2 className="faq-title">What are the users privileges?</h2>
+      <p className="faq-content">Being connected as a user will grant you the access to your personal Wishlist and DoneList as well as an access to all previous taked quiz and set of results.
       </p>
     </div>
   );

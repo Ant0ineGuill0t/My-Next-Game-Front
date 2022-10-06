@@ -13,8 +13,7 @@ function HomepageButton() {
   };
   return (
     <div className="home">
-      <p className="home-content animation">Bienvenue sur MNG! Vous êtes en quête de la petite
-        pépite que vous avez loupé? Nous sommes là pour ça!
+      <p className="home-content animation">Welcome to MNG! Are you looking for the next gem to play? Say no more, you've come to the right place!
       </p>
       <img className="home-picture" src={Mascotte} alt="mascotte du site" />
       <Link to="/quizz">
@@ -23,7 +22,7 @@ function HomepageButton() {
           className="home-button"
           onClick={createForm}
         >
-          Commencer le questionnaire
+          Start the Quiz
         </button>
       </Link>
     </div>

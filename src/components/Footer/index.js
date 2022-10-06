@@ -6,9 +6,9 @@ import './style.scss';
 function Footer() {
   return (
     <footer className="footer">
-      <Link to="/legal-notice">Mentions Légales</Link>
+      <Link to="/legal-notice">Légal Notice</Link>
       <Link to="/faq" className="mid">FAQ</Link>
-      <Link to="/about-us">Qui sommes-nous ?</Link>
+      <Link to="/about-us">About us ?</Link>
     </footer>
   );
 }

@@ -23,13 +23,13 @@ function LoginForm() {
   }
   return (
     <div>
-      <h2>Bienvenue sur le gestionnaire de création de Compte</h2>
+      <h2>Sign in form</h2>
       <form
         className="create-login"
         onSubmit={handleSubmit}
       >
         <label htmlFor="create-login-email">
-          Indiquez un Email valide
+          E-mail address
           <input
             className="create-login-input"
             id="createEmail"
@@ -44,7 +44,7 @@ function LoginForm() {
           />
         </label>
         <label htmlFor="create-login-pseudo">
-          Indiquez un Pseudo valide
+          Pseudo
           <input
             className="create-login-input"
             id="createPseudo"
@@ -59,7 +59,7 @@ function LoginForm() {
           />
         </label>
         <label htmlFor="create-login-password">
-          Rentrez votre mot de passe
+          Password
           <input
             className="create-login-input"
             id="createPassword"
@@ -75,7 +75,7 @@ function LoginForm() {
           />
         </label>
         <label htmlFor="create-login-password">
-          Confirmez votre votre mot de passe
+          Confirm Password
           <input
             className="create-login-input"
             id="comfirmPassword"
@@ -96,7 +96,7 @@ function LoginForm() {
           } */}
         </label>
         <label htmlFor="create-login-age">
-          Indiquez votre age
+         Date of birth
           <input
             className="create-login-input"
             id="addAge"
@@ -117,7 +117,7 @@ function LoginForm() {
           type="submit"
           className="create-login-submit"
         >
-          Envoyer
+          Sign In 
         </button>
       </form>
     </div>
