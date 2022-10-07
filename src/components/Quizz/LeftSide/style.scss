@@ -1,50 +1,29 @@
 .leftSide{
-
   display: flex;
-
   width: 30%;
-
   margin-top: 2em;
-
-
 }
 
 .responses{
-
   width: 100%;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
 }
 
 .responses p{
-
   font-size: 1em;
-
   width: 15em;
-
   margin: 0.5em;
-
 }
 
 .checkboxes{
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: space-between;
-
   width: 100%;
-
   flex-wrap: nowrap;
-
   margin-right: 2em;
   -webkit-user-drag: none;
   user-select: none;
@@ -55,29 +34,19 @@
 }
 
 .checkbox__img{
-
   width: 3em;
 }
 
 .checkbox__img:active{
-
   content: url("../../../assets/images/neonbutton-pushed-colored.png");
   filter: drop-shadow(0 0 0.75rem #9EF4F3);
-
 }
 
-
-
 .checkboxes input{
-
   width: 10%;
-
   all: unset;
-
 }
 
 .checkboxes label{
-
   width: 10%;
-
 }

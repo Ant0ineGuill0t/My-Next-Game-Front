@@ -9,9 +9,9 @@ function Footer() {
   const dispatch = useDispatch();
   return (
     <footer className="footer">
-      <Link to="/legal-notice" onClick={() => dispatch(unsetErrorFormMessage())}>Mentions Légales</Link>
+      <Link to="/legal-notice" onClick={() => dispatch(unsetErrorFormMessage())}>Legal Notices</Link>
       <Link to="/faq" onClick={() => dispatch(unsetErrorFormMessage())} className="mid">FAQ</Link>
-      <Link to="/about-us" onClick={() => dispatch(unsetErrorFormMessage())}>Qui sommes-nous ?</Link>
+      <Link to="/about-us" onClick={() => dispatch(unsetErrorFormMessage())}>About us</Link>
     </footer>
   );
 }

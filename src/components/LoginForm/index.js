@@ -40,30 +40,30 @@ function LoginForm() {
     dispatch(sendnewUserForm(data));
   }
   return (
-    <div>
+    <div className="div-page-create">
       {!validUserForm && (
         <>
-          <h2>Sign in form</h2>
+          <h2 className="create-login-title">Sign in form</h2>
           <form
             className="create-login"
             onSubmit={handleSubmit}
           >
-            <label htmlFor="create-login-email">
-              Email 
+            <label htmlFor="create-login-label" className="create-login-label">
+              Email adress
               <input
                 className="create-login-input"
                 id="createEmail"
                 type="email"
                 name="email"
                 value={userEmail}
-                placeholder="Votre Email"
+                placeholder="Email"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'email'));
                 }}
               />
             </label>
-            <label htmlFor="create-login-pseudo">
+            <label htmlFor="create-login-label" className="create-login-label">
               Pseudo
               <input
                 className="create-login-input"
@@ -71,14 +71,14 @@ function LoginForm() {
                 type="pseudo"
                 name="pseudo"
                 value={userPseudo}
-                placeholder="Votre pseudo"
+                placeholder="pseudo"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'pseudo'));
                 }}
               />
             </label>
-            <label htmlFor="create-login-password">
+            <label htmlFor="create-login-label" className="create-login-label">
               password
               <input
                 className="create-login-input"
@@ -87,14 +87,14 @@ function LoginForm() {
                 name="password"
                 autoComplete="on"
                 value={userPassword}
-                placeholder="Votre password"
+                placeholder="password"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'password'));
                 }}
               />
             </label>
-            <label htmlFor="create-login-password">
+            <label htmlFor="create-login-label" className="create-login-label">
               Confirm your password
               <input
                 className="create-login-input"
@@ -103,14 +103,14 @@ function LoginForm() {
                 name="password"
                 autoComplete="on"
                 value={userConfirmPassword}
-                placeholder="Votre password"
+                placeholder="password"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'confirmPassword'));
                 }}
               />
             </label>
-            <label htmlFor="create-login-age">
+            <label htmlFor="create-login-label" className="create-login-label">
               Birthdate
               <input
                 className="create-login-input"
@@ -120,7 +120,7 @@ function LoginForm() {
                 value={userAge}
                 min="1"
                 max="99"
-                placeholder="Votre age"
+                placeholder="age"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'age'));

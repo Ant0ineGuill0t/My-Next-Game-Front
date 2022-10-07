@@ -3,6 +3,7 @@ import {
   CHANGE_FIELD_CREATE_USER,
   CHANGE_FIELD_USER_LOGIN,
   SAVE_USER_DATA,
+  SAVE_USER_DATA_FROM_API,
   SET_ERROR_MESSAGE,
   UNSET_ERROR_MESSAGE,
   TOGGLE_ISLOGGED,
@@ -28,6 +29,8 @@ const initialState = {
   errorMessage: false,
   errorForm: [''],
   validUserForm: false,
+  emailField: false,
+  userData: { },
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -86,6 +89,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         token: action.token,
         isLogged: action.islogged,
+      };
+    case SAVE_USER_DATA_FROM_API:
+      return {
+        ...state,
+        userData: action.response,
       };
     case SET_ERROR_MESSAGE:
       return {
