@@ -7,11 +7,12 @@ import {
   saveQuestion,
   saveQuizzId,
   saveResults,
+  displayQuizz,
+  isLoading,
   SEND_ANSWER,
   DISPLAY_RESULTS,
   RESTART_QUIZZ,
 } from 'src/actions';
-import { displayQuizz } from '../actions';
 
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -47,7 +48,9 @@ const gameMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log('quizz recommencé');
+          store.dispatch(isLoading(!store.getState().game.loading));
           store.dispatch(displayQuizz());
+          console.log(store.getState().game.loading);
           console.log(response);
         })
         .catch((error) => {
@@ -116,6 +119,7 @@ const gameMiddleware = (store) => (next) => (action) => {
 
       break;
     case DISPLAY_RESULTS:
+      console.log(store.getState().game.loading);
       axios.get(
         'http://localhost:8000/api/game/result',
         {
@@ -127,8 +131,10 @@ const gameMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          store.dispatch(isLoading(!store.getState().game.loading));
           store.dispatch(saveResults(response));
           console.log(response);
+          console.log(store.getState().game.loading);
         })
         .catch((error) => {
           console.log(error);

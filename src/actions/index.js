@@ -21,6 +21,7 @@ export const SEND_NEW_USER_FORM = 'SEND_NEW_USER_FORM';
 export const RESTART_QUIZZ = 'RESTART_QUIZZ';
 export const SET_ERROR_FORM_MESSAGE = 'SET_ERROR_FORM_MESSAGE';
 export const UNSET_ERROR_FORM_MESSAGE = 'UNSET_ERROR_FORM_MESSAGE';
+export const IS_LOADING = 'IS_LOADING';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -66,6 +67,11 @@ export const saveUserData = (token) => ({
   type: SAVE_USER_DATA,
   token: token,
   isLogged: true,
+});
+
+export const isLoading = (loading) => ({
+  type: IS_LOADING,
+  loading: loading,
 });
 
 export const displayNextQuestion = () => ({

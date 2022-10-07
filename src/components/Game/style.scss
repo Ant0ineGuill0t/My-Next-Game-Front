@@ -171,6 +171,28 @@
   line-height: 2em;
 }
 
+.prev{
+  z-index: 10000;
+  margin: auto;
+  width: max-content;
+  position: relative;
+  height: max-content;
+  top: -23em;
+}
+
+.prevImg, .nextImg{
+  width: 5em;
+}
+
+.next{
+  z-index: 10000;
+  margin: auto;
+  width: max-content;
+  position: relative;
+  height: max-content;
+  top: -23em;
+}
+
 .gameImg{
   object-fit: cover;
   object-position: left top;
