@@ -39,6 +39,12 @@
     margin: 1em 0 0 0;
   }
 }
+
+@media screen and (min-width: 1921px){
+  .footer{
+    margin: 3em 0 0 0;
+  }
+}
 .footer{
   display: flex;
   justify-content: center;

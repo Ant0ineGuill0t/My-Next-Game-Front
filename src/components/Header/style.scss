@@ -90,7 +90,7 @@
   top: -1em;
   right: -2em;
   width: 15rem;
-  padding: 2em;
+  padding: 2em 2em 0 2em;
   margin: 3em;
   background-color: #022829;
   border: 2px solid #67CECD;
@@ -162,7 +162,7 @@
 
 .login-button:hover {
   background-color: #ff9633;
-  border: 2px solid #022829;
+  border: 2px solid #001414;
   color: #001414;
   margin: 1em 1em 2em 1em;
   padding: 0.7em;
@@ -184,7 +184,7 @@
   right: 2%;
   background-color: #001414;
   border: 0.1em solid #67CECD;
-  border-radius: 50%;
+  border-radius: 0.3em;
   color: #67CECD;
   text-align: center;
 }
@@ -192,8 +192,12 @@
 .login-button-close:hover {
   background-color: #ff9633;
   border: 0.1em solid #001414;
-  border-radius: 50%;
+  border-radius: 0.3em;
   color: #001414;
+}
+
+.login-button-close:active{
+  box-shadow: inset 0 0 0.2em black;
 }
 
 .login-button-plus{
@@ -232,4 +236,7 @@ display: none;
 }
 .create-user-button {
   all: unset;
+}
+.create-user-button:hover{
+  color: #ff9633;
 }
