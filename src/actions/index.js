@@ -22,6 +22,8 @@ export const RESTART_QUIZZ = 'RESTART_QUIZZ';
 export const SET_ERROR_FORM_MESSAGE = 'SET_ERROR_FORM_MESSAGE';
 export const UNSET_ERROR_FORM_MESSAGE = 'UNSET_ERROR_FORM_MESSAGE';
 export const IS_LOADING = 'IS_LOADING';
+export const SET_VALID_USER_FORM = 'SET_VALID_USER_FORM';
+export const UNSET_VALID_USER_FORM = 'UNSET_VALID_USER_FORM';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -133,4 +135,12 @@ export const setErrorFormMessage = (message) => ({
 
 export const unsetErrorFormMessage = () => ({
   type: UNSET_ERROR_FORM_MESSAGE,
+});
+
+export const setValidUserForm = () => ({
+  type: SET_VALID_USER_FORM,
+});
+
+export const unsetValidUserForm = () => ({
+  type: UNSET_VALID_USER_FORM,
 });
