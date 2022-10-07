@@ -5,11 +5,13 @@ import {
   SAVE_ANSWER,
   SAVE_RESULTS,
   RESTART_QUIZZ,
+  IS_LOADING,
 } from '../actions';
 
 const initialState = {
   game: '',
   question: '',
+  loading: true,
   choices: {
     // 'absolument !': 2,
     // 'Un peu': 1,
@@ -48,9 +50,15 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         answerChosen: action.answerChosen,
       };
+    case IS_LOADING:
+      return {
+        ...state,
+        loading: action.loading,
+      };
     case RESTART_QUIZZ:
       return {
         ...state,
+        loading: false,
       };
     case SAVE_RESULTS:
       return {

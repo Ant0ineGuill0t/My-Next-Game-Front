@@ -23,9 +23,7 @@ function LeftSide() {
     }
     if (questionNumber === 20) {
       dispatch(displayResults());
-      setTimeout(() => {
-        navigate('/quizz/results');
-      }, '3000');
+      navigate('/quizz/results');
     }
   };
   return (
