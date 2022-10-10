@@ -26,6 +26,7 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          localStorage.setItem('token', response.data.token);
           console.log(response);
           store.dispatch(
             saveUserData(response.data.token),
@@ -64,6 +65,7 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then(() => {
           store.dispatch(clearLogStore());
+          localStorage.removeItem('token');
         })
         .catch((error) => {
           console.log(error);
@@ -74,7 +76,7 @@ const userMiddleware = (store) => (next) => (action) => {
         'http://localhost:8000/api/user',
         {
           headers: {
-            Authorization: `Bearer ${store.getState().user.token}`,
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
           withCredentials: true,
           credentials: 'include',
