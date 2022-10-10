@@ -2,6 +2,7 @@ import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import Profil from '../../assets/images/Profil.png';
+import Gear from '../../assets/images/gear.png';
 
 function Profile() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function Profile() {
             htmlFor="profile-content-email"
             className="profile-content-email"
           >
-            Email : 
+            Email :
             <input
               className="profile-content-email-input"
               id="profile-content-email-input"
@@ -56,7 +57,8 @@ function Profile() {
             <button
               type="button"
               onClick={handleEmail}
-            >GEAR
+              className="gear-button"
+            ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
           <label htmlFor="profile-content-password" className="profile-content-password">
@@ -73,7 +75,8 @@ function Profile() {
             <button
               type="button"
               onClick={handlePassword}
-            >GEAR
+              className="gear-button"
+            ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
           <label htmlFor="profile-content-confirm-password" className={disablePassword ? 'password-off' : 'profile-content-confirm-password-input'}>
@@ -101,7 +104,8 @@ function Profile() {
             <button
               type="button"
               onClick={handlePseudo}
-            >GEAR
+              className="gear-button"
+            ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
           <button
