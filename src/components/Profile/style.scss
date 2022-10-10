@@ -49,6 +49,8 @@
 }
 .profile-content-password-input{
   all:unset;
+  text-overflow: Ellipsis;
+  overflow:hidden;
 }
 .profile-content-confirm-password-input{
   all:unset;
