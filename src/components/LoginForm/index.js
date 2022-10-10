@@ -50,14 +50,14 @@ function LoginForm() {
             onSubmit={handleSubmit}
           >
             <label htmlFor="create-login-label" className="create-login-label">
-              Email adress
+              Email address
               <input
                 className="create-login-input"
                 id="createEmail"
                 type="email"
                 name="email"
                 value={userEmail}
-                placeholder="Email"
+                placeholder="email"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'email'));
@@ -80,7 +80,7 @@ function LoginForm() {
               />
             </label>
             <label htmlFor="create-login-label" className="create-login-label">
-              password
+              Password <span className="infobulle" aria-label="Password must contain 8 letters, 1 Uppercase and 1 special caracters">?</span>
               <input
                 className="create-login-input"
                 id="createPassword"
@@ -121,7 +121,7 @@ function LoginForm() {
                 value={userAge}
                 min="1"
                 max="99"
-                placeholder="age"
+                placeholder="dd-mm-yyyy"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'age'));

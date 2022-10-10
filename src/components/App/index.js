@@ -2,6 +2,9 @@
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getUserData, toggleIsLogged } from 'src/actions';
+
 // Composants
 import dataGames from 'src/data/dataGames';
 import dataQuestions from 'src/data/dataQuestions';
@@ -23,6 +26,12 @@ import './styles.css';
 
 // == Composant
 function App() {
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
+  if (token) {
+    dispatch(toggleIsLogged());
+    dispatch(getUserData());
+  }
   return (
     <>
       <Header />

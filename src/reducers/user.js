@@ -29,7 +29,6 @@ const initialState = {
   errorMessage: false,
   errorForm: [''],
   validUserForm: false,
-  emailField: false,
   userData: { },
 };
 const reducer = (state = initialState, action = {}) => {
