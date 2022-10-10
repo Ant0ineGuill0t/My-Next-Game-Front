@@ -50,7 +50,9 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          store.dispatch(setValidUserForm());
+          if (response.data.user[0] !== 'Erreur dans la complétion du formulaire !') {
+            store.dispatch(setValidUserForm());
+          }
         })
         .catch((error) => {
           console.log(error);

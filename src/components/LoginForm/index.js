@@ -33,11 +33,12 @@ function LoginForm() {
     if (newUserPassword !== newUserConfirmPassword) {
       dispatch(setErrorFormMessage('Please make sure passwords are the same'));
     }
-    const data = {
-      email: newUserEmail, Birthdate: newUserAge, password: { first: newUserPassword, second: newUserConfirmPassword }, pseudo: newUserPseudo, platform: '', avatar: '',
-    };
-
-    dispatch(sendnewUserForm(data));
+    else {
+      const data = {
+        email: newUserEmail, Birthdate: newUserAge, password: { first: newUserPassword, second: newUserConfirmPassword }, pseudo: newUserPseudo, platform: '', avatar: '',
+      };
+      dispatch(sendnewUserForm(data));
+    }
   }
   return (
     <div className="div-page-create">
