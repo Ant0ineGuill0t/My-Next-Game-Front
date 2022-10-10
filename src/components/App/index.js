@@ -2,7 +2,6 @@
 import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
-import React from 'react';
 // Composants
 import dataGames from 'src/data/dataGames';
 import dataQuestions from 'src/data/dataQuestions';
@@ -18,6 +17,7 @@ import Game from '../Game';
 import LoginForm from '../LoginForm';
 import Error from '../Error';
 import Loading from '../Loading';
+import Profile from '../Profile';
 // styles
 import './styles.css';
 
@@ -39,6 +39,7 @@ function App() {
           <Route path="/login-form" element={<LoginForm />} />
           <Route path="*" element={<Navigate to="/error" />} />
           <Route path="/loading" element={<Loading />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
       <Footer />

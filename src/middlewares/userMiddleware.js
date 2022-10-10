@@ -1,7 +1,9 @@
 import axios from 'axios';
 import {
   LOG_IN,
+  GET_USER_DATA,
   saveUserData,
+  saveUserDataFromApi,
   toggleLoginForm,
   setErrorMessage,
   toggleIsLogged,
@@ -9,6 +11,7 @@ import {
   clearLogStore,
   SEND_NEW_USER_FORM,
   setValidUserForm,
+  getUserData,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -29,13 +32,7 @@ const userMiddleware = (store) => (next) => (action) => {
           );
           store.dispatch(toggleLoginForm());
           store.dispatch(toggleIsLogged());
-          function parseJwt(token) {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(window.atob(base64).split('').map((c) => `%${(`00${c.charCodeAt(0).toString(16)}`).slice(-2)}`).join(''));
-            return JSON.parse(jsonPayload);
-          }
-          console.log(parseJwt(response.data.token));
+          store.dispatch(getUserData());
         })
         .catch((error) => {
           console.log(error);
@@ -51,7 +48,8 @@ const userMiddleware = (store) => (next) => (action) => {
           headers: { 'Content-Type': 'application/json' },
         },
       )
-        .then(() => {
+        .then((response) => {
+          console.log(response);
           store.dispatch(setValidUserForm());
         })
         .catch((error) => {
@@ -64,6 +62,25 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then(() => {
           store.dispatch(clearLogStore());
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case GET_USER_DATA:
+      axios.get(
+        'http://localhost:8000/api/user',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().user.token}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+        },
+      )
+        .then((response) => {
+          store.dispatch(saveUserDataFromApi(response.data));
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);

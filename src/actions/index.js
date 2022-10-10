@@ -24,6 +24,9 @@ export const UNSET_ERROR_FORM_MESSAGE = 'UNSET_ERROR_FORM_MESSAGE';
 export const IS_LOADING = 'IS_LOADING';
 export const SET_VALID_USER_FORM = 'SET_VALID_USER_FORM';
 export const UNSET_VALID_USER_FORM = 'UNSET_VALID_USER_FORM';
+export const DISPLAY_USER_PROFILE_FIELD = 'DISPLAY_USER_PROFILE_FIELD';
+export const SAVE_USER_DATA_FROM_API = 'SAVE_USER_DATA_FROM_API';
+export const GET_USER_DATA = 'GET_USER_DATA';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -143,4 +146,18 @@ export const setValidUserForm = () => ({
 
 export const unsetValidUserForm = () => ({
   type: UNSET_VALID_USER_FORM,
+});
+
+export const displayUserProfileField = (fieldIdentifier) => ({
+  type: DISPLAY_USER_PROFILE_FIELD,
+  identifier: fieldIdentifier,
+});
+
+export const saveUserDataFromApi = (response) => ({
+  type: SAVE_USER_DATA_FROM_API,
+  response: response,
+});
+
+export const getUserData = () => ({
+  type: GET_USER_DATA,
 });

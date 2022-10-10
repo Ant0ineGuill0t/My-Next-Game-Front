@@ -1,5 +1,5 @@
 // == Import
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   toggleLoginForm,
@@ -19,11 +19,13 @@ import Profil from '../../assets/images/Profil.png';
 
 function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isOpen = useSelector((state) => state.user.isOpen);
   const userEmail = useSelector((state) => state.user.email);
   const userPassword = useSelector((state) => state.user.password);
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
+  const userPseudo = useSelector((state) => state.user.userData.pseudo);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -75,7 +77,7 @@ function Header() {
                 onChange={(event) => {
                   dispatch(changeFieldUserLogin(event.target.value, 'email'));
                 }}
-                placeholder="Votre Email"
+                placeholder="Email"
               />
             </label>
             <label htmlFor="login-password">
@@ -89,7 +91,7 @@ function Header() {
                 onChange={(event) => {
                   dispatch(changeFieldUserLogin(event.target.value, 'password'));
                 }}
-                placeholder="Votre password"
+                placeholder="Password"
               />
             </label>
             <p className={errorMessage ? 'error-on' : 'error-off'}>Incorrect password/email !</p>
@@ -108,14 +110,21 @@ function Header() {
         </div>
       )}
       {isLogged && (
-        <div>
-          <p>Hello Admin !</p>
+        <div className="isLogged-div">
+          <p>Hello {userPseudo} !</p>
           <button
             type="button"
             className="logout-button"
             onClick={handleLogout}
           >
-            Log Out
+            Log out
+          </button>
+          <button
+            type="button"
+            className="profil-button"
+            onClick={() => navigate('/profile')}
+          >
+            Go to profile
           </button>
         </div>
       )}

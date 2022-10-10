@@ -1,0 +1,77 @@
+.profile-div{
+  background-color: #022829;
+  border: 2px solid #67CECD;
+  width: 90%;
+  height: 80vh;
+  border-radius: 2em;
+  margin-top: 1em;
+  padding: 1em;
+}
+.profile-intel {
+  display: flex;
+  justify-content: space-between;
+  height: 40%;
+}
+.profile-intel-label {
+  width:25%;
+  margin-bottom: 2rem;
+}
+.profile-title{
+  text-align: center;
+}
+.profile-intel-div {
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+.profile-intel-picture{
+  width: 100%;
+  object-fit: cover;
+  object-position: left top;
+  border: #67CECD 0.1em solid;
+  border-radius: 2em;
+}
+.profile-gear-input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.profile-content{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.profile-content label {
+  margin: 1rem;
+}
+.profile-content-email-input {
+  all:unset;
+}
+.profile-content-password-input{
+  all:unset;
+}
+.profile-content-confirm-password {
+  all:unset;
+}
+.profile-content-confirm-password-input{
+  all:unset;
+}
+.profile-content-pseudo-input{
+  all:unset;
+}
+.profile-content-email-input-hidden{
+  all:unset;
+}
+.profile-content-password-input-hidden{
+  all:unset;
+}
+.profile-content-confirm-password-hidden{
+  all:unset;
+}
+.profile-content-confirm-password-input-hidden{
+  all:unset;
+}
+.profile-content-pseudo-input-hidden{
+  all:unset;
+}
