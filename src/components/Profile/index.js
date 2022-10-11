@@ -1,7 +1,9 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { editUser } from 'src/actions';
 import Profil from '../../assets/images/Profil.png';
+import Gear from '../../assets/images/gear.png';
 
 function Profile() {
   const dispatch = useDispatch();
@@ -10,6 +12,14 @@ function Profile() {
   const [disablePassword, setDisablePassword] = useState(true);
   const [disablePseudo, setDisablePseudo] = useState(true);
   const [disableSubmitButton, setDisableSubmitButton] = useState(false);
+  const editAvatar = useSelector((state) => state.user.userData.avatar);
+  const editEmail = useSelector((state) => state.user.userData.email);
+  const editPassword = useSelector((state) => state.user.userData.password);
+  const editPseudo = useSelector((state) => state.user.userData.pseudo);
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log('submit changements');
+  }
   function handleEmail() {
     setDisableEmail(!disableEmail);
     setDisableSubmitButton(true);
@@ -25,17 +35,22 @@ function Profile() {
   return (
     <div className="profile-div">
       <h2 className="profile-title"> {userData.pseudo} place</h2>
-      <form className="profile-intel">
+      <form
+        className="profile-intel"
+        onSubmit={handleSubmit}
+      >
         <label
           htmlFor="profile-picture"
           className="profile-intel-label"
         >
-          <img src={Profil} alt="" className="profile-intel-picture" />
+          <img src={editAvatar} alt="" className="profile-intel-picture" />
           <input
             type="file"
             name="checkbox-gear"
             id="profile-picture"
             className="profile-gear-input"
+            value={editAvatar}
+            onChange={() => dispatch(editUser(editAvatar, 'avatar'))}
           />
         </label>
         <div className="profile-content">
@@ -43,7 +58,7 @@ function Profile() {
             htmlFor="profile-content-email"
             className="profile-content-email"
           >
-            Email : 
+            Email :
             <input
               className="profile-content-email-input"
               id="profile-content-email-input"
@@ -52,11 +67,14 @@ function Profile() {
               autoComplete="on"
               placeholder={userData.email}
               disabled={disableEmail}
+              value={editEmail}
+              onChange={() => dispatch(editUser(editEmail, 'email'))}
             />
             <button
               type="button"
               onClick={handleEmail}
-            >GEAR
+              className="gear-button"
+            ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
           <label htmlFor="profile-content-password" className="profile-content-password">
@@ -69,11 +87,14 @@ function Profile() {
               autoComplete="on"
               placeholder=" ****** "
               disabled={disablePassword}
+              value={editPassword}
+              onChange={() => dispatch(editUser(editPassword, 'password'))}
             />
             <button
               type="button"
               onClick={handlePassword}
-            >GEAR
+              className="gear-button"
+            ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
           <label htmlFor="profile-content-confirm-password" className={disablePassword ? 'password-off' : 'profile-content-confirm-password-input'}>
@@ -97,11 +118,14 @@ function Profile() {
               disabled={disablePseudo}
               name="profile-content-pseudo"
               autoComplete="on"
+              value={editPseudo}
+              onChange={() => dispatch(editUser(editPseudo, 'pseudo'))}
             />
             <button
               type="button"
               onClick={handlePseudo}
-            >GEAR
+              className="gear-button"
+            ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
           <button

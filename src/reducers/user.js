@@ -12,6 +12,7 @@ import {
   UNSET_ERROR_FORM_MESSAGE,
   SET_VALID_USER_FORM,
   UNSET_VALID_USER_FORM,
+  EDIT_USER,
 } from 'src/actions';
 
 const initialState = {
@@ -29,7 +30,8 @@ const initialState = {
   errorMessage: false,
   errorForm: [''],
   validUserForm: false,
-  userData: { },
+  userData: {
+  },
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -131,6 +133,32 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         validUserForm: false,
       };
+    case EDIT_USER:
+      if (action.identifier === 'email') {
+        return {
+          ...state,
+          userData: { ...state.userData, email: action.inputValue },
+        };
+      }
+      if (action.identifier === 'password') {
+        return {
+          ...state,
+          userData: { ...state.userData, password: action.inputValue },
+        };
+      }
+      if (action.identifier === 'pseudo') {
+        return {
+          ...state,
+          userData: { ...state.userData, pseudo: action.inputValue },
+        };
+      }
+      if (action.identifier === 'avatar') {
+        return {
+          ...state,
+          userData: { ...state.userData, avatar: action.inputValue },
+        };
+      }
+      break;
     default:
       return state;
   }
