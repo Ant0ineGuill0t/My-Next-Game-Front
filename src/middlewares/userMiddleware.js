@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   LOG_IN,
   GET_USER_DATA,
+  UPDATE_USER,
   saveUserData,
   saveUserDataFromApi,
   toggleLoginForm,
@@ -12,6 +13,8 @@ import {
   SEND_NEW_USER_FORM,
   setValidUserForm,
   getUserData,
+  TOGGLE_DONELIST,
+  TOGGLE_WISHLIST,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -26,7 +29,7 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          localStorage.setItem('token', response.data.token);
+          sessionStorage.setItem('token', response.data.token);
           console.log(response);
           store.dispatch(
             saveUserData(response.data.token),
@@ -65,7 +68,25 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then(() => {
           store.dispatch(clearLogStore());
-          localStorage.removeItem('token');
+          sessionStorage.removeItem('token');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case UPDATE_USER:
+      axios.patch(
+        'http://localhost:8000/api/user/edit',
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+        },
+      )
+        .then((response) => {
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -76,7 +97,7 @@ const userMiddleware = (store) => (next) => (action) => {
         'http://localhost:8000/api/user',
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
           withCredentials: true,
           credentials: 'include',
@@ -84,6 +105,44 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(saveUserDataFromApi(response.data));
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case TOGGLE_WISHLIST:
+      axios.post(
+        'http://localhost:8000/api/wishlist',
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+          user: store.getState().user.dataUser.pseudo,
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case TOGGLE_DONELIST:
+      axios.post(
+        'http://localhost:8000/api/donelist',
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+          user: store.getState().user.dataUser.pseudo,
+        },
+      )
+        .then((response) => {
           console.log(response);
         })
         .catch((error) => {

@@ -53,6 +53,9 @@
     .platforms{
       opacity: 1;
     }
+    .lists{
+      opacity: 1;
+    }
   }
   .note{
     left: -7em;
@@ -77,6 +80,11 @@
     z-index: 1;
     top: 20em;
     opacity: 0;
+  }
+  .lists{
+    position: absolute;
+    opacity: 0;
+    top: 40em;
   }
 }
 @media screen and (min-width: 2000px){
@@ -170,16 +178,43 @@
   justify-self: flex-end;
 }
 
-/* .gameWishlist{
-  width: 100%;
+.listButton{
+  all: unset;
+  z-index: 1;
+}
+
+.gameChecklist:hover{
+  content: url("../../../assets/images/ChecklistButtonDone.png");
+  filter: drop-shadow(0 0 0.3rem #9EF4F3);
+}
+
+.gameWishlist:hover{
+  content: url("../../../assets/images/WishlistButtonCheck.png");
+  filter: drop-shadow(0 0 0.3rem #9EF4F3);
+}
+
+.lists{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.gameWishlist{
+  width: max-content;
   display: flex;
   align-items: center;
   text-align: center;
   padding: 1em;
 }
-.gameWishlist p{
-  height: 1em;
-} */
+
+.gameChecklist{
+  width: max-content;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+}
 
 .circle {
   

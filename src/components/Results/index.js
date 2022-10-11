@@ -1,7 +1,7 @@
 // == Import
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { isLoading, restartQuizz } from '../../actions';
+import { restartQuizz } from '../../actions';
 
 // composants
 import Result from './Result';
@@ -14,7 +14,7 @@ function Results() {
   const gameDatas = useSelector((state) => state.game.gameData);
   console.log(imLoading);
 
-  const handleRestartClick = (event) => {
+  const handleRestartClick = () => {
     dispatch(restartQuizz());
   };
   const handleScroll = (event) => {

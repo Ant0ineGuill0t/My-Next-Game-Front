@@ -2,8 +2,7 @@
 import Popup from 'reactjs-popup';
 import { Navigate, useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from 'react';
 import previousArrow from 'src/assets/images/ArrowLeft.png';
 import nextArrow from 'src/assets/images/ArrowRight.png';
 // composants

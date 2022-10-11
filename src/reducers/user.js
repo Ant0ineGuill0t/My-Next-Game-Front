@@ -30,8 +30,7 @@ const initialState = {
   errorMessage: false,
   errorForm: [''],
   validUserForm: false,
-  userData: {
-  },
+  userData: {},
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -137,28 +136,29 @@ const reducer = (state = initialState, action = {}) => {
       if (action.identifier === 'email') {
         return {
           ...state,
-          userData: { ...state.userData, email: action.inputValue },
-        };
-      }
-      if (action.identifier === 'password') {
-        return {
-          ...state,
-          userData: { ...state.userData, password: action.inputValue },
+          userData: {
+            ...state.userData,
+            email: action.value,
+          },
         };
       }
       if (action.identifier === 'pseudo') {
         return {
           ...state,
-          userData: { ...state.userData, pseudo: action.inputValue },
+          userData: {
+            ...state.userData,
+            pseudo: action.value,
+          },
         };
       }
-      if (action.identifier === 'avatar') {
-        return {
-          ...state,
-          userData: { ...state.userData, avatar: action.inputValue },
-        };
-      }
-      break;
+      return {
+        ...state,
+        userData: {
+          ...state.userData,
+          avatar: action.value,
+        },
+      };
+
     default:
       return state;
   }
