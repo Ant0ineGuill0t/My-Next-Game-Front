@@ -212,11 +212,15 @@
 .logout-button {
   background-color: #001414;
   border: 2px solid #67CECD;
-  width: max-content;
-  margin: 1em auto;
+  width: 20%;
+  height: 1.3em;
+  margin: 1.3em auto;
   padding: 0.7em;
+  font-size: 0.8em;
   border-radius: 0.3em;
+  align-self: flex-end;
   all: unset;
+  text-align: center;
 }
 
 .logout-button:hover {
@@ -228,10 +232,14 @@
 .profil-button {
   background-color: #001414;
   border: 2px solid #67CECD;
-  width: max-content;
-  margin: 1em 1em;
+  width: 35%;
+  margin: 1.3em 1em;
+  text-align: center;
+  height: 1.3em;
   padding: 0.7em;
+  font-size: 0.8em;
   border-radius: 0.3em;
+  align-self: flex-end;
   all: unset;
 }
 .profil-button:hover {
@@ -256,9 +264,22 @@ display: none;
 }
 
 .avatar{
-  width: 2em;
   object-fit: contain;
+  width: 8em;
+  height: 6em;
+  border: 0.2em solid;
+  border-radius: 0.3em;
+  padding: 0.3em;
+  position: relative;
+  left: 7em;
 }
 .hello {
-  width: 50%;
+  width: 45%;
+  position: relative;
+  left: 10.5em;
+  margin-bottom: 2em;
+  height: max-content;
+}
+.isLogged-div{
+  display: flex;
 }
