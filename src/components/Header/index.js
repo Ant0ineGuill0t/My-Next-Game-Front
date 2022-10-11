@@ -111,7 +111,7 @@ function Header() {
       )}
       {isLogged && (
         <div className="isLogged-div">
-          <p>Hello {userPseudo} !</p>
+          <h3 className="isLogged-title">Hello {userPseudo} !</h3>
           <button
             type="button"
             className="logout-button"
