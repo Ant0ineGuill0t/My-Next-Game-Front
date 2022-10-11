@@ -29,6 +29,7 @@ const gameMiddleware = (store) => (next) => (action) => {
           const sessId = response.data.sessionId;
           store.dispatch(saveQuizzId(idQuiz, sessId));
           store.dispatch(displayNextQuestion());
+          store.getState().game.loading = true;
         })
         .catch((error) => {
           console.log(error);

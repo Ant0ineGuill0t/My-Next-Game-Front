@@ -27,7 +27,7 @@ import './styles.css';
 // == Composant
 function App() {
   const dispatch = useDispatch();
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   if (token) {
     dispatch(toggleIsLogged());
     dispatch(getUserData());

@@ -27,6 +27,9 @@ export const UNSET_VALID_USER_FORM = 'UNSET_VALID_USER_FORM';
 export const SAVE_USER_DATA_FROM_API = 'SAVE_USER_DATA_FROM_API';
 export const GET_USER_DATA = 'GET_USER_DATA';
 export const EDIT_USER = 'EDIT_USER';
+export const UPDATE_USER = 'UPDATE_USER';
+export const TOGGLE_WISHLIST = 'TOGGLE_WISHLIST';
+export const TOGGLE_DONELIST = 'TOGGLE_DONELIST';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -161,4 +164,16 @@ export const editUser = (inputValue, identifier) => ({
   type: EDIT_USER,
   value: inputValue,
   identifier: identifier,
+});
+
+export const updateUser = () => ({
+  type: UPDATE_USER,
+});
+
+export const toggleWishlist = () => ({
+  type: TOGGLE_WISHLIST,
+});
+
+export const toggleAddList = () => ({
+  type: TOGGLE_DONELIST,
 });

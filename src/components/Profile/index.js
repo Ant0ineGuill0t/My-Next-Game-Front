@@ -1,12 +1,15 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { editUser } from 'src/actions';
-import Profil from '../../assets/images/Profil.png';
+import { useState, useRef } from 'react';
+import { editUser, updateUser } from 'src/actions';
 import Gear from '../../assets/images/gear.png';
+import Card from './card';
 
 function Profile() {
   const dispatch = useDispatch();
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const pseudoRef = useRef(null);
   const userData = useSelector((state) => state.user.userData);
   const [disableEmail, setDisableEmail] = useState(true);
   const [disablePassword, setDisablePassword] = useState(true);
@@ -14,23 +17,28 @@ function Profile() {
   const [disableSubmitButton, setDisableSubmitButton] = useState(false);
   const editAvatar = useSelector((state) => state.user.userData.avatar);
   const editEmail = useSelector((state) => state.user.userData.email);
-  const editPassword = useSelector((state) => state.user.userData.password);
+  // const editPassword = useSelector((state) => state.user.userData.password);
   const editPseudo = useSelector((state) => state.user.userData.pseudo);
+  const gameDatas = useSelector((state) => state.game.gameData);
   function handleSubmit(event) {
     event.preventDefault();
+    dispatch(updateUser());
     console.log('submit changements');
   }
   function handleEmail() {
     setDisableEmail(!disableEmail);
     setDisableSubmitButton(true);
+    setTimeout(() => emailRef.current.focus(), 0);
   }
   function handlePseudo() {
     setDisablePseudo(!disablePseudo);
     setDisableSubmitButton(true);
+    setTimeout(() => pseudoRef.current.focus(), 0);
   }
   function handlePassword() {
     setDisablePassword(!disablePassword);
     setDisableSubmitButton(true);
+    setTimeout(() => passwordRef.current.focus(), 0);
   }
   return (
     <div className="profile-div">
@@ -50,7 +58,7 @@ function Profile() {
             id="profile-picture"
             className="profile-gear-input"
             value={editAvatar}
-            onChange={() => dispatch(editUser(editAvatar, 'avatar'))}
+            onChange={(event) => dispatch(editUser(event.current.target, 'avatar'))}
           />
         </label>
         <div className="profile-content">
@@ -60,15 +68,16 @@ function Profile() {
           >
             Email :
             <input
-              className="profile-content-email-input"
+              className={disableEmail ? 'profile-content-email-input' : 'profile-content-email-input  borderInput'}
               id="profile-content-email-input"
               type="email"
+              ref={emailRef}
               name="profile-content-email"
               autoComplete="on"
               placeholder={userData.email}
               disabled={disableEmail}
               value={editEmail}
-              onChange={() => dispatch(editUser(editEmail, 'email'))}
+              onChange={(event) => dispatch(editUser(event.current.target, 'email'))}
             />
             <button
               type="button"
@@ -80,15 +89,16 @@ function Profile() {
           <label htmlFor="profile-content-password" className="profile-content-password">
             Password :
             <input
-              className="profile-content-password-input"
+              className={disablePassword ? 'profile-content-password-input' : 'profile-content-password-input  borderInput'}
               id="profile-content-password-input"
+              ref={passwordRef}
               type="password"
               name="profile-content-password"
               autoComplete="on"
               placeholder=" ****** "
+              value=""
               disabled={disablePassword}
-              value={editPassword}
-              onChange={() => dispatch(editUser(editPassword, 'password'))}
+              onChange={(event) => dispatch(editUser(event.current.target, 'password'))}
             />
             <button
               type="button"
@@ -97,10 +107,10 @@ function Profile() {
             ><img src={Gear} alt="" className="gear" />
             </button>
           </label>
-          <label htmlFor="profile-content-confirm-password" className={disablePassword ? 'password-off' : 'profile-content-confirm-password-input'}>
+          <label htmlFor="profile-content-confirm-password" className={disablePassword ? 'password-off' : 'profile-content-confirm-password-label'}>
             confirm your password :
             <input
-              className="profile-content-confirm-password-input"
+              className={disablePassword ? 'profile-content-confirm-password-input' : 'profile-content-confirm-password-input  borderInput'}
               id="profile-content-confirm-password-input"
               type="password"
               name="profile-content-confirm-password"
@@ -109,17 +119,18 @@ function Profile() {
             />
           </label>
           <label htmlFor="profile-content-pseudo" className="profile-content-pseudo">
-            pseudo :
+            Pseudo :
             <input
-              className="profile-content-pseudo-input"
+              className={disablePseudo ? 'profile-content-pseudo-input' : 'profile-content-pseudo-input  borderInput'}
               id="profile-content-pseudo-input"
               type="pseudo"
+              ref={pseudoRef}
               placeholder={userData.pseudo}
               disabled={disablePseudo}
               name="profile-content-pseudo"
               autoComplete="on"
               value={editPseudo}
-              onChange={() => dispatch(editUser(editPseudo, 'pseudo'))}
+              onChange={(event) => dispatch(editUser(event.current.target, 'pseudo'))}
             />
             <button
               type="button"
@@ -135,12 +146,26 @@ function Profile() {
           </button>
         </div>
       </form>
-      {/* <div className="profil-wishlist">
+      <div className="profil-wishlist">
         <p>WishList</p>
+        <ul className="scrollZoneWishlist">
+          {
+            gameDatas.map(
+              (gameData) => <li key={gameData.id}><Card {...gameData} /></li>,
+            )
+          }
+        </ul>
       </div>
       <div className="profil-done">
         <p>Done</p>
-      </div> */}
+        <ul className="scrollZoneChecklist">
+          {
+            gameDatas.map(
+              (gameData) => <li key={gameData.id}><Card {...gameData} /></li>,
+            )
+          }
+        </ul>
+      </div>
     </div>
 
   );

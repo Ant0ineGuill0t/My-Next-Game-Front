@@ -1,0 +1,113 @@
+@media screen and (max-width: 899px) {
+  .card {
+    height: 100%;
+    width: 18.5em;
+    box-sizing: border-box;
+  }
+
+  .cardImg {
+    height: 50%;
+    border-radius: 1em 1em 0 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    height: 100%;
+    width: 20.5em;
+    box-sizing: border-box;
+  }
+
+  .cardImg {
+    height: 50%;
+    border-radius: 1em 1em 0 0;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .card {
+    height: 100%;
+    width: 20.5em;
+    box-sizing: border-box;
+  }
+
+  .card:hover {
+    .cardImg {
+      opacity: 0.2;
+    }
+
+    .gamesTitle {
+      opacity: 1;
+    }
+  }
+
+  .cardImg {
+    height: 100%;
+    border-radius: 1em;
+  }
+
+  .gamesTitle {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .card {
+    height: 100%;
+    width: 30.5em;
+    box-sizing: border-box;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #022829;
+  border-radius: 1em;
+  box-shadow: 0 0 1rem #001414;
+  transition: 0.2s ease-out;
+  position: relative;
+  left: 0em;
+  margin: 1em;
+}
+
+.card:hover {
+  box-shadow: 0 0 1rem #ff9633;
+}
+
+.card:active {
+  box-shadow: 0 0 0.2rem #ff9633;
+}
+
+.cardImg {
+  width: 100%;
+  object-fit: cover;
+  justify-content: flex-start;
+  text-align: center;
+  position: relative;
+}
+
+.gamesTitle {
+  margin: 1em 0;
+  width: 100%;
+  text-align: center;
+  white-space: pre-wrap;
+  height: 2em;
+}
+
+.card p {
+  text-align: center;
+  padding: 1em;
+  height: 1em;
+}
+
+.stroke {
+  stroke: #ff9633;
+  stroke-dasharray: 324;
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}

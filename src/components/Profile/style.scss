@@ -43,6 +43,7 @@
 }
 .profile-content label {
   margin: 1rem;
+  width: max-content;
 }
 .profile-content-email-input {
   all:unset;
@@ -58,6 +59,19 @@
 .profile-content-pseudo-input{
   all:unset;
 }
+
+.borderInput{
+  border: 0.2em solid #67CECD;
+  border-radius: 0.5em;
+  padding: 0.3em;
+}
+
+.profile-content-password-input:focus, .profile-content-confirm-password-input:focus, .profile-content-pseudo-input:focus, .profile-content-email-input:focus{
+  border: 0.2em solid #ff9633;
+  border-radius: 0.5em;
+  padding: 0.3em;
+}
+
 .submit-on {
   text-align: center;
   width: 15%;
@@ -79,9 +93,121 @@
   width: 2rem;
   height: 2rem;
   all: unset;
+  margin-left: 0.5em;
 }
 .gear{
   width: 2rem;
   height: 2rem;
 }
+
+.profil-wishlist{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.profil-wishlist p{
+  width: max-content;
+  height: max-content;
+}
+
+.scrollZoneWishlist{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.profil-done{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.profil-done p{
+  width: max-content;
+  height: max-content;
+}
+
+.scrollZoneChecklist{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-around;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.cardList {
+
+  display: flex;
+  width: 10em;
+
+  flex-direction: column;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  background-color: #022829;
+
+  border-radius: 1em;
+
+  box-shadow: 0 0 1rem #001414;
+
+/*   margin-left: -50px; */
+
+  transition: 0.2s ease-out;
+
+  position: relative;
+
+  left: 0em;
+
+  margin: 1em;
+
+}
+
+.cardList:hover {
+  box-shadow: 0 0 1rem #ff9633;
+    .cardImg{
+      opacity: 0.2;
+    }
+    .gamesTitleWishlist{
+      opacity: 1;
+    }
+    .circle{
+      opacity: 1;
+    }
+    .platforms{
+      opacity: 1;
+    }
+}
+
+.gamesTitleWishlist{
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  top: 30%;
+  width: 100%;
+  white-space: break-spaces;
+  text-align: center;
+}
+.cardList:active{
+  box-shadow: 0 0 0.2rem #ff9633;
+}
+
 
