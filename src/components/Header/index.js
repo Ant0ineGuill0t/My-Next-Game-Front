@@ -26,6 +26,7 @@ function Header() {
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
   const userPseudo = useSelector((state) => state.user.userData.pseudo);
+  const editAvatar = useSelector((state) => state.user.userData.avatar);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -111,7 +112,8 @@ function Header() {
       )}
       {isLogged && (
         <div className="isLogged-div">
-          <p>Hello {userPseudo} !</p>
+          <img className="avatar" src={editAvatar} alt="avatar" />
+          <p className="hello">Hello {userPseudo} !</p>
           <button
             type="button"
             className="logout-button"

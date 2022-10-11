@@ -2,13 +2,34 @@
   .home-content{
     margin: 3rem;
     text-align: center;
-    }
+    white-space: normal;
+  }
 }
 
 @media screen and (min-width: 1920px){
   .home-content{
     margin: 1rem;
     text-align: center;
+    }
+    .animation{
+      display: inline;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .5em solid;
+      width: max-content;
+      white-space: nowrap;
+      animation: 
+        typing 2.5s steps(120, end),
+        blinking 1s step-end infinite,;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blinking {
+      from, to { border-color: transparent; }
+      50% { border-color: #ff9633; }
     }
 }
 
@@ -34,27 +55,6 @@
 
 .home-content{
 text-align: center;
-}
-
-.animation{
-  display: inline;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  border-right: .5em solid;
-  width: max-content;
-  animation: 
-    typing 2.5s steps(120, end),
-    blinking 1s step-end infinite,;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blinking {
-  from, to { border-color: transparent; }
-  50% { border-color: #ff9633; }
 }
 
 .home-button{

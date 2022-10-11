@@ -2,6 +2,7 @@ import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useRef } from 'react';
 import { editUser, updateUser } from 'src/actions';
+import Avatar from 'react-avatar-edit';
 import Gear from '../../assets/images/gear.png';
 import Card from './card';
 
@@ -40,6 +41,7 @@ function Profile() {
     setDisableSubmitButton(true);
     setTimeout(() => passwordRef.current.focus(), 0);
   }
+
   return (
     <div className="profile-div">
       <h2 className="profile-title"> {userData.pseudo} place</h2>
@@ -57,8 +59,7 @@ function Profile() {
             name="checkbox-gear"
             id="profile-picture"
             className="profile-gear-input"
-            value={editAvatar}
-            onChange={(event) => dispatch(editUser(event.current.target, 'avatar'))}
+            onChange={(event) => dispatch(editUser(window.URL.createObjectURL(event.target.files[0]), 'avatar'))}
           />
         </label>
         <div className="profile-content">
@@ -76,8 +77,7 @@ function Profile() {
               autoComplete="on"
               placeholder={userData.email}
               disabled={disableEmail}
-              value={editEmail}
-              onChange={(event) => dispatch(editUser(event.current.target, 'email'))}
+              onChange={(event) => dispatch(editUser(event.target.value, 'email'))}
             />
             <button
               type="button"
@@ -96,9 +96,8 @@ function Profile() {
               name="profile-content-password"
               autoComplete="on"
               placeholder=" ****** "
-              value=""
               disabled={disablePassword}
-              onChange={(event) => dispatch(editUser(event.current.target, 'password'))}
+              onChange={(event) => dispatch(editUser(event.target.value, 'password'))}
             />
             <button
               type="button"
@@ -129,8 +128,7 @@ function Profile() {
               disabled={disablePseudo}
               name="profile-content-pseudo"
               autoComplete="on"
-              value={editPseudo}
-              onChange={(event) => dispatch(editUser(event.current.target, 'pseudo'))}
+              onChange={(event) => dispatch(editUser(event.target.value, 'pseudo'))}
             />
             <button
               type="button"

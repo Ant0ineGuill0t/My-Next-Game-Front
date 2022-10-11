@@ -254,3 +254,11 @@ display: none;
 .create-user-button:hover{
   color: #ff9633;
 }
+
+.avatar{
+  width: 2em;
+  object-fit: contain;
+}
+.hello {
+  width: 50%;
+}
