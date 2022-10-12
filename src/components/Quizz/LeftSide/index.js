@@ -27,17 +27,17 @@ function LeftSide() {
     }
   };
   return (
-    <div className="leftSide">
-      <div className="checkboxes">
+    <div className="left-side">
+      <div className="left-side__checkboxes">
         {
           values.map(
             (choice) => (
-              <label key={choice} htmlFor={`checkbox ${choice}`}>
-                <img className="checkbox__img" src={NeonButton} alt="checkbox" />
+              <label key={choice} htmlFor={`checkboxes ${choice}`}>
+                <img className="checkboxes__image" src={NeonButton} alt="checkbox" />
                 <input
                   type="checkbox"
-                  name={`checkbox ${choice}`}
-                  id={`checkbox ${choice}`}
+                  name={`checkboxes ${choice}`}
+                  id={`checkboxes ${choice}`}
                   value={choice}
                   onClick={handleClick}
                 />
@@ -45,24 +45,8 @@ function LeftSide() {
             ),
           )
         }
-        {/* <label htmlFor="checkbox2">
-          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
-          <input type="checkbox" name="checkbox2" id="checkbox2" />
-        </label>
-        <label htmlFor="checkbox3">
-          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
-          <input type="checkbox" name="checkbox3" id="checkbox3" />
-        </label>
-        <label htmlFor="checkbox4">
-          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
-          <input type="checkbox" name="checkbox4" id="checkbox4" />
-        </label>
-        <label htmlFor="checkbox5">
-          <img className="checkbox__img" src={NeonButton} alt="checkbox" />
-          <input type="checkbox" name="checkbox1" id="checkbox5" />
-        </label> */}
       </div>
-      <div className="responses">
+      <div className="left-side__responses">
         {
           keys.map(
             (key) => <p key={key}>{key}</p>,

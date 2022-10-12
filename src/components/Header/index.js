@@ -46,30 +46,34 @@ function Header() {
   };
   return (
     <header className="header">
-      <Link to="/"><h1 className="h1"><img className="header-logo" src={Logo} alt="" onClick={() => dispatch(unsetErrorFormMessage())} /></h1></Link>
+      <Link to="/">
+        <h1 className="header__title">
+          <img className="header__title__logo" src={Logo} alt="" onClick={() => dispatch(unsetErrorFormMessage())} />
+        </h1>
+      </Link>
       {!isLogged && (
-        <div>
+        <div className="header__not-logged">
           <button
             type="button"
-            className={isOpen ? 'userButton_off' : 'userButton_on'}
+            className={isOpen ? 'not-logged__user-button_off' : 'not-logged__user-button_on'}
             onClick={handleLogin}
           >
-            <img className="logoProfil" src={Profil} alt="logo du profil" />
+            <img className="user-button__logo" src={Profil} alt="profile logo" />
           </button>
           <form
-            className={isOpen ? 'login_on' : 'login_off'}
+            className={isOpen ? 'header__form-login_on' : 'header__form-login_off'}
             onSubmit={handleSubmit}
           >
             <button
               type="button"
-              className="login-button-close"
+              className="form-login__close-button"
               onClick={handleClick}
             >
-              <p className="login-button-plus">+</p>
+              <p className="form-login__close-button__plus">+</p>
             </button>
-            <label htmlFor="login-email">
+            <label htmlFor="form-login__email">
               <input
-                className="login-email"
+                className="form-login__email"
                 id="email"
                 type="text"
                 name="email"
@@ -80,9 +84,9 @@ function Header() {
                 placeholder="Email"
               />
             </label>
-            <label htmlFor="login-password">
+            <label htmlFor="form-login__password">
               <input
-                className="login-password"
+                className="form-login__password"
                 id="password"
                 type="password"
                 name="password"
@@ -94,14 +98,14 @@ function Header() {
                 placeholder="Password"
               />
             </label>
-            <p className={errorMessage ? 'error-on' : 'error-off'}>Incorrect password/email !</p>
-            <button type="submit" className="login-button">
+            <p className={errorMessage ? 'form-login__error-on' : 'form-login__error-off'}>Incorrect password/email !</p>
+            <button type="submit" className="form-login__button">
               Log In
             </button>
             <Link to="/login-form">
               <button
                 type="button"
-                className="create-user-button"
+                className="form-login__create-user-button"
                 onClick={() => dispatch(toggleLoginForm())}
               >Sign In
               </button>
@@ -110,18 +114,18 @@ function Header() {
         </div>
       )}
       {isLogged && (
-        <div className="isLogged-div">
-          <h3 className="isLogged-title">Hello {userPseudo} !</h3>
+        <div className="header__is-logged">
+          <h3 className="is-logged__title">Hello {userPseudo} !</h3>
           <button
             type="button"
-            className="logout-button"
+            className="is-logged__logout-button"
             onClick={handleLogout}
           >
             Log out
           </button>
           <button
             type="button"
-            className="profil-button"
+            className="is-logged__profil-button"
             onClick={() => navigate('/profile')}
           >
             Go to profile

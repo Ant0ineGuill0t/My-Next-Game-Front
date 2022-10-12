@@ -1,23 +1,20 @@
-.leftSide{
+.left-side{
   display: flex;
   width: 30%;
   margin-top: 2em;
 }
-
-.responses{
+.left-side__responses{
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.responses p{
+.left-side__responses p{
   font-size: 1em;
   width: 15em;
   margin: 0.5em;
 }
-
-.checkboxes{
+.left-side__checkboxes{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,23 +27,18 @@
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none
-
 }
-
-.checkbox__img{
+.checkboxes__img{
   width: 3em;
 }
-
-.checkbox__img:active{
+.checkboxes__image:active{
   content: url("../../../assets/images/neonbutton-pushed-colored.png");
   filter: drop-shadow(0 0 0.75rem #9EF4F3);
 }
-
-.checkboxes input{
+.left-side__checkboxes input{
   width: 10%;
   all: unset;
 }
-
-.checkboxes label{
+.left-side__checkboxes label{
   width: 10%;
 }

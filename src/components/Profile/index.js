@@ -41,10 +41,10 @@ function Profile() {
     setTimeout(() => passwordRef.current.focus(), 0);
   }
   return (
-    <div className="profile-div">
-      <h2 className="profile-title"> {userData.pseudo} place</h2>
+    <div className="profile">
+      <h2 className="profile__title"> {userData.pseudo} place</h2>
       <form
-        className="profile-intel"
+        className="profile__form"
         onSubmit={handleSubmit}
       >
         <label

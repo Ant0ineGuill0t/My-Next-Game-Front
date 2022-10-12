@@ -10,7 +10,7 @@
 }
 }
 @media screen and (min-width: 800px){
-  .create-login-input {
+  .form__input {
     float: right;
   background-color: #001414;
   border: 2px solid #ff9633;
@@ -22,29 +22,29 @@
   }
 }
 @media screen and (min-width: 1080px){
-  .create-login{
+  .form{
     padding-bottom:12rem;
   }
 }
 
-.div-page-create {
+.create-user {
   width: 50%;
 }
 
-.create-login{
+.create-user__form{
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
 }
 
-.create-login-title{
+.create-user__title{
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 2rem;
 }
 
-.create-login-input {
+.form__input {
   float: right;
   background-color: #001414;
   border: 2px solid #ff9633;
@@ -55,7 +55,7 @@
   all: unset;
 }
 
-.create-login-submit {
+.form__submit {
   text-align: center;
   background-color: #022829;
   border: 2px solid #ff9633;
@@ -69,11 +69,11 @@
   cursor: pointer;
 }
 
-.create-login-error {
+.form__error {
   font-size: .8rem;
   color: red;
 }
-.create-login-password-info{
+.form__password-info{
   border: 1px solid;
   font-size: .5rem;
   padding: 0.2rem;

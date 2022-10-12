@@ -41,18 +41,18 @@ function LoginForm() {
     }
   }
   return (
-    <div className="div-page-create">
+    <div className="create-user">
       {!validUserForm && (
         <>
-          <h2 className="create-login-title">Sign in form</h2>
+          <h2 className="create-user__title">Sign in form</h2>
           <form
-            className="create-login"
+            className="create-user__form"
             onSubmit={handleSubmit}
           >
-            <label htmlFor="create-login-label" className="create-login-label">
+            <label htmlFor="form__input" className="form__label">
               Email address
               <input
-                className="create-login-input"
+                className="form__input"
                 id="createEmail"
                 type="email"
                 name="email"
@@ -64,10 +64,10 @@ function LoginForm() {
                 }}
               />
             </label>
-            <label htmlFor="create-login-label" className="create-login-label">
+            <label htmlFor="form__input" className="form__label">
               Pseudo
               <input
-                className="create-login-input"
+                className="form__input"
                 id="createPseudo"
                 type="pseudo"
                 name="pseudo"
@@ -79,10 +79,10 @@ function LoginForm() {
                 }}
               />
             </label>
-            <label htmlFor="create-login-label" className="create-login-label">
-              Password <span className="infobulle" aria-label="Password must contain 8 letters, 1 Uppercase and 1 special caracters">?</span>
+            <label htmlFor="form__input" className="form__label">
+              Password <span className="infobulle" aria-label="Password must contain 8 letters, 1 number and 1 special caracters">?</span>
               <input
-                className="create-login-input"
+                className="form__input"
                 id="createPassword"
                 type="password"
                 name="password"
@@ -95,10 +95,10 @@ function LoginForm() {
                 }}
               />
             </label>
-            <label htmlFor="create-login-label" className="create-login-label">
+            <label htmlFor="form__input" className="form__label">
               Confirm your password
               <input
-                className="create-login-input"
+                className="form__input"
                 id="comfirmPassword"
                 type="password"
                 name="password"
@@ -111,10 +111,10 @@ function LoginForm() {
                 }}
               />
             </label>
-            <label htmlFor="create-login-label" className="create-login-label">
+            <label htmlFor="form__input" className="form__label">
               Birthdate
               <input
-                className="create-login-input"
+                className="form__input"
                 id="addAge"
                 type="date"
                 name="addAge"
@@ -130,11 +130,11 @@ function LoginForm() {
               {/* <span className="validity" /> */}
             </label>
             {errorForm.map(
-              (message) => <p className="create-login-error" key={message}>{message}</p>,
+              (message) => <p className="form__error" key={message}>{message}</p>,
             )}
             <button
               type="submit"
-              className="create-login-submit"
+              className="form__submit"
               onClick={() => dispatch(unsetErrorFormMessage(''))}
             >
               Send

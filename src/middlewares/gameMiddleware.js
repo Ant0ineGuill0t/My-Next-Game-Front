@@ -47,12 +47,9 @@ const gameMiddleware = (store) => (next) => (action) => {
           credentials: 'include',
         },
       )
-        .then((response) => {
-          console.log('quizz recommencé');
+        .then(() => {
           store.dispatch(isLoading(!store.getState().game.loading));
           store.dispatch(displayQuizz());
-          console.log(store.getState().game.loading);
-          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -73,7 +70,6 @@ const gameMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           const { question, choices, questionNumber } = response.data;
           store.dispatch(saveQuestion(question, choices, questionNumber));
-          console.log(response);
         })
         .catch((error) => {
           console.log(error);
@@ -134,8 +130,6 @@ const gameMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           store.dispatch(isLoading(!store.getState().game.loading));
           store.dispatch(saveResults(response));
-          console.log(response);
-          console.log(store.getState().game.loading);
         })
         .catch((error) => {
           console.log(error);

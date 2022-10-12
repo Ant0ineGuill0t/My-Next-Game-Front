@@ -10,7 +10,6 @@
     height: 80vh;
   }
 }
-
 .faq{
   display: flex;
   flex-direction: column;
@@ -18,15 +17,12 @@
   text-align: left;
   overflow: auto;
 }
-
-.faq-main-title{
+.faq__main-title{
   text-align: center;
   padding: 1rem;
   font-size: 2rem;
   line-height: 2.5rem;
 }
-
-.faq-title{
+.faq__title{
   padding: 1rem 0;
 }
-
