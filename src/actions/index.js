@@ -170,8 +170,10 @@ export const updateUser = () => ({
   type: UPDATE_USER,
 });
 
-export const toggleWishlist = () => ({
+export const toggleWishlist = (id, name) => ({
   type: TOGGLE_WISHLIST,
+  apiId: id,
+  name: name,
 });
 
 export const toggleAddList = () => ({

@@ -27,8 +27,6 @@ function Header() {
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
   const userPseudo = useSelector((state) => state.user.userData.pseudo);
-  const editAvatar = useSelector((state) => state.user.userData.avatar);
-  const [isMenu, setIsMenu] = useState(false);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -42,16 +40,12 @@ function Header() {
     dispatch(logOut());
     dispatch(clearLogStore());
     dispatch(toggleIsLogged());
-    setIsMenu(false);
   };
   const handleLogin = () => {
     dispatch(toggleLoginForm());
     dispatch(unsetValidUserForm());
   };
-  const handleAvatarClick = () => {
-    setIsMenu(!isMenu);
-    console.log(isMenu);
-  };
+
   return (
     <header className="header">
       <Link to="/">
@@ -123,28 +117,23 @@ function Header() {
       )}
       {isLogged && (
         <div className="header__logged">
-
           <p className="logged__message">Hello {userPseudo} !</p>
-          <img onClick={handleAvatarClick} className="logged__avatar" src={editAvatar} alt="avatar" />
-          <div className={isMenu ? 'logged__menu_on' : 'logged__menu_off'}>
-            <button
-              type="button"
-              className=".logged__logout-button"
-              onClick={handleLogout}
-            >
-              Log out
-            </button>
-            <button
-              type="button"
-              className="logged__profil-button"
-              onClick={() => {
-                navigate('/profile');
-                setIsMenu(false);
-              }}
-            >
-              Go to profile
-            </button>
-          </div>
+          <button
+            type="button"
+            className="logged__logout-button"
+            onClick={handleLogout}
+          >
+            Log out
+          </button>
+          <button
+            type="button"
+            className="logged__profil-button"
+            onClick={() => {
+              navigate('/profile');
+            }}
+          >
+            Go to profile
+          </button>
         </div>
       )}
     </header>
