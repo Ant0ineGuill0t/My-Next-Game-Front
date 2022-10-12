@@ -35,9 +35,10 @@
     height: 80%;
   }
 }
-
 @media screen and (min-width: 1280px){
   .quizz{
+: 19em 0;
+
     height: 80vh;
   }
   .quizz-container{
@@ -50,7 +51,6 @@
     height: 50vh;
   }
 }
-
 @media screen and (min-width: 1920px){
   .quizz{
     height: 78vh;
@@ -62,7 +62,6 @@
     height: max-content;
   }
 }
-
 .quizz{
   width: 100%;
   margin: 0 2em;
@@ -83,27 +82,19 @@
   -ms-user-select: none
 }
 .quizz button{
-
   all: unset;
   width: 5em;
 }
-
-h2{
+.quizz__title{
   font-size: 1.4em;
   font-weight: bold;
   margin: 0.5em 0;
   height: 5%;
 }
-
-.questionDiv{
+.quizz__div{
 width: 100%;
 }
-
-.question{
+.quizz__div__question{
   margin-top: 1em;
   width: 100%;
 }
-
-
-
-

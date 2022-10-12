@@ -42,41 +42,43 @@ function Game() {
       setkeyIndex(0);
     }
   };
-
   const isOpening = (key) => {
     setkeyIndex(key);
     setOpen(true);
   };
-
   const closeModal = () => {
     setOpen(false);
   };
   return (
     <>
       <div className="game">
-        <h2 className="gameTitle">{game.name}</h2>
-        <img src={`https://images.igdb.com/igdb/image/upload/t_720p/${game.cover.image_id}.jpg`} alt={game.name} className="gameImg" />
-        <div className="gameLeft">
-          <div className="gameLeftRelease">
+        <h2 className="game__title">{game.name}</h2>
+        <img
+          src={`https://images.igdb.com/igdb/image/upload/t_720p/${game.cover.image_id}.jpg`}
+          alt={game.name}
+          className="game__image"
+        />
+        <div className="game__left">
+          <div className="game__left__Release">
             <h3>Release Date :</h3>
             <p>{humanDateFormat}</p>
           </div>
-          <div className="gameLeftPegi">
+          <div className="game__left__pegi">
             <h3>PEGI :</h3>
             <p>{game.first_release_date}</p>
           </div>
-          <div className="gameLeftType">
+          <div className="game__left__type">
             <h3>Genre/themes :</h3>
             <ul>{game.genres.map(
               (genre) => <li key={genre.id}>{genre.name} </li>,
             )}
             </ul>
           </div>
-          <div className="gameLeftRate">
+          <div className="game__left__rate">
             <h3>Rating :</h3>
-            <p className="noteGame">{gameNote}/100</p>
+            <p>{gameNote}/100</p>
           </div>
-          <div className="gameLeftPlateform">
+          <div className="game__left__plateform">
             <h3>Plateforms :</h3>
             <ul>{game.platforms.map(
               (platform) => <li key={platform.id}>{platform.name} </li>,
@@ -84,22 +86,46 @@ function Game() {
             </ul>
           </div>
         </div>
-        <div className="gameRight">
-          <p className="pitch">{game.summary}</p>
+        <div className="game__right">
+          <p className="game__right__pitch">{game.summary}</p>
         </div>
-        <div className="images">
+        <div className="game__images">
           {game.screenshots.map(
             (screenshot, key, array) => (
-              <Popup onOpen={() => isOpening(key)} closeOnDocumentClick key={screenshot.id} modal trigger={<img src={`https://images.igdb.com/igdb/image/upload/t_720p/${screenshot.image_id}.jpg`} className="gameplay" alt="screenshots" />} onClose={closeModal} position="right center">
-                <a className="prev"><img onClick={() => handlePreviousClick(key)} className="prevImg" src={previousArrow} alt="previousArrow" /></a>
-                <img src={`https://images.igdb.com/igdb/image/upload/t_720p/${array[keyIndex].image_id}.jpg`} className="gameplayBig" alt="screenshots" />
-                <a className="next"><img onClick={() => handleNextClick(key)} className="nextImg" src={nextArrow} alt="nextArrow" /></a>
+              <Popup
+                onOpen={() => isOpening(key)}
+                closeOnDocumentClick
+                key={screenshot.id}
+                modal
+                trigger={(
+                  <img
+                    src={`https://images.igdb.com/igdb/image/upload/t_720p/${screenshot.image_id}.jpg`}
+                    className="game__images__gameplay"
+                    alt="screenshots"
+                  />
+                )}
+                onClose={closeModal}
+                position="right center"
+              >
+                <a className="game__images_previous">
+                  <img onClick={() => handlePreviousClick(key)} className="game__images__previous-image" src={previousArrow} alt="previousArrow" />
+                </a>
+                <img
+                  src={`https://images.igdb.com/igdb/image/upload/t_720p/${array[keyIndex].image_id}.jpg`}
+                  className="game__images__gameplay_big"
+                  alt="screenshots"
+                />
+                <a className="game__images_next">
+                  <img onClick={() => handleNextClick(key)} className="game__images__next-image" src={nextArrow} alt="nextArrow" />
+                </a>
               </Popup>
             ),
           )}
         </div>
       </div>
-      <Link to="/quizz/results" className="returnResults"><button type="button" className="returnResultsButton">Return</button></Link>
+      <Link to="/quizz/results" className="return-results">
+        <button type="button" className="return-results__button">Return</button>
+      </Link>
     </>
   );
 }

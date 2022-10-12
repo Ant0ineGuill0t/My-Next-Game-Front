@@ -1,6 +1,5 @@
 // == Import
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 // composants
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';

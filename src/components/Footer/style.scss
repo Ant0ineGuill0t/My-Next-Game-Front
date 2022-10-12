@@ -3,13 +3,11 @@
     margin: 2em 0 0 0;
   }
 }
-
 @media screen and (min-width: 380px){
   .footer{
     margin: 3em 0 0 0;
   }
 }
-
 @media screen and (min-width: 900px){
   .footer{
     margin: 2.7em 0 0 0;
@@ -22,18 +20,15 @@
   align-items: center;
   align-self: flex-end;
 }
-
 .footer a{
   padding: 0 0.5em;
   margin: 0.5em;
   text-decoration: none;
   transition: all 0.2s ease-out, opacity 1.5s;
 }
-
 .footer a:hover{
   color: #ff9633;
 }
-
 .mid{
   border-left: 0.1em #67CECD solid;
   border-right: 0.1em #67CECD solid;

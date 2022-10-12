@@ -43,7 +43,7 @@
     left: -6em;
     top: 0;
   }
-  .cardImg{
+  .card__image{
     height: 50%;
     border-radius: 1em 1em 0 0;
   }
@@ -65,10 +65,10 @@
     width: 20.5em;
     box-sizing: border-box;
   }
-  .note{
+  .circle__rate{
     left: -7em;
   }
-  .cardImg{
+  .card__image{
     height: 50%;
     border-radius: 1em 1em 0 0;
   }
@@ -97,35 +97,35 @@
     box-sizing: border-box;
   }
   .card:hover{
-    .cardImg{
+    .card__image{
       opacity: 0.2;
     }
-    .gamesTitle{
+    .card__title{
       opacity: 1;
     }
-    .circle{
+    .card__circle{
       opacity: 1;
     }
-    .platforms{
+    .card__platforms{
       opacity: 1;
     }
-    .lists{
+    .card__lists{
       opacity: 1;
     }
   }
   .note{
     left: -12em;
   }
-  .cardImg{
+  .card__image{
     height: 100%;
     border-radius: 1em;
   }
-  .gamesTitle{
+  .card__title{
     position: absolute;
     z-index: 1;
     opacity: 0;
   }
-  .circle{
+  .card__circle{
     position: absolute;
     z-index: 1;
     top: 7em;
@@ -133,14 +133,14 @@
     width: 100%;
     height: 20%;
   }
-  .platforms{
+  .card__platforms{
     position: absolute;
     font-size: 1em;
     z-index: 1;
     top: 15em;
     opacity: 0;
   }
-  .lists{
+  .card__lists{
     position: absolute;
     opacity: 0;
     top: 25em;
@@ -173,7 +173,7 @@
     left: -4.5em;
     opacity: 0;
   }
-  .note{
+  .circle__rate{
     left: -3.3em;
   }
   svg{
@@ -183,31 +183,17 @@
 
 
 .card {
-
   display: flex;
-
   flex-direction: column;
-
   flex-wrap: wrap;
-
   align-items: center;
-
   background-color: #022829;
-
   border-radius: 1em;
-
   box-shadow: 0 0 1rem #001414;
-
-/*   margin-left: -50px; */
-
   transition: 0.2s ease-out;
-
   position: relative;
-
   left: 0em;
-
   margin: 1em;
-
 }
 
 .card:hover {
@@ -217,20 +203,12 @@
   box-shadow: 0 0 0.2rem #ff9633;
 }
 
-.cardImg{
-
+.card__image{
   width: 100%;
-
-  
-
   object-fit: cover;
-
   justify-content: flex-start;
-
   text-align: center;
-
   position: relative;
-
 }
 
 .gamesTitle{
@@ -255,24 +233,24 @@
   z-index: 1;
 }
 
-.gameChecklist:hover{
+.lists__donelist:hover{
   content: url("../../../assets/images/ChecklistButtonDone.png");
   filter: drop-shadow(0 0 0.3rem #9EF4F3);
 }
 
-.gameWishlist:hover{
+.lists__wishlist:hover{
   content: url("../../../assets/images/WishlistButtonCheck.png");
   filter: drop-shadow(0 0 0.3rem #9EF4F3);
 }
 
-.lists{
+.card__lists{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
 }
 
-.gameWishlist{
+.lists__wishlist{
   width: max-content;
   display: flex;
   align-items: center;
@@ -280,7 +258,7 @@
   padding: 1em;
 }
 
-.gameChecklist{
+.lists__donelist{
   width: max-content;
   display: flex;
   align-items: center;
@@ -288,7 +266,7 @@
   padding: 1em;
 }
 
-.circle {
+.card__circle {
   
   justify-self: center;
   justify-content: center;
@@ -298,29 +276,24 @@
 }
 
 svg {
-
   fill: #17141d;
-
   stroke-width: 0.125em;
-
   position: relative;
   left: calc(50% - 60px);
-
 }
 
-.platforms{
+.card__platforms{
   -webkit-line-clamp: 3;
 }
 
-.stroke {
-
+.circle__stroke {
   stroke: #ff9633;
   stroke-dasharray: 324;
   stroke-dashoffset : 100;
   transition: 0.6s ease-out;
 }
 
-.note{
+.circle__rate{
   position: relative;
   margin: 2.5em 0 0 0;
   word-spacing: 5rem;

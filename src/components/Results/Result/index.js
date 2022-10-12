@@ -22,23 +22,22 @@ function Result({
         navigate(`/game/${slug}`);
       }}
     >
-      <img className="cardImg" src={`https://images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`} alt="" />
-      <h3 className="gamesTitle">{name}</h3>
-      <div className="circle">
+      <img className="card__image" src={`https://images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`} alt="" />
+      <h3 className="card__title">{name}</h3>
+      <div className="card__circle">
         <svg>
-          <circle className="stroke" cx="60" cy="60" r="40" strokeDasharray={gameNote * 3.6} />
+          <circle className="circle__stroke" cx="60" cy="60" r="40" strokeDasharray={gameNote * 3.6} />
         </svg>
-        <p className="note">{gameNote}/100</p>
+        <p className="circle__rate">{gameNote}/100</p>
       </div>
-      {/* <p className='gameNote'>90/100</p> */}
       <div
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="lists"
+        className="card__lists"
       >
         <div
-          className="gameWishlist"
+          className="lists__wishlist"
           onClick={() => {
             console.log('ajout wishlist');
           }}
@@ -54,11 +53,12 @@ function Result({
           }}
         >
           <button className="listButton" type="button">
+
             <img className="list-img" src={CheckListImage} alt="checklistButton" />
           </button>
         </div>
       </div>
-      <div className="platforms">
+      <div className="card__platforms">
         {
           platforms.slice(0, 4).map(
             (plateform) => <p key={plateform.id}>{plateform.name}</p>,

@@ -5,24 +5,24 @@ import './style.scss';
 function LegalNotice() {
   return (
     <div className="legal-notice">
-      <h1 className="legal-notice-main-title">Mentions légales</h1>
-      <p className="legal-notice-content">Merci de lire avec attention les différentes modalités d’utilisation du présent site
+      <h1 className="legal-notice__main-title">Mentions légales</h1>
+      <p className="legal-notice__content">Merci de lire avec attention les différentes modalités d’utilisation du présent site
         avant d’y parcourir ses pages.
         En vous connectant sur ce site, vous acceptez, sans réserves, les présentes modalités.
         Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance
         dans l’économie numérique, les responsables du présent site internet www.anthedesign.fr
         sont :
       </p>
-      <h2 className="legal-notice-title">Éditeur du Site :</h2>
-      <p className="legal-notice-content">SARL MNG<br />
+      <h2 className="legal-notice__title">Éditeur du Site :</h2>
+      <p className="legal-notice__content">SARL MNG<br />
         Responsable éditorial : Camille<br />
         12 Rue du JavaScript, 12345 OCLOCK<br />
         Téléphone : 00 00 00 00 00<br />
         Email : Camille@oclock.io<br />
         Site Web : www.MNG.fr
       </p>
-      <h2 className="legal-notice-title">Conditions d’utilisation :</h2>
-      <p className="legal-notice-content">Ce site (www.MNG.fr) est proposé en différents langages web
+      <h2 className="legal-notice__title">Conditions d’utilisation :</h2>
+      <p className="legal-notice__content">Ce site (www.MNG.fr) est proposé en différents langages web
         (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d’utilisation
         et un graphisme plus agréable.
         Nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer,
@@ -37,8 +37,8 @@ function LegalNotice() {
         de l’utilisation faite de ces informations, et de tout préjudice direct ou indirect
         pouvant en découler.
       </p>
-      <h2 className="legal-notice-title">Propriété intellectuelle :</h2>
-      <p className="legal-notice-content">Tout le contenu du présent site www.MNG.fr, incluant, de façon non limitative,
+      <h2 className="legal-notice__title">Propriété intellectuelle :</h2>
+      <p className="legal-notice__content">Tout le contenu du présent site www.MNG.fr, incluant, de façon non limitative,
         les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi
         que leur mise en forme sont la propriété exclusive de la société
         à l’exception des marques, logos ou contenus appartenant à d’autres sociétés

@@ -4,7 +4,6 @@
     height: 70vh;
   }
 }
-
 @media screen and (min-width: 380px){
   .home{
     justify-content: flex-start;
@@ -14,7 +13,6 @@
     margin: 1rem;
   }
 }
-
 @media screen and (min-width: 900px){
   .home-content{
     margin: 3rem;
@@ -26,7 +24,6 @@
     height: 78vh;
   }
 }
-
 @media screen and (min-width: 1920px){
   .home{
     height: 78vh;
@@ -56,17 +53,13 @@
       50% { border-color: #ff9633; }
     }
 }
-
 .home {
   display: flex;
   flex-direction: column;
   width: 80%;
   align-items: center;
-  
-
 }
-
-.home-picture {
+.home__picture {
   animation-name: example;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -76,11 +69,9 @@
   margin-top: 2em;
   margin: 3em  auto 0 auto;
 }
-
-.home-content{
+.home__content{
 text-align: center;
 }
-
 .home-button{
   width: 10em;
   align-self: center;
@@ -93,11 +84,11 @@ text-align: center;
   all: unset;
   transition: all 0.2s ease-out, opacity 1.5s;
 }
-.home-button:hover {
+.home__button:hover {
   background-color: #ff9633;
   color: #022829;
   border: 2px solid #001414;
 }
-.home-button:active {
+.home__button:active {
   box-shadow: inset 0 0 0.5em black;
 }

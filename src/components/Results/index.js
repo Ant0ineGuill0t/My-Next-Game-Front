@@ -25,8 +25,8 @@ function Results() {
     <div className="results">
       {!imLoading && (
         <>
-          <div onWheel={handleScroll} className="cardContainer">
-            <ul className="scrollZone">
+          <div onWheel={handleScroll} className="results__card-container">
+            <ul className="card-container__scrollZone">
               {
                 gameDatas.map(
                   (gameData) => <li key={gameData.id}><Result {...gameData} /></li>,
@@ -35,14 +35,14 @@ function Results() {
             </ul>
           </div>
           <Link to="/Quizz">
-            <button onClick={handleRestartClick} type="button" className="restartQuizz">Restart a Quizz</button>
+            <button onClick={handleRestartClick} type="button" className="card-container__restart">Restart a Quizz</button>
           </Link>
         </>
       )}
       {imLoading && (
-        <div className="loaderContainer">
+        <div className="results__loader-container">
           <h2>Loading ...</h2>
-          <span className="loader" />
+          <span className="loader-container__loader" />
         </div>
       )}
     </div>

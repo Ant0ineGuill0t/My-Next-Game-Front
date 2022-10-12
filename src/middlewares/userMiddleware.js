@@ -30,7 +30,6 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           sessionStorage.setItem('token', response.data.token);
-          console.log(response);
           store.dispatch(
             saveUserData(response.data.token),
           );
@@ -53,7 +52,6 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
           if (response.data.user[0] !== 'Erreur dans la complétion du formulaire !') {
             store.dispatch(setValidUserForm());
           }
@@ -86,8 +84,8 @@ const userMiddleware = (store) => (next) => (action) => {
           user: store.getState().user.userData,
         },
       )
-        .then((response) => {
-          console.log(response);
+        .then(() => {
+
         })
         .catch((error) => {
           console.log(error);
@@ -107,7 +105,6 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(saveUserDataFromApi(response.data));
-          console.log(response);
         })
         .catch((error) => {
           console.log(error);

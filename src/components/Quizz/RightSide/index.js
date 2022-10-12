@@ -16,23 +16,22 @@ function RightSide() {
   const handleRestartClick = () => {
     dispatch(restartQuizz());
   };
-
   const handlePreviousClick = () => {
     dispatch(displayPreviousQuestion());
   };
   return (
-    <div className="rightSide">
-      <img className="mascotte" src={Mascotte} alt="" />
-      <div className="progressBar">
+    <div className="right-side">
+      <img className="right-side__mascot" src={Mascotte} alt="mascot" />
+      <div className="right-side__progressBar">
         <label htmlFor="progressionBar">Progression :
-          <progress className="progressionBar" id="progressionBar" max="100" value={progressBar} />
+          <progress className="right-side__progressionBar" id="progressionBar" max="100" value={progressBar} />
         </label>
       </div>
       <button onClick={handlePreviousClick} type="button">
-        <img className="back" src={PreviousButton} alt="" />
+        <img className="right-side__previous" src={PreviousButton} alt="previous question" />
       </button>
       <button onClick={handleRestartClick} type="button">
-        <img className="restart" src={RestartButton} alt="" />
+        <img className="right-side__restart" src={RestartButton} alt="restart quizz" />
       </button>
     </div>
   );

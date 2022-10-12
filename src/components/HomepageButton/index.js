@@ -13,13 +13,13 @@ function HomepageButton() {
   };
   return (
     <div className="home">
-      <p className="home-content animation">Welcome to MNG! Are you looking for the next gem to play? Say no more, you've come to the right place!
+      <p className="home__content home__animation">Welcome to MNG! Are you looking for the next gem to play? Say no more, you've come to the right place!
       </p>
-      <img className="home-picture" src={Mascotte} alt="mascotte du site" />
+      <img className="home__picture" src={Mascotte} alt="mascotte du site" />
       <Link to="/quizz">
         <button
           type="button"
-          className="home-button"
+          className="home__button"
           onClick={createForm}
         >
           Start the Quiz
