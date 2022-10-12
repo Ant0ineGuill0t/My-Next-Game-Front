@@ -119,6 +119,7 @@ function Header() {
       )}
       {isLogged && (
         <div className="isLogged-div">
+
           <p className="hello">Hello {userPseudo} !</p>
           <img onClick={handleAvatarClick} className="avatar" src={editAvatar} alt="avatar" />
           <div className={isMenu ? 'profile-menu_on' : 'profile-menu_off'}>

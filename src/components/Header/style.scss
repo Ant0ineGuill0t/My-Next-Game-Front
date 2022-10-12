@@ -27,7 +27,23 @@
   .isLogged-div{
     height: 9em;
   }
-  
+  .isLogged-div{
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  .profil-button{
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 480px){
+  .isLogged-div{
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  .profil-button{
+    margin-left: 1rem;
+  }
 }
 @media screen and (min-width: 900px){
   .userButton_on{
@@ -52,14 +68,12 @@
 }
 
 .h1{
-
   width: 7em;
   font-size: 20px;
   margin: 0;
   text-align: center;
   font-family: 'Press-Start'; /*a name to be used later*/
   color: #67CECD;
-
 }
 
 .userButton_on{
@@ -98,7 +112,7 @@
 }
 
 .header-logo{
-  width: 150%;
+  width: 120%;
 }
 .header-logo:hover{
   animation-duration: .6s;
@@ -216,7 +230,7 @@
   right: 2%;
   background-color: #001414;
   border: 0.1em solid #67CECD;
-  border-radius: 0.3em;
+  border-radius: 5em;
   color: #67CECD;
   text-align: center;
 }
@@ -234,7 +248,6 @@
 
 .login-button-plus{
   transform: rotateZ(45deg);
-  
 }
 
 .create-button{
@@ -274,23 +287,29 @@
   align-self: flex-end;
   all: unset;
 }
+
 .profil-button:hover {
   background-color: #ff9633;
   color: #001414;
   border: 2px solid #ff9633;
 }
+
 .logout-button:active{
   box-shadow: inset 0 0 0.5em black;
 }
+
 .error-on {
   color: #ff9633;
 }
+
 .error-off {
 display: none;
 }
+
 .create-user-button {
   all: unset;
 }
+
 .create-user-button:hover{
   color: #ff9633;
 }
