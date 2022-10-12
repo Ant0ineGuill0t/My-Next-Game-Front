@@ -16,6 +16,7 @@ import {
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
 import Profil from '../../assets/images/Profil.png';
+import { useState } from 'react';
 
 function Header() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function Header() {
   const errorMessage = useSelector((state) => state.user.errorMessage);
   const userPseudo = useSelector((state) => state.user.userData.pseudo);
   const editAvatar = useSelector((state) => state.user.userData.avatar);
+  const [isMenu, setIsMenu] = useState(false);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -40,10 +42,15 @@ function Header() {
     dispatch(logOut());
     dispatch(clearLogStore());
     dispatch(toggleIsLogged());
+    setIsMenu(false);
   };
   const handleLogin = () => {
     dispatch(toggleLoginForm());
     dispatch(unsetValidUserForm());
+  };
+  const handleAvatarClick = () => {
+    setIsMenu(!isMenu);
+    console.log(isMenu);
   };
   return (
     <header className="header">
@@ -112,22 +119,27 @@ function Header() {
       )}
       {isLogged && (
         <div className="isLogged-div">
-          <img className="avatar" src={editAvatar} alt="avatar" />
           <p className="hello">Hello {userPseudo} !</p>
-          <button
-            type="button"
-            className="logout-button"
-            onClick={handleLogout}
-          >
-            Log out
-          </button>
-          <button
-            type="button"
-            className="profil-button"
-            onClick={() => navigate('/profile')}
-          >
-            Go to profile
-          </button>
+          <img onClick={handleAvatarClick} className="avatar" src={editAvatar} alt="avatar" />
+          <div className={isMenu ? 'profile-menu_on' : 'profile-menu_off'}>
+            <button
+              type="button"
+              className="logout-button"
+              onClick={handleLogout}
+            >
+              Log out
+            </button>
+            <button
+              type="button"
+              className="profil-button"
+              onClick={() => {
+                navigate('/profile');
+                setIsMenu(false);
+              }}
+            >
+              Go to profile
+            </button>
+          </div>
         </div>
       )}
     </header>

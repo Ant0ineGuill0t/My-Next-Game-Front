@@ -1,8 +1,8 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import { editUser, updateUser } from 'src/actions';
-import Avatar from 'react-avatar-edit';
 import Gear from '../../assets/images/gear.png';
 import Card from './card';
 
@@ -12,6 +12,7 @@ function Profile() {
   const passwordRef = useRef(null);
   const pseudoRef = useRef(null);
   const userData = useSelector((state) => state.user.userData);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const [disableEmail, setDisableEmail] = useState(true);
   const [disablePassword, setDisablePassword] = useState(true);
   const [disablePseudo, setDisablePseudo] = useState(true);
@@ -40,6 +41,12 @@ function Profile() {
     setDisablePassword(!disablePassword);
     setDisableSubmitButton(true);
     setTimeout(() => passwordRef.current.focus(), 0);
+  }
+
+  if (!isLogged) {
+    return (
+      <Navigate to="/" replace />
+    );
   }
 
   return (
@@ -107,7 +114,7 @@ function Profile() {
             </button>
           </label>
           <label htmlFor="profile-content-confirm-password" className={disablePassword ? 'password-off' : 'profile-content-confirm-password-label'}>
-            confirm your password :
+            Confirm your password :
             <input
               className={disablePassword ? 'profile-content-confirm-password-input' : 'profile-content-confirm-password-input  borderInput'}
               id="profile-content-confirm-password-input"

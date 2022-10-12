@@ -1,37 +1,37 @@
 @media screen and (max-width: 899px) {
-  .card {
+  .profile-card {
     height: 100%;
     width: 18.5em;
     box-sizing: border-box;
   }
 
-  .cardImg {
+  .profile-cardImg {
     height: 50%;
     border-radius: 1em 1em 0 0;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .card {
+  .profile-card {
     height: 100%;
     width: 20.5em;
     box-sizing: border-box;
   }
 
-  .cardImg {
+  .profile-cardImg {
     height: 50%;
     border-radius: 1em 1em 0 0;
   }
 }
 
 @media screen and (min-width: 1920px) {
-  .card {
+  .profile-card {
     height: 100%;
     width: 20.5em;
     box-sizing: border-box;
   }
 
-  .card:hover {
+  .profile-card:hover {
     .cardImg {
       opacity: 0.2;
     }
@@ -41,12 +41,12 @@
     }
   }
 
-  .cardImg {
+  .profile-cardImg {
     height: 100%;
     border-radius: 1em;
   }
 
-  .gamesTitle {
+  .profil-gamesTitle {
     position: absolute;
     z-index: 1;
     opacity: 0;
@@ -54,14 +54,14 @@
 }
 
 @media screen and (min-width: 2000px) {
-  .card {
+  .profile-card {
     height: 100%;
     width: 30.5em;
     box-sizing: border-box;
   }
 }
 
-.card {
+.profile-card {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -75,15 +75,15 @@
   margin: 1em;
 }
 
-.card:hover {
+.profile-card:hover {
   box-shadow: 0 0 1rem #ff9633;
 }
 
-.card:active {
+.profile-card:active {
   box-shadow: 0 0 0.2rem #ff9633;
 }
 
-.cardImg {
+.profile-cardImg {
   width: 100%;
   object-fit: cover;
   justify-content: flex-start;
@@ -91,7 +91,7 @@
   position: relative;
 }
 
-.gamesTitle {
+.profil-gamesTitle {
   margin: 1em 0;
   width: 100%;
   text-align: center;
@@ -99,7 +99,7 @@
   height: 2em;
 }
 
-.card p {
+.profile-card p {
   text-align: center;
   padding: 1em;
   height: 1em;

@@ -1,8 +1,11 @@
-@media screen and (max-width: 899px){
+@media screen and (min-width: 200px){
   .card{
-    height: 100%;
-    width: 18.5em;
+    height: 48em;
+    width: 24em;
     box-sizing: border-box;
+  }
+  .gamesTitle{
+    margin: 1em 0 0 0;
   }
   .note{
     left: -6em;
@@ -14,11 +17,18 @@
   svg{
     width: 100%;
   }
+  .circle{
+    width: 80%;
+    height: 15%;
+  }
+  .list-img{
+    width: 3em;
+  }
 }
 
 @media screen and (min-width: 900px){
   .card{
-    height: 100%;
+    height: 40em;
     width: 20.5em;
     box-sizing: border-box;
   }
@@ -32,12 +42,25 @@
   svg{
     width: 100%;
   }
+  .gamesTitle{
+    margin: 1em 0 0 0;
+  }
+  .circle{
+    width: 100%;
+    height: 20%;
+  }
+  .list-img{
+    width: 2em;
+  }
+  .platforms{
+    font-size: 0.6em;
+  }
 }
 
 @media screen and (min-width: 1920px){
   .card{
     height: 100%;
-    width: 20.5em;
+    width: 25.5em;
     box-sizing: border-box;
   }
   .card:hover{
@@ -58,7 +81,7 @@
     }
   }
   .note{
-    left: -7em;
+    left: -9.5em;
   }
   .cardImg{
     height: 100%;
@@ -74,24 +97,41 @@
     z-index: 1;
     top: 7em;
     opacity: 0;
+    width: 100%;
+    height: 20%;
+  }
+  .platforms{
+    position: absolute;
+    font-size: 1em;
+    z-index: 1;
+    top: 15em;
+    opacity: 0;
+  }
+  .lists{
+    position: absolute;
+    opacity: 0;
+    top: 25em;
+  }
+  .list-img{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 2000px){
+  .card{
+    height: 100%;
+    width: 35.5em;
+    box-sizing: border-box;
+  }
+  .lists{
+    position: absolute;
+    opacity: 0;
+    top: 30em;
   }
   .platforms{
     position: absolute;
     z-index: 1;
     top: 20em;
     opacity: 0;
-  }
-  .lists{
-    position: absolute;
-    opacity: 0;
-    top: 40em;
-  }
-}
-@media screen and (min-width: 2000px){
-  .card{
-    height: 100%;
-    width: 30.5em;
-    box-sizing: border-box;
   }
   .circle{
     position: absolute;
@@ -161,7 +201,6 @@
 }
 
 .gamesTitle{
-  margin: 1em 0;
   width: 100%;
   text-align: center;
   white-space: pre-wrap;
@@ -220,7 +259,6 @@
   
   justify-self: center;
   justify-content: center;
-  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   

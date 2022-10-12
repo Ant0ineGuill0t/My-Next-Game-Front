@@ -1,8 +1,29 @@
-@media screen and (max-width: 1919px){
+@media screen and (min-width: 200px){
+  .home{
+    justify-content: flex-start;
+    height: 70vh;
+  }
+}
+
+@media screen and (min-width: 380px){
+  .home{
+    justify-content: flex-start;
+    height: 55vh;
+  }
+  .home-content{
+    margin: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px){
   .home-content{
     margin: 3rem;
     text-align: center;
     white-space: normal;
+  }
+  .home{
+    justify-content: center;
+    height: 78vh;
   }
 }
 
@@ -38,8 +59,8 @@
   flex-direction: column;
   width: 80%;
   align-items: center;
-  height: 78vh;
-  justify-content: center;
+  
+
 }
 
 .home-picture {
