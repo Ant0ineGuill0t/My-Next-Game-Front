@@ -1,4 +1,4 @@
-@media screen and (min-width: 200px){
+@media screen and (min-width: 0px){
   .scrollZone{
     height: 100%;
     align-items: flex-start;
@@ -42,7 +42,7 @@
     padding: 0;
   }
   .cardContainer{
-    height: 60vh;
+    height: max-content;
     margin: 0;
   }
 }
@@ -50,6 +50,12 @@
 @media screen and (min-width: 1024px){
   .results{
     height: 80vh;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .results{
+    height: 78vh;
   }
 }
 
