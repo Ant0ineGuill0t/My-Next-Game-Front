@@ -1,19 +1,74 @@
+@media screen and (min-width: 200px){
+  .profile-intel-label{
+    width: 100%;
+  }
+  .profile-div{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+  }
+  .profile-content{
+    width: 80%;
+    align-self: center;
+  }
+  .profile-content label {
+    width: 100%;
+  }
+  .profile-intel{
+    display: flex;
+    flex-direction: column;
+  }
+  .submit-on{
+    width: 100%;
+    margin-top: 2em;
+  }
+  .profil-wishlist{
+    margin-top: 2em;
+  }
+  .profile-gear-input{
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .profile-intel-label{
+    width: 16%;
+  }
+  .profile-intel{
+    display: flex;
+    flex-direction: row;
+  }
+  .profile-div{
+    height: 80vh;
+  }
+  .profile-content{
+    width: 60%;
+  }
+  .profile-content label {
+    width: max-content;
+  }
+  .submit-on{
+    width: 15%;
+    margin-top: 3rem;
+  }
+  .profile-gear-input{
+    position: absolute;
+  }
+}
+
 .profile-div{
   background-color: #022829;
   border: 2px solid #67CECD;
-  width: 90%;
-  height: 80vh;
+  width: 100%;
   border-radius: 2em;
-  margin-top: 1em;
+  margin: 1em 1em 0 1em;
   padding: 1em;
 }
 .profile-intel {
-  display: flex;
   justify-content: space-between;
   height: 40%;
 }
 .profile-intel-label {
-  width:15%;
   margin-bottom: 2rem;
 }
 .profile-title{
@@ -28,22 +83,20 @@
   width: 100%;
   object-fit: cover;
   object-position: left top;
-  border: #67CECD 0.1em solid;
+  border: 0.2em solid;
   border-radius: 2em;
+  padding: 0.3em;
 }
 .profile-gear-input {
   opacity: 0;
-  position: absolute;
   z-index: -1;
 }
 .profile-content{
   display: flex;
   flex-direction: column;
-  width: 60%;
 }
 .profile-content label {
   margin: 1rem;
-  width: max-content;
 }
 .profile-content-email-input {
   all:unset;
@@ -74,9 +127,7 @@
 
 .submit-on {
   text-align: center;
-  width: 15%;
   padding: .5em;
-  margin-top: 3rem;
   background-color: #022829;
   border: 2px solid #67CECD;
   border-radius: 2rem;
@@ -118,7 +169,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -145,7 +196,7 @@
   height: 100%;
   display: flex;
   white-space: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
 	overflow-x: auto;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;

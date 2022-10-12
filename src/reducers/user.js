@@ -151,6 +151,15 @@ const reducer = (state = initialState, action = {}) => {
           },
         };
       }
+      if (action.identifier === 'password') {
+        return {
+          ...state,
+          userData: {
+            ...state.userData,
+            password: action.value,
+          },
+        };
+      }
       return {
         ...state,
         userData: {

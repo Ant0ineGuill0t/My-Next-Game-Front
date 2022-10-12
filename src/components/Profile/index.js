@@ -1,5 +1,6 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import { editUser, updateUser } from 'src/actions';
 import Gear from '../../assets/images/gear.png';
@@ -11,6 +12,7 @@ function Profile() {
   const passwordRef = useRef(null);
   const pseudoRef = useRef(null);
   const userData = useSelector((state) => state.user.userData);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const [disableEmail, setDisableEmail] = useState(true);
   const [disablePassword, setDisablePassword] = useState(true);
   const [disablePseudo, setDisablePseudo] = useState(true);
@@ -40,6 +42,13 @@ function Profile() {
     setDisableSubmitButton(true);
     setTimeout(() => passwordRef.current.focus(), 0);
   }
+
+  if (!isLogged) {
+    return (
+      <Navigate to="/" replace />
+    );
+  }
+
   return (
     <div className="profile-div">
       <h2 className="profile-title"> {userData.pseudo} place</h2>
@@ -57,8 +66,7 @@ function Profile() {
             name="checkbox-gear"
             id="profile-picture"
             className="profile-gear-input"
-            value={editAvatar}
-            onChange={(event) => dispatch(editUser(event.current.target, 'avatar'))}
+            onChange={(event) => dispatch(editUser(window.URL.createObjectURL(event.target.files[0]), 'avatar'))}
           />
         </label>
         <div className="profile-content">
@@ -76,8 +84,7 @@ function Profile() {
               autoComplete="on"
               placeholder={userData.email}
               disabled={disableEmail}
-              value={editEmail}
-              onChange={(event) => dispatch(editUser(event.current.target, 'email'))}
+              onChange={(event) => dispatch(editUser(event.target.value, 'email'))}
             />
             <button
               type="button"
@@ -96,9 +103,8 @@ function Profile() {
               name="profile-content-password"
               autoComplete="on"
               placeholder=" ****** "
-              value=""
               disabled={disablePassword}
-              onChange={(event) => dispatch(editUser(event.current.target, 'password'))}
+              onChange={(event) => dispatch(editUser(event.target.value, 'password'))}
             />
             <button
               type="button"
@@ -108,7 +114,7 @@ function Profile() {
             </button>
           </label>
           <label htmlFor="profile-content-confirm-password" className={disablePassword ? 'password-off' : 'profile-content-confirm-password-label'}>
-            confirm your password :
+            Confirm your password :
             <input
               className={disablePassword ? 'profile-content-confirm-password-input' : 'profile-content-confirm-password-input  borderInput'}
               id="profile-content-confirm-password-input"
@@ -129,8 +135,7 @@ function Profile() {
               disabled={disablePseudo}
               name="profile-content-pseudo"
               autoComplete="on"
-              value={editPseudo}
-              onChange={(event) => dispatch(editUser(event.current.target, 'pseudo'))}
+              onChange={(event) => dispatch(editUser(event.target.value, 'pseudo'))}
             />
             <button
               type="button"
