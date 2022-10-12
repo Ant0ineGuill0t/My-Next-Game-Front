@@ -12,9 +12,11 @@ function Quizz() {
 
   return (
     <div className="quizz">
-      <div className="quizz-container">
-        <h2>Question {useSelector((state) => state.game.questionNumber)}/20</h2>
-        <div className="questionDiv"><p className="question" key={question}>{question}</p></div>
+      <div className="quizz__container">
+        <h2 className="quizz__title">Question {useSelector((state) => state.game.questionNumber)}/20</h2>
+        <div className="container__div">
+          <p className="div__question" key={question}>{question}</p>
+        </div>
         <LeftSide />
         <RightSide />
       </div>

@@ -24,23 +24,23 @@
     margin-bottom: 1em;
   }
 
-  .isLogged-div{
+  .header__logged{
     height: 9em;
   }
-  .header__is-logged{
+  .header__logged{
     text-align: right;
     font-size: 0.9rem;
   }
-  .is-logged__profil-button{
+  .logged__profil-button{
     margin-bottom: 1rem;
   }
 }
 @media screen and (min-width: 480px){
-  .header__is-logged{
+  .header__logged{
     text-align: right;
     font-size: 0.9rem;
   }
-  .is-logged__profil-button{
+  .logged__profil-button{
     margin-left: 1rem;
   }
 }
@@ -232,7 +232,7 @@
 .create-button{
   all: unset;
 }
-.is-logged__logout-button {
+.logged__logout-button {
   background-color: #001414;
   border: 2px solid #67CECD;
   width: 35%;
@@ -245,12 +245,12 @@
   all: unset;
   text-align: center;
 }
-.is-logged__logout-button:hover {
+.logged__logout-button:hover {
   background-color: #ff9633;
   color: #001414;
   border: 2px solid #ff9633;
 }
-.is-logged__profil-button {
+.logged__profil-button {
   background-color: #001414;
   border: 2px solid #67CECD;
   width: 50%;
@@ -263,12 +263,12 @@
   align-self: flex-end;
   all: unset;
 }
-.is-logged__profil-button:hover {
+.logged__profil-button:hover {
   background-color: #ff9633;
   color: #001414;
   border: 2px solid #ff9633;
 }
-.is-logged__logout-button:active{
+.logged__logout-button:active{
   box-shadow: inset 0 0 0.5em black;
 }
 .form-login__error-on {
@@ -284,7 +284,7 @@ display: none;
   color: #ff9633;
 }
 
-.avatar{
+.logged__avatar{
   object-fit: contain;
   width: 8.5em;
   height: 5em;
@@ -295,7 +295,7 @@ display: none;
   /* position: relative;
   left: 7em; */
 }
-.hello {
+.logged__message {
   /* position: relative;
   left: 10.5em; */
   margin-bottom: 2em;
@@ -303,7 +303,7 @@ display: none;
   width: max-content;
 }
 
-.profile-menu_off {
+.logged__menu_off {
   width: 8.5em;
   position: relative;
   opacity: 0;
@@ -319,7 +319,7 @@ display: none;
   transition: all 0.1s ease-out;
 }
 
-.profile-menu_on {
+.logged__menu_on {
   width: 8.5em;
   position: relative;
   display: flex;
@@ -336,7 +336,7 @@ display: none;
   z-index: 1;
 }
 
-.isLogged-div{
+.header__logged{
   display: flex;
   flex-direction: column;
 }

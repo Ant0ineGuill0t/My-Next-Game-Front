@@ -1,10 +1,10 @@
 @media screen and (min-width: 0px){
-  .scrollZone{
+  .card-container__scrollZone{
     height: 100%;
     align-items: flex-start;
     padding: 0;
   }
-  .cardContainer{
+  .container__div{
     align-items: flex-start;
     margin:0;
   }
@@ -12,7 +12,6 @@
     height: 110vh;
     align-items: flex-start;
   }
-
   .results a{
     margin: 1em 0;
   }
@@ -37,7 +36,7 @@
     height: 100%;
     padding: 0;
   }
-  .cardContainer{
+  .container__div{
     height: max-content;
     margin: 0;
   }
@@ -59,7 +58,7 @@
   width: 100%;
   justify-content: center;
 }
-.loaderContainer{
+.results__loader-container{
   height: 80vh;
   display: flex;
   justify-content: center;

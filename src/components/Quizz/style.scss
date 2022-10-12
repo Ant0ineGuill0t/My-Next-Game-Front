@@ -2,7 +2,7 @@
   .quizz{
     height: 100vh;
   }
-  .quizz-container{
+  .quizz__container{
     padding: 1em;
     height: 100%;
   }
@@ -37,11 +37,10 @@
 }
 @media screen and (min-width: 1280px){
   .quizz{
-: 19em 0;
 
     height: 80vh;
   }
-  .quizz-container{
+  .quizz__container{
     padding: 3em;
   }
 }
@@ -55,10 +54,10 @@
   .quizz{
     height: 78vh;
   }
-  .quizz-container{
+  .quizz__container{
     height: 80%;
   }
-  .questionDiv{
+  .container__div{
     height: max-content;
   }
 }
@@ -67,7 +66,7 @@
   margin: 0 2em;
 }
 
-.quizz-container{
+.quizz__container{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -91,10 +90,10 @@
   margin: 0.5em 0;
   height: 5%;
 }
-.quizz__div{
+.container__div{
 width: 100%;
 }
-.quizz__div__question{
+.div__question{
   margin-top: 1em;
   width: 100%;
 }

@@ -43,18 +43,18 @@ function Result({
           }}
         >
           <button className="listButton" type="button">
-            <img className="list-img" src={WishListImage} alt="wishlistButton" />
+            <img className="list-img" src={WishListImage} alt="wishlist button" />
           </button>
         </div>
         <div
-          className="gameChecklist"
+          className="lists__donelist"
           onClick={() => {
             console.log('ajout donelist');
           }}
         >
           <button className="listButton" type="button">
 
-            <img className="list-img" src={CheckListImage} alt="checklistButton" />
+            <img className="list-img" src={CheckListImage} alt="checklist button" />
           </button>
         </div>
       </div>

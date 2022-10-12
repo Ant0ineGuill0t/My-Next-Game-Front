@@ -1,6 +1,7 @@
 // == Import
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import {
   toggleLoginForm,
   changeFieldUserLogin,
@@ -16,7 +17,6 @@ import {
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
 import Profil from '../../assets/images/Profil.png';
-import { useState } from 'react';
 
 function Header() {
   const dispatch = useDispatch();
@@ -122,21 +122,21 @@ function Header() {
         </div>
       )}
       {isLogged && (
-        <div className="isLogged-div">
+        <div className="header__logged">
 
-          <p className="hello">Hello {userPseudo} !</p>
-          <img onClick={handleAvatarClick} className="avatar" src={editAvatar} alt="avatar" />
-          <div className={isMenu ? 'profile-menu_on' : 'profile-menu_off'}>
+          <p className="logged__message">Hello {userPseudo} !</p>
+          <img onClick={handleAvatarClick} className="logged__avatar" src={editAvatar} alt="avatar" />
+          <div className={isMenu ? 'logged__menu_on' : 'logged__menu_off'}>
             <button
               type="button"
-              className="logout-button"
+              className=".logged__logout-button"
               onClick={handleLogout}
             >
               Log out
             </button>
             <button
               type="button"
-              className="profil-button"
+              className="logged__profil-button"
               onClick={() => {
                 navigate('/profile');
                 setIsMenu(false);
