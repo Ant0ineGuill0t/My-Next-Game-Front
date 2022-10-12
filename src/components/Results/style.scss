@@ -1,12 +1,57 @@
-@media screen and (min-width: 1920px){
-  .card-container__scrollZone{
+@media screen and (min-width: 0px){
+  .scrollZone{
     height: 100%;
+    align-items: flex-start;
+    padding: 0;
   }
-  .results__card-container{
-    height: 60vh;
+  .cardContainer{
+    align-items: flex-start;
+    margin:0;
+  }
+  .results{
+    height: 110vh;
+    align-items: flex-start;
+  }
+
+  .results a{
+    margin: 1em 0;
   }
 }
-
+@media screen and (min-width: 380px){
+  .results{
+    height: 90vh;
+  }
+}
+@media screen and (min-width: 400px){
+  .results{
+    height: 85vh;
+  }
+}
+@media screen and (min-width: 500px){
+  .results{
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 900px){
+  .scrollZone{
+    height: 100%;
+    padding: 0;
+  }
+  .cardContainer{
+    height: max-content;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1024px){
+  .results{
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 1024px){
+  .results{
+    height: 78vh;
+  }
+}
 .results{
   display: flex;
   flex-wrap: wrap;
@@ -14,19 +59,12 @@
   width: 100%;
   justify-content: center;
 }
-
-.results a {
-  margin-bottom: 7em;
-  margin-top: 7em;
-}
-
-.results__loader-container{
+.loaderContainer{
   height: 80vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-
 .loader-container__loader {
   width: 8em;
   height: 8em;
@@ -89,7 +127,6 @@
   max-width: 1000%;
   overflow-x: hidden;
 	overflow-y: hidden;
-  margin: 2em 0;
 }
 .card-container__scrollZone{
   display: flex;
@@ -98,7 +135,6 @@
 	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-  padding: 2em 0;
 }
 ::-webkit-scrollbar {
   width: 1em;

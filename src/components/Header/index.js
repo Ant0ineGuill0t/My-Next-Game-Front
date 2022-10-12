@@ -16,6 +16,7 @@ import {
 import './style.scss';
 import Logo from '../../assets/images/Logo.png';
 import Profil from '../../assets/images/Profil.png';
+import { useState } from 'react';
 
 function Header() {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ function Header() {
   const isLogged = useSelector((state) => state.user.isLogged);
   const errorMessage = useSelector((state) => state.user.errorMessage);
   const userPseudo = useSelector((state) => state.user.userData.pseudo);
+  const editAvatar = useSelector((state) => state.user.userData.avatar);
+  const [isMenu, setIsMenu] = useState(false);
 
   const handleClick = () => {
     dispatch(unsetErrorMessage());
@@ -39,10 +42,15 @@ function Header() {
     dispatch(logOut());
     dispatch(clearLogStore());
     dispatch(toggleIsLogged());
+    setIsMenu(false);
   };
   const handleLogin = () => {
     dispatch(toggleLoginForm());
     dispatch(unsetValidUserForm());
+  };
+  const handleAvatarClick = () => {
+    setIsMenu(!isMenu);
+    console.log(isMenu);
   };
   return (
     <header className="header">
@@ -114,22 +122,29 @@ function Header() {
         </div>
       )}
       {isLogged && (
-        <div className="header__is-logged">
-          <h3 className="is-logged__title">Hello {userPseudo} !</h3>
-          <button
-            type="button"
-            className="is-logged__logout-button"
-            onClick={handleLogout}
-          >
-            Log out
-          </button>
-          <button
-            type="button"
-            className="is-logged__profil-button"
-            onClick={() => navigate('/profile')}
-          >
-            Go to profile
-          </button>
+        <div className="isLogged-div">
+
+          <p className="hello">Hello {userPseudo} !</p>
+          <img onClick={handleAvatarClick} className="avatar" src={editAvatar} alt="avatar" />
+          <div className={isMenu ? 'profile-menu_on' : 'profile-menu_off'}>
+            <button
+              type="button"
+              className="logout-button"
+              onClick={handleLogout}
+            >
+              Log out
+            </button>
+            <button
+              type="button"
+              className="profil-button"
+              onClick={() => {
+                navigate('/profile');
+                setIsMenu(false);
+              }}
+            >
+              Go to profile
+            </button>
+          </div>
         </div>
       )}
     </header>

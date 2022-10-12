@@ -43,7 +43,7 @@ function Result({
           }}
         >
           <button className="listButton" type="button">
-            <img src={WishListImage} alt="wishlist button" />
+            <img className="list-img" src={WishListImage} alt="wishlistButton" />
           </button>
         </div>
         <div
@@ -53,7 +53,8 @@ function Result({
           }}
         >
           <button className="listButton" type="button">
-            <img src={CheckListImage} alt="donelist Button" />
+
+            <img className="list-img" src={CheckListImage} alt="checklistButton" />
           </button>
         </div>
       </div>

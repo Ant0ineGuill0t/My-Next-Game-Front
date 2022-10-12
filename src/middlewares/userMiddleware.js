@@ -81,6 +81,7 @@ const userMiddleware = (store) => (next) => (action) => {
           },
           withCredentials: true,
           credentials: 'include',
+          user: store.getState().user.userData,
         },
       )
         .then(() => {
@@ -88,6 +89,7 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+          console.log(store.getState().user.userData);
         });
       break;
     case GET_USER_DATA:
