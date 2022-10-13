@@ -1,6 +1,6 @@
 // == Import
 import Popup from 'reactjs-popup';
-import { Navigate, useParams, Link } from 'react-router-dom';
+import { Navigate, useParams, Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import previousArrow from 'src/assets/images/ArrowLeft.png';
@@ -10,17 +10,32 @@ import nextArrow from 'src/assets/images/ArrowRight.png';
 import './style.scss';
 
 function Game() {
+  const navigate = useNavigate();
   const gameData = useSelector((state) => state.game.gameData);
+  const checkListData = useSelector((state) => state.user.checklist);
+  const wishListData = useSelector((state) => state.user.wishlist);
   const { paramSlug } = useParams();
   const filteredSlug = gameData.filter((data) => data.slug === paramSlug);
+  const filteredSlugChecklist = checkListData.filter((data) => data.slug === paramSlug);
+  const filteredSlugWishlist = wishListData.filter((data) => data.slug === paramSlug);
   const [keyIndex, setkeyIndex] = useState(0);
   const [open, setOpen] = useState(false);
-  if (filteredSlug.length < 1) {
+  let game = '';
+  if (filteredSlug.length < 1
+    && filteredSlugChecklist.length < 1 && filteredSlugWishlist.length < 1) {
     return (
       <Navigate to="/error" replace />
     );
   }
-  const game = filteredSlug[0];
+  if (filteredSlug.length > 0) {
+    game = filteredSlug[0];
+  }
+  if (filteredSlugChecklist.length > 0) {
+    game = filteredSlugChecklist[0];
+  }
+  if (filteredSlugWishlist.length > 0) {
+    game = filteredSlugWishlist[0];
+  }
   const gameNote = Math.round(game.aggregated_rating);
   const millisecondsDate = game.first_release_date * 1000;
   const releaseDate = new Date(millisecondsDate);
@@ -123,9 +138,9 @@ function Game() {
           )}
         </div>
       </div>
-      <Link to="/quizz/results" className="return-results">
-        <button type="button" className="return-results__button">Return</button>
-      </Link>
+      {/* <Link to="/quizz/results" className="return-results"> */}
+      <button onClick={() => navigate(-1)} type="button" className="return-results">Return</button>
+      {/* </Link> */}
     </>
   );
 }

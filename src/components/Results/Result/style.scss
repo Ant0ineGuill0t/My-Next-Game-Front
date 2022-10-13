@@ -222,12 +222,12 @@
   all: unset;
   z-index: 1;
 }
-.lists__donelist:hover{
+.lists__donelist .list-img:hover{
   content: url("../../../assets/images/ChecklistButtonDone.png");
   filter: drop-shadow(0 0 0.3rem #9EF4F3);
 }
 
-.lists__wishlist:hover{
+.lists__wishlist .list-img:hover{
   content: url("../../../assets/images/WishlistButtonCheck.png");
   filter: drop-shadow(0 0 0.3rem #9EF4F3);
 }

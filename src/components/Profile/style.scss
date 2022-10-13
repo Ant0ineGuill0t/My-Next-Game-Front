@@ -95,6 +95,7 @@
 .profile-content{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .profile-content label {
   margin: 1rem;
@@ -165,7 +166,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -189,7 +190,7 @@
   height: 100%;
   display: flex;
   white-space: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 	overflow-x: auto;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
