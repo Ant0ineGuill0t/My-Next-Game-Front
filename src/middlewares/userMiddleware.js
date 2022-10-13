@@ -111,15 +111,23 @@ const userMiddleware = (store) => (next) => (action) => {
         });
       break;
     case TOGGLE_WISHLIST:
+      const user = store.getState().user.userData;
+      const gameData = {
+        id: `${user.id}`,
+        game: [{
+          name: action.name,
+          apiId: `${action.apiId}`,
+        }],
+      };
       axios.post(
-        'http://localhost:8000/api/wishlist',
+        'http://localhost:8000/api/wishlist/toggle',
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
           withCredentials: true,
           credentials: 'include',
-          user: store.getState().user.dataUser.pseudo,
+          data: gameData,
         },
       )
         .then((response) => {
@@ -131,7 +139,7 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
     case TOGGLE_DONELIST:
       axios.post(
-        'http://localhost:8000/api/donelist',
+        'http://localhost:8000/api/checklist/toggle',
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,

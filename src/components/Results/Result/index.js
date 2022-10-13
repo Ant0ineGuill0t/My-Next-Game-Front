@@ -1,12 +1,15 @@
 // == Import
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleWishlist } from 'src/actions';
 // data, styles
 import './style.scss';
 import WishListImage from '../../../assets/images/WishlistButton.png';
 import CheckListImage from '../../../assets/images/ChecklistButton.png';
 
 function Result({
+  id,
   cover,
   name,
   slug,
@@ -14,7 +17,9 @@ function Result({
   aggregated_rating,
 }) {
   const gameNote = Math.round(aggregated_rating);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div
       className="card"
@@ -34,12 +39,12 @@ function Result({
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="card__lists"
+        className={isLogged ? 'card__lists' : 'card__lists_hide'}
       >
         <div
           className="lists__wishlist"
           onClick={() => {
-            console.log('ajout wishlist');
+            dispatch(toggleWishlist(id, name));
           }}
         >
           <button className="listButton" type="button">
@@ -73,6 +78,7 @@ Result.propTypes = {
   cover: PropTypes.shape({
     image_id: PropTypes.string,
   }),
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   aggregated_rating: PropTypes.number.isRequired,

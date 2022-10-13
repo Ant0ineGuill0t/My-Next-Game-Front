@@ -11,7 +11,7 @@ import './style.scss';
 function RightSide() {
   const dispatch = useDispatch();
   const questionNumber = useSelector((state) => state.game.questionNumber);
-  const progressBar = questionNumber * 5;
+  const progressBar = questionNumber * 6.66;
 
   const handleRestartClick = () => {
     dispatch(restartQuizz());
