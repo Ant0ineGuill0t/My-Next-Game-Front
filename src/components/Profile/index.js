@@ -50,7 +50,7 @@ function Profile() {
   }
 
   return (
-    <div className="profile">
+    <div className="profile-div">
       <h2 className="profile__title"> {userData.pseudo} place</h2>
       <form
         className="profile__form"
