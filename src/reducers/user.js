@@ -13,6 +13,7 @@ import {
   SET_VALID_USER_FORM,
   UNSET_VALID_USER_FORM,
   EDIT_USER,
+  SAVE_WISHLIST,
 } from 'src/actions';
 
 const initialState = {
@@ -27,6 +28,7 @@ const initialState = {
   newUserConfirmPassword: '',
   token: '',
   isLogged: false,
+  wishlist: [],
   errorMessage: false,
   errorForm: [''],
   validUserForm: false,
@@ -166,6 +168,11 @@ const reducer = (state = initialState, action = {}) => {
           ...state.userData,
           avatar: action.value,
         },
+      };
+    case SAVE_WISHLIST:
+      return {
+        ...state,
+        wishlist: action.wishlist,
       };
 
     default:

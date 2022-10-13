@@ -22,7 +22,7 @@ function Result({
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleWishlist = () => {
-    const wishlist = { "game": [{ "name": `${name}`, "apiId": `${id}` }], "id": `${user.id}` };
+    const wishlist = { game: { name: name, apiId: id }, id: user.id };
     dispatch(toggleWishlist(wishlist));
   };
   return (

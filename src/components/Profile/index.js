@@ -21,7 +21,9 @@ function Profile() {
   const editEmail = useSelector((state) => state.user.userData.email);
   // const editPassword = useSelector((state) => state.user.userData.password);
   const editPseudo = useSelector((state) => state.user.userData.pseudo);
-  const gameDatas = useSelector((state) => state.game.gameData);
+  const wishlists = useSelector((state) => state.user.wishlist);
+  const checklists = useSelector((state) => state.user.checklist);
+  console.log(wishlists);
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(updateUser());
@@ -155,22 +157,22 @@ function Profile() {
         <p>WishList</p>
         <ul className="scrollZoneWishlist">
           {
-            gameDatas.map(
-              (gameData) => <li key={gameData.id}><Card {...gameData} /></li>,
+            wishlists.map(
+              (wishlist) => <li key={wishlist.id}><Card {...wishlist} /></li>,
             )
           }
         </ul>
       </div>
-      <div className="profil-done">
+      {/* <div className="profil-done">
         <p>Done</p>
         <ul className="scrollZoneChecklist">
           {
-            gameDatas.map(
+            checklists.map(
               (gameData) => <li key={gameData.id}><Card {...gameData} /></li>,
             )
           }
         </ul>
-      </div>
+      </div> */}
     </div>
 
   );
