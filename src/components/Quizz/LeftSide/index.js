@@ -16,12 +16,12 @@ function LeftSide() {
   const navigate = useNavigate();
 
   const handleClick = (event) => {
-    if (questionNumber < 20) {
+    if (questionNumber < 15) {
       console.log(questionNumber);
       dispatch(saveAnswer(event.target.value));
       dispatch(sendAnswer());
     }
-    if (questionNumber === 20) {
+    if (questionNumber === 15) {
       dispatch(displayResults());
       navigate('/quizz/results');
     }
