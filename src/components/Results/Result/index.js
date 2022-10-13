@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleWishlist } from 'src/actions';
+import { toggleWishlist, toggleDonelist } from 'src/actions';
 // data, styles
 import './style.scss';
 import WishListImage from '../../../assets/images/WishlistButton.png';
@@ -24,6 +24,10 @@ function Result({
   const handleWishlist = () => {
     const wishlist = { game: { name: name, apiId: id }, id: user.id };
     dispatch(toggleWishlist(wishlist));
+  };
+  const handleDonelist = () => {
+    const donelist = { game: { name: name, apiId: id }, id: user.id };
+    dispatch(toggleDonelist(donelist));
   };
   return (
     <div
@@ -56,9 +60,7 @@ function Result({
         </div>
         <div
           className="lists__donelist"
-          onClick={() => {
-            console.log('ajout donelist');
-          }}
+          onClick={handleDonelist}
         >
           <button className="listButton" type="button">
 

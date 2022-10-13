@@ -14,6 +14,7 @@ import {
   UNSET_VALID_USER_FORM,
   EDIT_USER,
   SAVE_WISHLIST,
+  SAVE_CHECKLIST,
 } from 'src/actions';
 
 const initialState = {
@@ -29,6 +30,7 @@ const initialState = {
   token: '',
   isLogged: false,
   wishlist: [],
+  checklist: [],
   errorMessage: false,
   errorForm: [''],
   validUserForm: false,
@@ -173,6 +175,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         wishlist: action.wishlist,
+      };
+    case SAVE_CHECKLIST:
+      return {
+        ...state,
+        checklist: action.checklist,
       };
 
     default:
