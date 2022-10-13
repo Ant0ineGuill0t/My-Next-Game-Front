@@ -45,7 +45,6 @@ function Header() {
     dispatch(toggleLoginForm());
     dispatch(unsetValidUserForm());
   };
-
   return (
     <header className="header">
       <Link to="/">

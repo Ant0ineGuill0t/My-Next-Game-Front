@@ -56,7 +56,7 @@ function Profile() {
         className="profile__form"
         onSubmit={handleSubmit}
       >
-        <label
+        {/* <label
           htmlFor="profile-picture"
           className="profile-intel-label"
         >
@@ -68,7 +68,7 @@ function Profile() {
             className="profile-gear-input"
             onChange={(event) => dispatch(editUser(window.URL.createObjectURL(event.target.files[0]), 'avatar'))}
           />
-        </label>
+        </label> */}
         <div className="profile-content">
           <label
             htmlFor="profile-content-email"
