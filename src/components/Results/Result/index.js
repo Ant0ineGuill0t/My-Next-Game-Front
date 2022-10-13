@@ -18,8 +18,13 @@ function Result({
 }) {
   const gameNote = Math.round(aggregated_rating);
   const isLogged = useSelector((state) => state.user.isLogged);
+  const user = useSelector((state) => state.user.userData);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const handleWishlist = () => {
+    const wishlist = { "game": [{ "name": `${name}`, "apiId": `${id}` }], "id": `${user.id}` };
+    dispatch(toggleWishlist(wishlist));
+  };
   return (
     <div
       className="card"
@@ -43,9 +48,7 @@ function Result({
       >
         <div
           className="lists__wishlist"
-          onClick={() => {
-            dispatch(toggleWishlist(id, name));
-          }}
+          onClick={handleWishlist}
         >
           <button className="listButton" type="button">
             <img className="list-img" src={WishListImage} alt="wishlist button" />

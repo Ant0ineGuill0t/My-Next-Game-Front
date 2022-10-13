@@ -111,14 +111,6 @@ const userMiddleware = (store) => (next) => (action) => {
         });
       break;
     case TOGGLE_WISHLIST:
-      const user = store.getState().user.userData;
-      const gameData = {
-        id: `${user.id}`,
-        game: [{
-          name: action.name,
-          apiId: `${action.apiId}`,
-        }],
-      };
       axios.post(
         'http://localhost:8000/api/wishlist/toggle',
         {
@@ -127,7 +119,7 @@ const userMiddleware = (store) => (next) => (action) => {
           },
           withCredentials: true,
           credentials: 'include',
-          data: gameData,
+          data: action.data,
         },
       )
         .then((response) => {
