@@ -50,7 +50,6 @@ function Header() {
     dispatch(displayWishlist());
     navigate('/profile');
   };
-
   return (
     <header className="header">
       <Link to="/">
