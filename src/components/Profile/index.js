@@ -23,7 +23,7 @@ function Profile() {
   const editPseudo = useSelector((state) => state.user.userData.pseudo);
   const wishlists = useSelector((state) => state.user.wishlist);
   const checklists = useSelector((state) => state.user.checklist);
-  console.log(wishlists);
+  console.log(checklists);
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(updateUser());
@@ -163,16 +163,16 @@ function Profile() {
           }
         </ul>
       </div>
-      {/* <div className="profil-done">
+      <div className="profil-done">
         <p>Done</p>
         <ul className="scrollZoneChecklist">
           {
             checklists.map(
-              (gameData) => <li key={gameData.id}><Card {...gameData} /></li>,
+              (checklist) => <li key={checklist.id}><Card {...checklist} /></li>,
             )
-          }
+            }
         </ul>
-      </div> */}
+      </div>
     </div>
 
   );

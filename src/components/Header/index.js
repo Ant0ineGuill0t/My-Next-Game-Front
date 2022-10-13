@@ -13,6 +13,7 @@ import {
   unsetErrorFormMessage,
   unsetValidUserForm,
   displayWishlist,
+  displayChecklist,
 } from 'src/actions';
 // data, styles
 import './style.scss';
@@ -48,6 +49,7 @@ function Header() {
   };
   const handleClickProfile = () => {
     dispatch(displayWishlist());
+    dispatch(displayChecklist());
     navigate('/profile');
   };
 

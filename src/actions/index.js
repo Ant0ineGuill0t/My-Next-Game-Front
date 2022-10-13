@@ -31,7 +31,9 @@ export const UPDATE_USER = 'UPDATE_USER';
 export const TOGGLE_WISHLIST = 'TOGGLE_WISHLIST';
 export const TOGGLE_DONELIST = 'TOGGLE_DONELIST';
 export const DISPLAY_WISHLIST = 'DISPLAY_WISHLIST';
+export const DISPLAY_CHECKLIST = 'DISPLAY_CHECKLIST';
 export const SAVE_WISHLIST = 'SAVE_WISHLIST';
+export const SAVE_CHECKLIST = 'SAVE_CHECKLIST';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -181,11 +183,21 @@ export const displayWishlist = () => ({
   type: DISPLAY_WISHLIST,
 });
 
+export const displayChecklist = () => ({
+  type: DISPLAY_CHECKLIST,
+});
+
 export const saveWishlist = (wishlist) => ({
   type: SAVE_WISHLIST,
   wishlist: wishlist,
 });
 
-export const toggleAddList = () => ({
+export const saveChecklist = (checklist) => ({
+  type: SAVE_CHECKLIST,
+  checklist: checklist,
+});
+
+export const toggleDonelist = (donelist) => ({
   type: TOGGLE_DONELIST,
+  data: donelist,
 });

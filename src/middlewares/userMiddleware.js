@@ -16,7 +16,9 @@ import {
   TOGGLE_DONELIST,
   TOGGLE_WISHLIST,
   DISPLAY_WISHLIST,
+  DISPLAY_CHECKLIST,
   saveWishlist,
+  saveChecklist,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -134,13 +136,13 @@ const userMiddleware = (store) => (next) => (action) => {
     case TOGGLE_DONELIST:
       axios.post(
         'http://localhost:8000/api/checklist/toggle',
+        action.data,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
           withCredentials: true,
           credentials: 'include',
-          user: store.getState().user.dataUser.pseudo,
         },
       )
         .then((response) => {
@@ -164,6 +166,25 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data.results);
           store.dispatch(saveWishlist(response.data.results));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case DISPLAY_CHECKLIST:
+      axios.get(
+        'http://localhost:8000/api/checklist',
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+        },
+      )
+        .then((response) => {
+          console.log(response.data.results);
+          store.dispatch(saveChecklist(response.data.results));
         })
         .catch((error) => {
           console.log(error);
