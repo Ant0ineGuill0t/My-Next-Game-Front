@@ -15,6 +15,8 @@ import {
   getUserData,
   TOGGLE_DONELIST,
   TOGGLE_WISHLIST,
+  DISPLAY_WISHLIST,
+  saveWishlist,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -111,23 +113,15 @@ const userMiddleware = (store) => (next) => (action) => {
         });
       break;
     case TOGGLE_WISHLIST:
-      const user = store.getState().user.userData;
-      const gameData = {
-        id: `${user.id}`,
-        game: [{
-          name: action.name,
-          apiId: `${action.apiId}`,
-        }],
-      };
       axios.post(
         'http://localhost:8000/api/wishlist/toggle',
+        action.data,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
           withCredentials: true,
           credentials: 'include',
-          data: gameData,
         },
       )
         .then((response) => {
@@ -151,6 +145,25 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case DISPLAY_WISHLIST:
+      axios.get(
+        'http://localhost:8000/api/wishlist',
+        {
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+          },
+          withCredentials: true,
+          credentials: 'include',
+        },
+      )
+        .then((response) => {
+          console.log(response.data.results);
+          store.dispatch(saveWishlist(response.data.results));
         })
         .catch((error) => {
           console.log(error);

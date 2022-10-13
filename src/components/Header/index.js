@@ -12,6 +12,7 @@ import {
   unsetErrorMessage,
   unsetErrorFormMessage,
   unsetValidUserForm,
+  displayWishlist,
 } from 'src/actions';
 // data, styles
 import './style.scss';
@@ -44,6 +45,10 @@ function Header() {
   const handleLogin = () => {
     dispatch(toggleLoginForm());
     dispatch(unsetValidUserForm());
+  };
+  const handleClickProfile = () => {
+    dispatch(displayWishlist());
+    navigate('/profile');
   };
   return (
     <header className="header">
@@ -127,9 +132,7 @@ function Header() {
           <button
             type="button"
             className="logged__profil-button"
-            onClick={() => {
-              navigate('/profile');
-            }}
+            onClick={handleClickProfile}
           >
             Go to profile
           </button>

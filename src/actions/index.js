@@ -30,6 +30,8 @@ export const EDIT_USER = 'EDIT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const TOGGLE_WISHLIST = 'TOGGLE_WISHLIST';
 export const TOGGLE_DONELIST = 'TOGGLE_DONELIST';
+export const DISPLAY_WISHLIST = 'DISPLAY_WISHLIST';
+export const SAVE_WISHLIST = 'SAVE_WISHLIST';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -170,10 +172,18 @@ export const updateUser = () => ({
   type: UPDATE_USER,
 });
 
-export const toggleWishlist = (id, name) => ({
+export const toggleWishlist = (wishlist) => ({
   type: TOGGLE_WISHLIST,
-  apiId: id,
-  name: name,
+  data: wishlist,
+});
+
+export const displayWishlist = () => ({
+  type: DISPLAY_WISHLIST,
+});
+
+export const saveWishlist = (wishlist) => ({
+  type: SAVE_WISHLIST,
+  wishlist: wishlist,
 });
 
 export const toggleAddList = () => ({
