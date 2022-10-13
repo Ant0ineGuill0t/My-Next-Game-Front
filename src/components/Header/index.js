@@ -48,10 +48,10 @@ function Header() {
     dispatch(toggleLoginForm());
     dispatch(unsetValidUserForm());
   };
-  const handleAvatarClick = () => {
+ /*  const handleAvatarClick = () => {
     setIsMenu(!isMenu);
     console.log(isMenu);
-  };
+  }; */
   return (
     <header className="header">
       <Link to="/">
@@ -125,8 +125,8 @@ function Header() {
         <div className="header__logged">
 
           <p className="logged__message">Hello {userPseudo} !</p>
-          <img onClick={handleAvatarClick} className="logged__avatar" src={editAvatar} alt="avatar" />
-          <div className={isMenu ? 'logged__menu_on' : 'logged__menu_off'}>
+          {/* <img onClick={handleAvatarClick} className="logged__avatar" src={editAvatar} alt="avatar" /> */}
+          <div className="logged__menu_on">
             <button
               type="button"
               className="logged__logout-button"
