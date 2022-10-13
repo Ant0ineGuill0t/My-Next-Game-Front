@@ -129,7 +129,7 @@ function Header() {
           <div className={isMenu ? 'logged__menu_on' : 'logged__menu_off'}>
             <button
               type="button"
-              className=".logged__logout-button"
+              className="logged__logout-button"
               onClick={handleLogout}
             >
               Log out

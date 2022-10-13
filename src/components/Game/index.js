@@ -59,7 +59,7 @@ function Game() {
           className="game__image"
         />
         <div className="game__left">
-          <div className="game__left__Release">
+          <div className="game__left__release">
             <h3>Release Date :</h3>
             <p>{humanDateFormat}</p>
           </div>

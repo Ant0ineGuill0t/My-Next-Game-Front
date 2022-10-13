@@ -63,7 +63,8 @@
   padding: 1em;
 }
 
-.profile-intel {
+.profile__form{
+  display: flex;
   justify-content: space-between;
   height: 40%;
 }
@@ -127,7 +128,8 @@
   background-color: #022829;
   border: 2px solid #67CECD;
   border-radius: 2rem;
-  all:unset;
+  color: unset;
+  font: unset;
 }
 .submit-off{
   display: none;
@@ -208,7 +210,7 @@
 }
 .cardList:hover {
   box-shadow: 0 0 1rem #ff9633;
-    .cardImg{
+    .profile__cardImg{
       opacity: 0.2;
     }
     .gamesTitleWishlist{

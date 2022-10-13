@@ -12,7 +12,7 @@ function Card({
   return (
     <Link to={`/game/${slug}`}>
       <div className="cardList">
-        <img className="cardImg" src={`https://images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`} alt="" />
+        <img className="profile__cardImg" src={`https://images.igdb.com/igdb/image/upload/t_720p/${cover.image_id}.jpg`} alt="" />
         <h3 className="gamesTitleWishlist">{name}</h3>
       </div>
     </Link>
