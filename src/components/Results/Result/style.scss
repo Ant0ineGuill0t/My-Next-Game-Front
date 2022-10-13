@@ -237,7 +237,9 @@
   justify-content: space-between;
   width: 90%;
 }
-
+.card__lists_hide{
+  display: none;
+}
 .lists__wishlist{
   width: max-content;
   display: flex;

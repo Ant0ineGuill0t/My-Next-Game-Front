@@ -13,7 +13,7 @@ function Quizz() {
   return (
     <div className="quizz">
       <div className="quizz__container">
-        <h2 className="quizz__title">Question {useSelector((state) => state.game.questionNumber)}/20</h2>
+        <h2 className="quizz__title">Question {useSelector((state) => state.game.questionNumber)}/15</h2>
         <div className="container__div">
           <p className="div__question" key={question}>{question}</p>
         </div>

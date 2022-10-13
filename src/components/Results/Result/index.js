@@ -1,7 +1,7 @@
 // == Import
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toggleWishlist } from 'src/actions';
 // data, styles
 import './style.scss';
@@ -17,6 +17,7 @@ function Result({
   aggregated_rating,
 }) {
   const gameNote = Math.round(aggregated_rating);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
@@ -38,7 +39,7 @@ function Result({
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="card__lists"
+        className={isLogged ? 'card__lists' : 'card__lists_hide'}
       >
         <div
           className="lists__wishlist"
