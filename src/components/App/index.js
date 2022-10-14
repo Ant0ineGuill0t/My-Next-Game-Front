@@ -3,7 +3,10 @@ import {
   Routes, Route, Navigate,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getUserData, toggleIsLogged } from 'src/actions';
+import {
+  getUserData,
+  toggleIsLogged,
+} from 'src/actions';
 
 // Composants
 import dataGames from 'src/data/dataGames';

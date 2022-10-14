@@ -19,6 +19,10 @@ function Result({
   const gameNote = Math.round(aggregated_rating);
   const isLogged = useSelector((state) => state.user.isLogged);
   const user = useSelector((state) => state.user.userData);
+  const checkListData = useSelector((state) => state.user.checklist);
+  const wishListData = useSelector((state) => state.user.wishlist);
+  const filteredSlugChecklist = checkListData.filter((data) => data.name === name);
+  const filteredSlugWishlist = wishListData.filter((data) => data.name === name);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleWishlist = () => {
@@ -55,7 +59,7 @@ function Result({
           onClick={handleWishlist}
         >
           <button className="listButton" type="button">
-            <img className="list-img" src={WishListImage} alt="wishlist button" />
+            <img className={filteredSlugWishlist.length > 0 ? 'list-img-checked' : 'list-img'} src={WishListImage} alt="wishlist button" />
           </button>
         </div>
         <div
@@ -64,7 +68,7 @@ function Result({
         >
           <button className="listButton" type="button">
 
-            <img className="list-img" src={CheckListImage} alt="checklist button" />
+            <img className={filteredSlugChecklist.length > 0 ? 'list-img-checked' : 'list-img'} src={CheckListImage} alt="checklist button" />
           </button>
         </div>
       </div>

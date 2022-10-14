@@ -19,6 +19,8 @@ import {
   DISPLAY_CHECKLIST,
   saveWishlist,
   saveChecklist,
+  displayChecklist,
+  displayWishlist,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -40,6 +42,8 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(toggleLoginForm());
           store.dispatch(toggleIsLogged());
           store.dispatch(getUserData());
+          store.dispatch(displayWishlist());
+          store.dispatch(displayChecklist());
         })
         .catch((error) => {
           console.log(error);
@@ -77,15 +81,16 @@ const userMiddleware = (store) => (next) => (action) => {
         });
       break;
     case UPDATE_USER:
+      console.log(store.getState().user.userData);
       axios.patch(
-        'http://localhost:8000/api/user/edit',
+        `http://localhost:8000/api/user/${store.getState().user.userData.id}/edit`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },
           withCredentials: true,
           credentials: 'include',
-          user: store.getState().user.userData,
+          data: store.getState().user.userData,
         },
       )
         .then(() => {
@@ -109,6 +114,8 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(saveUserDataFromApi(response.data));
+          store.dispatch(displayWishlist());
+          store.dispatch(displayChecklist());
         })
         .catch((error) => {
           console.log(error);
@@ -128,6 +135,7 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          store.dispatch(displayWishlist());
         })
         .catch((error) => {
           console.log(error);
@@ -147,6 +155,7 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          store.dispatch(displayChecklist());
         })
         .catch((error) => {
           console.log(error);
@@ -164,7 +173,6 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response.data.results);
           store.dispatch(saveWishlist(response.data.results));
         })
         .catch((error) => {
@@ -183,7 +191,6 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response.data.results);
           store.dispatch(saveChecklist(response.data.results));
         })
         .catch((error) => {
