@@ -35,6 +35,7 @@ const initialState = {
   errorForm: [''],
   validUserForm: false,
   userData: {},
+  editUserData: {},
 };
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -140,8 +141,8 @@ const reducer = (state = initialState, action = {}) => {
       if (action.identifier === 'email') {
         return {
           ...state,
-          userData: {
-            ...state.userData,
+          editUserData: {
+            ...state.editUserData,
             email: action.value,
           },
         };
@@ -149,8 +150,8 @@ const reducer = (state = initialState, action = {}) => {
       if (action.identifier === 'pseudo') {
         return {
           ...state,
-          userData: {
-            ...state.userData,
+          editUserData: {
+            ...state.editUserData,
             pseudo: action.value,
           },
         };
@@ -158,16 +159,16 @@ const reducer = (state = initialState, action = {}) => {
       if (action.identifier === 'password') {
         return {
           ...state,
-          userData: {
-            ...state.userData,
+          editUserData: {
+            ...state.editUserData,
             password: action.value,
           },
         };
       }
       return {
         ...state,
-        userData: {
-          ...state.userData,
+        editUserData: {
+          ...state.editUserData,
           confirmPassword: action.value,
         },
       };

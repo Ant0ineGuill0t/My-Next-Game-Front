@@ -94,7 +94,6 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          console.log(store.getState().user.userData);
         });
       break;
     case GET_USER_DATA:
@@ -127,9 +126,6 @@ const userMiddleware = (store) => (next) => (action) => {
           credentials: 'include',
         },
       )
-        .then((response) => {
-          console.log(response);
-        })
         .catch((error) => {
           console.log(error);
         });
@@ -146,9 +142,6 @@ const userMiddleware = (store) => (next) => (action) => {
           credentials: 'include',
         },
       )
-        .then((response) => {
-          console.log(response);
-        })
         .catch((error) => {
           console.log(error);
         });
@@ -165,7 +158,6 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response.data.results);
           store.dispatch(saveWishlist(response.data.results));
         })
         .catch((error) => {
@@ -184,7 +176,6 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response.data.results);
           store.dispatch(saveChecklist(response.data.results));
         })
         .catch((error) => {
