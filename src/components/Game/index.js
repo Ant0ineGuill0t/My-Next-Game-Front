@@ -1,17 +1,23 @@
 // == Import
 import Popup from 'reactjs-popup';
 import { Navigate, useParams, Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { toggleWishlist, toggleDonelist } from 'src/actions';
 import previousArrow from 'src/assets/images/ArrowLeft.png';
 import nextArrow from 'src/assets/images/ArrowRight.png';
+import WishListImage from 'src/assets/images/WishlistButton.png';
+import CheckListImage from 'src/assets/images/ChecklistButton.png';
+
 // composants
 // data, styles
 import './style.scss';
 
 function Game() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const gameData = useSelector((state) => state.game.gameData);
+  const userData = useSelector((state) => state.user.userData);
   const checkListData = useSelector((state) => state.user.checklist);
   const wishListData = useSelector((state) => state.user.wishlist);
   const { paramSlug } = useParams();
@@ -20,6 +26,7 @@ function Game() {
   const filteredSlugWishlist = wishListData.filter((data) => data.slug === paramSlug);
   const [keyIndex, setkeyIndex] = useState(0);
   const [open, setOpen] = useState(false);
+  console.log(userData);
   let game = '';
   if (filteredSlug.length < 1
     && filteredSlugChecklist.length < 1 && filteredSlugWishlist.length < 1) {
@@ -28,13 +35,14 @@ function Game() {
     );
   }
   if (filteredSlug.length > 0) {
-    game = filteredSlug[0];
+    [game] = filteredSlug;
+    console.log(game);
   }
   if (filteredSlugChecklist.length > 0) {
-    game = filteredSlugChecklist[0];
+    [game] = filteredSlugChecklist;
   }
   if (filteredSlugWishlist.length > 0) {
-    game = filteredSlugWishlist[0];
+    [game] = filteredSlugWishlist;
   }
   const gameNote = Math.round(game.aggregated_rating);
   const millisecondsDate = game.first_release_date * 1000;
@@ -57,6 +65,14 @@ function Game() {
       setkeyIndex(0);
     }
   };
+  const handleWishlist = () => {
+    const wishlist = { game: { name: game.name, apiId: game.id }, id: userData.id };
+    dispatch(toggleWishlist(wishlist));
+  };
+  const handleDonelist = () => {
+    const donelist = { game: { name: game.name, apiId: game.id }, id: userData.id };
+    dispatch(toggleDonelist(donelist));
+  };
   const isOpening = (key) => {
     setkeyIndex(key);
     setOpen(true);
@@ -67,7 +83,34 @@ function Game() {
   return (
     <>
       <div className="game">
-        <h2 className="game__title">{game.name}</h2>
+        <div className="game__title">
+          <h2>{game.name}</h2>
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            className="game__lists"
+          >
+            <div
+              className="lists__wishlist"
+              onClick={handleWishlist}
+            >
+              <button className="listButton" type="button">
+                <img className={filteredSlugWishlist.length > 0 ? 'list-img-checked' : 'list-img'} src={WishListImage} alt="wishlist button" />
+              </button>
+            </div>
+            <div
+              className="lists__donelist"
+              onClick={handleDonelist}
+            >
+              <button className="listButton" type="button">
+
+                <img className={filteredSlugChecklist.length > 0 ? 'list-img-checked' : 'list-img'} src={CheckListImage} alt="checklist button" />
+              </button>
+            </div>
+          </div>
+
+        </div>
         <img
           src={`https://images.igdb.com/igdb/image/upload/t_720p/${game.cover.image_id}.jpg`}
           alt={game.name}

@@ -19,6 +19,8 @@ import {
   DISPLAY_CHECKLIST,
   saveWishlist,
   saveChecklist,
+  displayChecklist,
+  displayWishlist,
 } from 'src/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -40,6 +42,8 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(toggleLoginForm());
           store.dispatch(toggleIsLogged());
           store.dispatch(getUserData());
+          store.dispatch(displayWishlist());
+          store.dispatch(displayChecklist());
         })
         .catch((error) => {
           console.log(error);
@@ -77,6 +81,7 @@ const userMiddleware = (store) => (next) => (action) => {
         });
       break;
     case UPDATE_USER:
+      console.log(store.getState().user.userData);
       axios.patch(
         `http://localhost:8000/api/user/${store.getState().user.userData.id}/edit`,
         action.data,
@@ -87,6 +92,7 @@ const userMiddleware = (store) => (next) => (action) => {
           },
           withCredentials: true,
           credentials: 'include',
+          data: store.getState().user.userData,
         },
       )
         .then(() => {
@@ -109,6 +115,8 @@ const userMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(saveUserDataFromApi(response.data));
+          store.dispatch(displayWishlist());
+          store.dispatch(displayChecklist());
         })
         .catch((error) => {
           console.log(error);
@@ -126,6 +134,10 @@ const userMiddleware = (store) => (next) => (action) => {
           credentials: 'include',
         },
       )
+        .then((response) => {
+          console.log(response);
+          store.dispatch(displayWishlist());
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -142,6 +154,10 @@ const userMiddleware = (store) => (next) => (action) => {
           credentials: 'include',
         },
       )
+        .then((response) => {
+          console.log(response);
+          store.dispatch(displayChecklist());
+        })
         .catch((error) => {
           console.log(error);
         });

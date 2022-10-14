@@ -222,6 +222,7 @@
   all: unset;
   z-index: 1;
 }
+
 .lists__donelist .list-img:hover{
   content: url("../../../assets/images/ChecklistButtonDone.png");
   filter: drop-shadow(0 0 0.3rem #9EF4F3);
@@ -229,6 +230,22 @@
 
 .lists__wishlist .list-img:hover{
   content: url("../../../assets/images/WishlistButtonCheck.png");
+  filter: drop-shadow(0 0 0.3rem #9EF4F3);
+}
+
+.lists__wishlist .list-img-checked{
+  content: url("../../../assets/images/WishlistButtonCheck.png");
+}
+
+.lists__donelist .list-img-checked{
+  content: url("../../../assets/images/ChecklistButtonDone.png");
+}
+
+.lists__donelist .list-img-checked:hover{
+  filter: drop-shadow(0 0 0.3rem #9EF4F3);
+}
+
+.lists__wishlist .list-img-checked:hover{
   filter: drop-shadow(0 0 0.3rem #9EF4F3);
 }
 

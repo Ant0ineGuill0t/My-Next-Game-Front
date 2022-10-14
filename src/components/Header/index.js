@@ -48,8 +48,6 @@ function Header() {
     dispatch(unsetValidUserForm());
   };
   const handleClickProfile = () => {
-    dispatch(displayWishlist());
-    dispatch(displayChecklist());
     navigate('/profile');
   };
   return (
