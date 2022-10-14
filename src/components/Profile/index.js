@@ -8,26 +8,25 @@ import Card from './card';
 
 function Profile() {
   const dispatch = useDispatch();
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
-  const pseudoRef = useRef(null);
-  const userData = useSelector((state) => state.user.userData);
-  const isLogged = useSelector((state) => state.user.isLogged);
   const [disableEmail, setDisableEmail] = useState(true);
   const [disablePassword, setDisablePassword] = useState(true);
   const [disablePseudo, setDisablePseudo] = useState(true);
   const [disableSubmitButton, setDisableSubmitButton] = useState(false);
-  const editAvatar = useSelector((state) => state.user.userData.avatar);
-  const editEmail = useSelector((state) => state.user.userData.email);
-  // const editPassword = useSelector((state) => state.user.userData.password);
-  const editPseudo = useSelector((state) => state.user.userData.pseudo);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const pseudoRef = useRef(null);
+  const userData = useSelector((state) => state.user.userData);
+  const editUserData = useSelector((state) => state.user.editUserData);
+  const isLogged = useSelector((state) => state.user.isLogged);
   const wishlists = useSelector((state) => state.user.wishlist);
   const checklists = useSelector((state) => state.user.checklist);
-  console.log(checklists);
   function handleSubmit(event) {
     event.preventDefault();
-    dispatch(updateUser());
-    console.log('submit changements');
+    dispatch(updateUser(editUserData));
+    setDisableEmail(true);
+    setDisablePseudo(true);
+    setDisablePassword(true);
+    setDisableSubmitButton(false);
   }
   function handleEmail() {
     setDisableEmail(!disableEmail);
@@ -68,7 +67,10 @@ function Profile() {
             name="checkbox-gear"
             id="profile-picture"
             className="profile-gear-input"
-            onChange={(event) => dispatch(editUser(window.URL.createObjectURL(event.target.files[0]), 'avatar'))}
+            onChange={
+              (event) => dispatch(
+                editUser(window.URL.createObjectURL(event.target.files[0]), 'avatar'))
+            }
           />
         </label> */}
         <div className="profile-content">
@@ -124,6 +126,7 @@ function Profile() {
               name="profile-content-confirm-password"
               placeholder=" ****** "
               autoComplete="on"
+              onChange={(event) => dispatch(editUser(event.target.value, 'confirmPassword'))}
             />
           </label>
           <label htmlFor="profile-content-pseudo" className="profile-content-pseudo">

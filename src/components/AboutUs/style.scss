@@ -1,6 +1,6 @@
 @media screen and (min-width: 900px){
   .about-us{
-    padding-bottom: 29rem;
+    padding-bottom: 25rem;
   }
 }
 @media screen and (min-width: 1921px){
@@ -13,6 +13,12 @@
   margin: 5rem auto;
   text-align: center;
   line-height: 1.5rem;
+}
+.about-us__title{
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 .about-us__content{
   margin-top: 2rem;

@@ -84,9 +84,11 @@ const userMiddleware = (store) => (next) => (action) => {
       console.log(store.getState().user.userData);
       axios.patch(
         `http://localhost:8000/api/user/${store.getState().user.userData.id}/edit`,
+        action.data,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
           },
           withCredentials: true,
           credentials: 'include',
@@ -98,7 +100,6 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
-          console.log(store.getState().user.userData);
         });
       break;
     case GET_USER_DATA:
