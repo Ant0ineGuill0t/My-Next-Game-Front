@@ -170,8 +170,9 @@ export const editUser = (inputValue, identifier) => ({
   identifier: identifier,
 });
 
-export const updateUser = () => ({
+export const updateUser = (data) => ({
   type: UPDATE_USER,
+  data: data,
 });
 
 export const toggleWishlist = (wishlist) => ({

@@ -78,14 +78,15 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
     case UPDATE_USER:
       axios.patch(
-        'http://localhost:8000/api/user/edit',
+        `http://localhost:8000/api/user/${store.getState().user.userData.id}/edit`,
+        action.data,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+            'Content-Type': 'application/json',
           },
           withCredentials: true,
           credentials: 'include',
-          user: store.getState().user.userData,
         },
       )
         .then(() => {

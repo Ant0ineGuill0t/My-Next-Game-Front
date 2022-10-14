@@ -168,7 +168,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         userData: {
           ...state.userData,
-          avatar: action.value,
+          confirmPassword: action.value,
         },
       };
     case SAVE_WISHLIST:

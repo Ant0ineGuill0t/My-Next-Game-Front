@@ -17,16 +17,15 @@ function Profile() {
   const [disablePassword, setDisablePassword] = useState(true);
   const [disablePseudo, setDisablePseudo] = useState(true);
   const [disableSubmitButton, setDisableSubmitButton] = useState(false);
-  const editAvatar = useSelector((state) => state.user.userData.avatar);
-  const editEmail = useSelector((state) => state.user.userData.email);
-  // const editPassword = useSelector((state) => state.user.userData.password);
-  const editPseudo = useSelector((state) => state.user.userData.pseudo);
   const wishlists = useSelector((state) => state.user.wishlist);
   const checklists = useSelector((state) => state.user.checklist);
   console.log(checklists);
   function handleSubmit(event) {
     event.preventDefault();
-    dispatch(updateUser());
+    const data = {
+      email: userData.email, Birthdate: userData.Birthdate, password: { first: userData.password, second: userData.confirmPassword }, pseudo: userData.pseudo, platform: '', avatar: '',
+    };
+    dispatch(updateUser(data));
     console.log('submit changements');
   }
   function handleEmail() {
@@ -124,6 +123,7 @@ function Profile() {
               name="profile-content-confirm-password"
               placeholder=" ****** "
               autoComplete="on"
+              onChange={(event) => dispatch(editUser(event.target.value, 'confirmPassword'))}
             />
           </label>
           <label htmlFor="profile-content-pseudo" className="profile-content-pseudo">
