@@ -116,7 +116,6 @@ const gameMiddleware = (store) => (next) => (action) => {
 
       break;
     case DISPLAY_RESULTS:
-      console.log(store.getState().game.loading);
       axios.get(
         'http://localhost:8000/api/game/result',
         {

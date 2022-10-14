@@ -17,7 +17,6 @@ function LeftSide() {
 
   const handleClick = (event) => {
     if (questionNumber < 15) {
-      console.log(questionNumber);
       dispatch(saveAnswer(event.target.value));
       dispatch(sendAnswer());
     }

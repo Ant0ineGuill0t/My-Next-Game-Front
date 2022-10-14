@@ -1,8 +1,8 @@
 // == Import
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { restartQuizz } from '../../actions';
-
 // composants
 import Result from './Result';
 // data, styles
@@ -12,8 +12,12 @@ function Results() {
   const dispatch = useDispatch();
   const imLoading = useSelector((state) => state.game.loading);
   const gameDatas = useSelector((state) => state.game.gameData);
-  console.log(imLoading);
-
+  const [GameFound, setGameFound] = useState(true);
+  if (gameDatas.lenght === 0) {
+    setGameFound(false);
+  }
+  console.log(gameDatas);
+  console.log(GameFound);
   const handleRestartClick = () => {
     dispatch(restartQuizz());
   };
@@ -23,7 +27,7 @@ function Results() {
   };
   return (
     <div className="results">
-      {!imLoading && (
+      {!imLoading && GameFound && (
         <>
           <div onWheel={handleScroll} className="results__card-container">
             <ul className="card-container__scrollZone">
@@ -43,6 +47,11 @@ function Results() {
         <div className="results__loader-container">
           <h2>Loading ...</h2>
           <span className="loader-container__loader" />
+        </div>
+      )}
+      {!imLoading && !GameFound && (
+        <div className="results">
+          <p>No game Found...</p>
         </div>
       )}
     </div>
