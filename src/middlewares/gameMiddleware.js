@@ -13,6 +13,7 @@ import {
   DISPLAY_RESULTS,
   RESTART_QUIZZ,
 } from 'src/actions';
+import { setGameFoundFalse, setGameFoundTrue } from '../actions';
 
 const gameMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -127,8 +128,16 @@ const gameMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          console.log(response);
           store.dispatch(isLoading(!store.getState().game.loading));
           store.dispatch(saveResults(response));
+          if (response.data.results.length < 1) {
+            store.dispatch(setGameFoundFalse());
+            console.log(store.getState().game.gameFound);
+          }
+          else {
+            store.dispatch(setGameFoundTrue());
+          }
         })
         .catch((error) => {
           console.log(error);

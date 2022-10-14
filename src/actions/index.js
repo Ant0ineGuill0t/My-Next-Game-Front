@@ -34,6 +34,8 @@ export const DISPLAY_WISHLIST = 'DISPLAY_WISHLIST';
 export const DISPLAY_CHECKLIST = 'DISPLAY_CHECKLIST';
 export const SAVE_WISHLIST = 'SAVE_WISHLIST';
 export const SAVE_CHECKLIST = 'SAVE_CHECKLIST';
+export const SET_GAMEFOUND_FALSE = 'SET_GAMEFOUND_FALSE';
+export const SET_GAMEFOUND_TRUE = 'SET_GAMEFOUND_TRUE';
 
 export const toggleLoginForm = () => ({
   type: TOGGLE_LOGIN_FORM,
@@ -201,4 +203,14 @@ export const saveChecklist = (checklist) => ({
 export const toggleDonelist = (donelist) => ({
   type: TOGGLE_DONELIST,
   data: donelist,
+});
+
+export const setGameFoundFalse = () => ({
+  type: SET_GAMEFOUND_FALSE,
+  gameFound: false,
+});
+
+export const setGameFoundTrue = () => ({
+  type: SET_GAMEFOUND_TRUE,
+  gameFound: true,
 });

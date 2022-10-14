@@ -41,9 +41,9 @@ const userMiddleware = (store) => (next) => (action) => {
           );
           store.dispatch(toggleLoginForm());
           store.dispatch(toggleIsLogged());
-          store.dispatch(getUserData());
           store.dispatch(displayWishlist());
           store.dispatch(displayChecklist());
+          store.dispatch(getUserData());
         })
         .catch((error) => {
           console.log(error);

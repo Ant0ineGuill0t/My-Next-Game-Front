@@ -12,12 +12,7 @@ function Results() {
   const dispatch = useDispatch();
   const imLoading = useSelector((state) => state.game.loading);
   const gameDatas = useSelector((state) => state.game.gameData);
-  const [GameFound, setGameFound] = useState(true);
-  if (gameDatas.lenght === 0) {
-    setGameFound(false);
-  }
-  console.log(gameDatas);
-  console.log(GameFound);
+  const GameFound = useSelector((state) => state.game.gameFound);
   const handleRestartClick = () => {
     dispatch(restartQuizz());
   };
@@ -52,6 +47,9 @@ function Results() {
       {!imLoading && !GameFound && (
         <div className="results">
           <p>No game Found...</p>
+          <Link to="/Quizz">
+            <button onClick={handleRestartClick} type="button" className="card-container__restart">Restart a Quizz</button>
+          </Link>
         </div>
       )}
     </div>

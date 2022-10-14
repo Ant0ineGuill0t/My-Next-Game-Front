@@ -6,12 +6,15 @@ import {
   SAVE_RESULTS,
   RESTART_QUIZZ,
   IS_LOADING,
+  SET_GAMEFOUND_FALSE,
+  SET_GAMEFOUND_TRUE,
 } from '../actions';
 
 const initialState = {
   game: '',
   question: '',
   loading: true,
+  gameFound: true,
   choices: {
     // 'absolument !': 2,
     // 'Un peu': 1,
@@ -64,6 +67,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         gameData: action.gameData,
+      };
+    case SET_GAMEFOUND_FALSE:
+      return {
+        ...state,
+        gameFound: action.gameFound,
+      };
+    case SET_GAMEFOUND_TRUE:
+      return {
+        ...state,
+        gameFound: action.gameFound,
       };
     default:
       return state;

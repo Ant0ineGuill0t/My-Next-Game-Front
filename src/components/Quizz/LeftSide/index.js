@@ -2,10 +2,12 @@
 import { sendAnswer, saveAnswer, displayResults } from 'src/actions';
 // import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // data, styles
 import './style.scss';
 import NeonButton from '../../../assets/images/neonbutton.png';
+import { setGameFoundFalse } from '../../../actions';
 
 function LeftSide() {
   const dispatch = useDispatch();
