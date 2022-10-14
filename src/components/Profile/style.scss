@@ -55,6 +55,7 @@
     position: absolute;
   }
 }
+
 .profile-div{
   background-color: #022829;
   border: 2px solid #67CECD;
@@ -198,7 +199,6 @@
 }
 .cardList {
   display: flex;
-  width: 10em;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
@@ -208,6 +208,7 @@
   transition: 0.2s ease-out;
   position: relative;
   left: 0em;
+  width: 9em;
   margin: 1em;
 }
 .cardList:hover {
