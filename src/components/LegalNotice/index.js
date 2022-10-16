@@ -5,53 +5,53 @@ import './style.scss';
 function LegalNotice() {
   return (
     <div className="legal-notice">
-      <h1 className="legal-notice__main-title">Mentions légales</h1>
-      <p className="legal-notice__content">Merci de lire avec attention les différentes modalités d’utilisation du présent site
-        avant d’y parcourir ses pages.
-        En vous connectant sur ce site, vous acceptez, sans réserves, les présentes modalités.
-        Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance
-        dans l’économie numérique, les responsables du présent site internet www.anthedesign.fr
-        sont :
+      <h1 className="legal-notice__main-title">Legal notices</h1>
+      <p className="legal-notice__content">Please read carefully the different terms of use of this site.
+        before browsing its pages.
+        By connecting to this site, you accept these terms and conditions without reservation.
+        Also, in accordance with article n ° 6 of Law n ° 2004-575 of June 21, 2004 for the
+        confidence in the digital economy, the managers of this website www.anthedesign.fr
+        are :
       </p>
-      <h2 className="legal-notice__title">Éditeur du Site :</h2>
+      <h2 className="legal-notice__title">Website editor :</h2>
       <p className="legal-notice__content">SARL MNG<br />
-        Responsable éditorial : Camille<br />
+        Editorial manager: Camille<br />
         12 Rue du JavaScript, 12345 OCLOCK<br />
-        Téléphone : 00 00 00 00 00<br />
+        Phone number : 00 00 00 00 00<br />
         Email : Camille@oclock.io<br />
-        Site Web : www.MNG.fr
+        Website : www.MNG.fr
       </p>
-      <h2 className="legal-notice__title">Conditions d’utilisation :</h2>
-      <p className="legal-notice__content">Ce site (www.MNG.fr) est proposé en différents langages web
-        (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d’utilisation
-        et un graphisme plus agréable.
-        Nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer,
-        Safari, Firefox, Google Chrome, etc…
-        L’agence web MNG met en œuvre tous les moyens dont elle dispose,
-        pour assurer une information
-        fiable et une mise à jour fiable de ses sites internet.
-        Toutefois, des erreurs ou omissions peuvent survenir.
-        L’internaute devra donc s’assurer de l’exactitude des informations auprès de MNG ,
-        et signaler toutes modifications du site qu’il jugerait utile.
-        MNG n’est en aucun cas responsable
-        de l’utilisation faite de ces informations, et de tout préjudice direct ou indirect
-        pouvant en découler.
+      <h2 className="legal-notice__title">Terms of use :</h2>
+      <p className="legal-notice__content">This site (www.MNG.fr) is available in different web languages
+        (HTML, HTML5, Javascript, CSS, etc.) for better user comfort
+        and nicer graphics.
+        We recommend that you use modern browsers such as Internet Explorer,
+        Safari, Firefox, Google Chrome, etc.
+        The MNG web agency implements all the means at its disposal,
+        to provide information
+        reliable and reliable updating of its websites.
+        However, errors or omissions may occur.
+        The Internet user must therefore ensure the accuracy of the information with MNG,
+        and report any changes to the site that it deems useful.
+        MNG is in no way responsible
+        the use made of this information, and any direct or indirect damage
+        may derive from it.
       </p>
-      <h2 className="legal-notice__title">Propriété intellectuelle :</h2>
-      <p className="legal-notice__content">Tout le contenu du présent site www.MNG.fr, incluant, de façon non limitative,
-        les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi
-        que leur mise en forme sont la propriété exclusive de la société
-        à l’exception des marques, logos ou contenus appartenant à d’autres sociétés
-        partenaires ou auteurs.
-        Toute reproduction, distribution, modification, adaptation, retransmission ou publication,
-        même partielle, de ces différents éléments est strictement interdite sans l’accord exprès
-        par écrit de SARL MNG. Cette représentation ou reproduction,
-        par quelque procédé que ce soit,
-        constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code
-        de la propriété intellectuelle. Le non-respect de cette interdiction
-        constitue une contrefaçon pouvant engager la responsabilité civile
-        et pénale du contrefacteur. En outre, les propriétaires des Contenus
-        copiés pourraient intenter une action en justice à votre encontre.
+      <h2 className="legal-notice__title">Intellectual property :</h2>
+      <p className="legal-notice__content">All the content of this site www.MNG.fr, including, without limitation,
+        graphics, images, texts, videos, animations, sounds, logos, gifs and icons as well
+        that their formatting is the exclusive property of the company
+        with the exception of trademarks, logos or content belonging to other companies
+        partners or authors.
+        Any reproduction, distribution, modification, adaptation, retransmission or publication,
+        even partial, of these different elements is strictly prohibited without the express
+        agreement in writing from SARL MNG. This representation or reproduction,
+        by any means whatsoever,
+        constitutes an infringement sanctioned by articles L.335-2 and following of the Code
+        intellectual property. Failure to comply with this prohibition
+        constitutes an infringement that may incur civil liability
+        and penal of the counterfeiter. In addition, the owners of the Content
+        copied may bring legal action against you.
       </p>
     </div>
   );
