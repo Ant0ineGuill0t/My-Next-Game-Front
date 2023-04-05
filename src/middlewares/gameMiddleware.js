@@ -110,6 +110,7 @@ const gameMiddleware = (store) => (next) => (action) => {
       )
         .then(() => {
           store.dispatch(displayNextQuestion());
+          console.log(store.getState().game.answerChosen);
         })
         .catch((error) => {
           console.log(error);
@@ -129,6 +130,22 @@ const gameMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          console.log(response.map);
+          console.log(response.data.results[0].name);
+          console.log(response.data.results[1].name);
+          console.log(response.data.results[2].name);
+          console.log(response.data.results[3].name);
+          console.log(response.data.results[4].name);
+          console.log(response.data.results[5].name);
+          console.log(response.data.results[6].name);
+          console.log(response.data.results[7].name);
+          console.log(response.data.results[8].name);
+          console.log(response.data.results[9].name);
+          console.log(response.data.results[10].name);
+          console.log(response.data.results[11].name);
+          console.log(response.data.results[12].name);
+          console.log(response.data.results[13].name);
+          console.log(response.data.results[14].name);
           store.dispatch(isLoading(!store.getState().game.loading));
           store.dispatch(saveResults(response));
           if (response.data.results.length < 1) {

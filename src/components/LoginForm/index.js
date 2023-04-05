@@ -69,7 +69,7 @@ function LoginForm() {
               <input
                 className="form__input"
                 id="createPseudo"
-                type="pseudo"
+                type="text"
                 name="pseudo"
                 value={userPseudo}
                 placeholder="pseudo"
@@ -121,13 +121,11 @@ function LoginForm() {
                 value={userAge}
                 min="1"
                 max="99"
-                placeholder="dd-mm-yyyy"
                 required
                 onChange={(event) => {
                   dispatch(changeFieldCreateUser(event.target.value, 'age'));
                 }}
               />
-              {/* <span className="validity" /> */}
             </label>
             {errorForm.map(
               (message) => <p className="form__error" key={message}>{message}</p>,
@@ -135,7 +133,7 @@ function LoginForm() {
             <button
               type="submit"
               className="form__submit"
-              onClick={() => dispatch(unsetErrorFormMessage(''))}
+              onClick={() => dispatch(unsetErrorFormMessage())}
             >
               Send
             </button>

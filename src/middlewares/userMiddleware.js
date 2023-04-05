@@ -49,7 +49,6 @@ const userMiddleware = (store) => (next) => (action) => {
           console.log(error);
           store.dispatch(setErrorMessage());
         });
-
       break;
     case SEND_NEW_USER_FORM:
       axios.post(

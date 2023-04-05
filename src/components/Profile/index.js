@@ -57,22 +57,6 @@ function Profile() {
         className="profile__form"
         onSubmit={handleSubmit}
       >
-        {/* <label
-          htmlFor="profile-picture"
-          className="profile-intel-label"
-        >
-          <img src={editAvatar} alt="" className="profile-intel-picture" />
-          <input
-            type="file"
-            name="checkbox-gear"
-            id="profile-picture"
-            className="profile-gear-input"
-            onChange={
-              (event) => dispatch(
-                editUser(window.URL.createObjectURL(event.target.files[0]), 'avatar'))
-            }
-          />
-        </label> */}
         <div className="profile-content">
           <label
             htmlFor="profile-content-email"
